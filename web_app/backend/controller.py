@@ -17,6 +17,15 @@ class Controller:
         
         self.column_means = self.df.groupby('Personality').mean()
     
+    def find_cosine(self, input_vector):
+        ans = []
+        for i in self.column_means.index:
+            cosine_sim = cosine_similarity([input_vector], [column_means.loc[i].values])
+            ans.append([cosine_sim[0][0], i])
+            # print(i, cosine_sim[0][0])
+        ans.sort(reverse=True)
+        return ans
+
     def find_pearson(self, input_vector):
         ans = []
         for i in self.column_means.index:
