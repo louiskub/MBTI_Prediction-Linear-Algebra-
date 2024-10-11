@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import Question from '../components/Question';
 
 function MBTItest() {
     return (

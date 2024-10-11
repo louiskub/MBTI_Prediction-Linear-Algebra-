@@ -8,7 +8,7 @@ function MBTItypes() {
 
         <Navbar/>
         <div className='pt-16 w-[80vw] text-center'>
-            <h1 className='text-5xl font-bold p-16 text-et-brown'>Personality Types</h1>
+            <h1 className='text-6xl font-bold p-16 text-et-brown'>Personality Types</h1>
             <TestButton/>
             <div className="relative h-56 flex justify-center flex-row text-8xl text-et-light-gray font-bold hover:cursor-pointer mt-8 border-2 border-et-light-gray rounded-md">
                 <div className='basis-1/8 p-4 rounded-md hover:text-et-green-blue group'>
