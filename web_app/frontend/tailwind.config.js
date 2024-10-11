@@ -7,17 +7,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "Noto": ['Noto', 'sans-serif']
+        "IBM": ['IBM Plex Sans Thai Looped', 'sans-serif']
       },
       colors: {
         'et-light-skin1': '#e5c7ad',
         'et-gray': '#c2baaf',
         'et-pink': '#d9bbb3',
-        'et-yellow': '#d4b78d',
+        'et-yellow': '#efe5c1',
         'et-light-orange': '#cc997a',
         'et-sage-green': '#d0d8c1',
         'et-dark-green': '#8e9b89',
-        'et-brown': '#8e9b89',
+        'et-brown': '#7f6269',
         'et-pale-pink': '#efe7e4',
         'et-yellow-green': '#bdab6d',
         'et-green-blue': '#88988e',
@@ -26,8 +26,9 @@ export default {
         'et-green': '#92a087',
         'et-light-skin': '#ebd7c6',
         'et-light-gray': '#e9e4e1',
-        'et-lavender': '#e5dbe4',
-        'et-dark-purple': '#c6bcc5',
+        'et-lavender': '#d7c9db',
+        'et-dark-purple': '#baa7bf',
+        'et-light-blue': '#c5d4e3'
       }
     },
   },
