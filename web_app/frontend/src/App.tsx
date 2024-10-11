@@ -2,8 +2,10 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
+import MBTIdescription from './components/MBTItypes.tsx'
 
-function App() {
+function Home() {
   const [count, setCount] = useState(0)
 
   return (
@@ -29,6 +31,28 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/MBTIdescription">MBTI</Link>
+      </nav>
+
+      <Routes>
+
+        <Route path="/" element={<Home />} />
+
+        <Route path="/MBTIdescription" element={<MBTIdescription />} />
+
+      </Routes>
+
+      <footer>
+        <p>&copy; 2024 My App. All rights reserved.</p>
+      </footer>
+    </Router>
   )
 }
 

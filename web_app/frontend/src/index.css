@@ -1,7 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -69,4 +68,16 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+:root{
+  --font1: "Noto Sans Thai Looped";
+  --font2: "IBM Plex Sans Thai Looped";
+  --font3: "Pridi";
+  --font4: "IBM Plex Sans Thai"
+
+}
+
+html {
+  font-family: var(--font2), sans-serif;
 }
