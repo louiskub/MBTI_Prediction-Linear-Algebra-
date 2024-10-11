@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 function MBTItest() {
@@ -50,14 +51,14 @@ function MBTItest() {
                 <div className="flex justify-center items-center p-4">
                     <p className="font-bold mr-4">เพศ</p>
                     <button 
-                        onClick={() => setGender('male')} 
-                        className={`border border-gray-300 w-20 p-2 rounded mr-2 ${gender === 'male' ? 'bg-et-gray-blue text-white' : 'bg-white'}`}
+                        onClick={() => setGender("Male")} 
+                        className={`border border-gray-300 w-20 p-2 rounded mr-2 ${gender === "Male" ? 'bg-et-gray-blue text-white' : 'bg-white'}`}
                     >
                         ชาย
                     </button>
                     <button 
-                        onClick={() => setGender('female')} 
-                        className={`border border-gray-300 w-20 p-2 rounded ${gender === 'female' ? 'bg-et-pink text-white' : 'bg-white'}`}
+                        onClick={() => setGender("Female")} 
+                        className={`border border-gray-300 w-20 p-2 rounded ${gender === "Female" ? 'bg-et-pink text-white' : 'bg-white'}`}
                     >
                         หญิง
                     </button>
@@ -93,6 +94,11 @@ function MBTItest() {
                     </select>
                 </div>
                 <p>{name},{age},{gender},{education},{interest}</p>
+            </div>
+            <div className="flex justify-center">
+                <Link to="/" className="rounded-md text-xl font-bold p-2 text-et-brown bg-et-pale-pink text-center hover:text-et-dark-green hover:bg-et-sage-green hover:cursor-pointer">
+                    ส่งแบบทดสอบ ➜
+                </Link>
             </div>
         </div>
     )
