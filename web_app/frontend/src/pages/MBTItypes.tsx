@@ -1,6 +1,4 @@
-import './MBTItypes.css'
-
-function MBTIdescription() {
+function MBTItypes() {
     return (
     <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
@@ -127,4 +125,4 @@ function MBTIdescription() {
     )
 }
 
-export default MBTIdescription
+export default MBTItypes
