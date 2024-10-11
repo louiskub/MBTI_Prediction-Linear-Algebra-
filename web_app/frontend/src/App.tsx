@@ -38,20 +38,16 @@ function App() {
   return (
     <Router>
       <nav>
-        <Link to="/">Home</Link> | <Link to="/MBTIdescription">MBTI</Link>
+        <Link to="/">Home</Link> | <Link to="/MBTItypes">MBTI</Link>
       </nav>
 
       <Routes>
 
         <Route path="/" element={<Home />} />
 
-        <Route path="/MBTIdescription" element={<MBTIdescription />} />
+        <Route path="/MBTItypes" element={<MBTIdescription />} />
 
       </Routes>
-
-      <footer>
-        <p>&copy; 2024 My App. All rights reserved.</p>
-      </footer>
     </Router>
   )
 }

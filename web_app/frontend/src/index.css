@@ -77,7 +77,3 @@ button:focus-visible {
   --font4: "IBM Plex Sans Thai"
 
 }
-
-html {
-  font-family: var(--font2), sans-serif;
-}
