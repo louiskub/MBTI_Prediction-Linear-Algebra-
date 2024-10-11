@@ -4,7 +4,10 @@ function MBTItest() {
     return (
         <div>
             <Navbar/>
-            <h1 className='text-9xl pt-16'>MBTItest</h1>
+            <div className="flex justify-center items-center pt-16">
+                <h1 className="text-3xl font-bold">MBTI Test</h1>
+                <input/>
+            </div>
         </div>
     )
 }
