@@ -1,7 +1,10 @@
+import Navbar from '../components/Navbar';
+
 function Theorem() {
     return (
         <div>
-            <h1 className='text-9xl'>Theorem</h1>
+            <Navbar/>
+            <h1 className='text-9xl pt-16'>Theorem</h1>
         </div>
     )
 }

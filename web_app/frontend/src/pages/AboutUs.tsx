@@ -1,7 +1,10 @@
+import Navbar from '../components/Navbar';
+
 function AboutUs() {
     return (
         <div>
-            <h1 className='text-9xl'>AboutUs</h1>
+            <Navbar/>
+            <h1 className='text-9xl pt-16'>AboutUs</h1>
         </div>
     )
 }
