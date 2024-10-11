@@ -1,7 +1,10 @@
+import Navbar from '../components/Navbar';
+
 function MBTItest() {
     return (
         <div>
-            <h1 className='text-9xl'>MBTItest</h1>
+            <Navbar/>
+            <h1 className='text-9xl pt-16'>MBTItest</h1>
         </div>
     )
 }
