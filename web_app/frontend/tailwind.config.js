@@ -10,6 +10,9 @@ export default {
         "IBM": ['IBM Plex Sans Thai Looped', 'sans-serif']
       },
       colors: {
+        'cream-50': '#f9f7f1',
+        'light-brown': '#d7c6a6',
+        'dark-brown': '#5B3A29',
         'et-light-skin1': '#e5c7ad',
         'et-gray': '#c2baaf',
         'et-pink': '#d9bbb3',
