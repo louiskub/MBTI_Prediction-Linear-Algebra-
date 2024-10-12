@@ -6,28 +6,28 @@ const members = [
         role: 'Member1',
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://tr.rbxcdn.com/30DAY-Avatar-FCD68AA595DBED3E0F053BCA1D3C583A-Png/420/420/Avatar/Png/noFilter', 
-        instagram: 'https://www.instagram.com/example1',
+        instagram: 'https://www.instagram.com',
     },
     {
         name: 'Ananthachai',
         role: 'Member2',
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://tr.rbxcdn.com/30DAY-Avatar-FCD68AA595DBED3E0F053BCA1D3C583A-Png/420/420/Avatar/Png/noFilter', 
-        instagram: 'https://www.instagram.com/example2',
+        instagram: 'https://www.instagram.com',
     },
     {
         name: 'Peerawat',
         role: 'Member3',
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://tr.rbxcdn.com/30DAY-Avatar-FCD68AA595DBED3E0F053BCA1D3C583A-Png/420/420/Avatar/Png/noFilter', 
-        instagram: 'https://www.instagram.com/example3',
+        instagram: 'https://www.instagram.com',
     },
     {
         name: 'Emily',
         role: 'Member4',
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://tr.rbxcdn.com/30DAY-Avatar-FCD68AA595DBED3E0F053BCA1D3C583A-Png/420/420/Avatar/Png/noFilter', 
-        instagram: 'https://www.instagram.com/example4',
+        instagram: 'https://www.instagram.com',
     },
 ];
 
