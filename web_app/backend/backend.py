@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from controller import Controller
+import uvicorn
 app = FastAPI()
 controller = Controller()
 from pydantic import BaseModel
