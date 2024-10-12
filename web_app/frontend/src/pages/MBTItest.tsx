@@ -1,7 +1,6 @@
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import Question from '../components/Question';
 
 function MBTItest() {
     const [name, setName] = useState('');
@@ -9,6 +8,21 @@ function MBTItest() {
     const [gender, setGender] = useState('');
     const [education, setEducation] = useState<number | ''>('');
     const [interest, setInterest] = useState('');
+
+    const questions = [
+        "ข้อ 1", 
+        "ข้อ 2", 
+        "ข้อ 3", 
+        "ข้อ 4", 
+        "ข้อ 5",
+        "ข้อ 6", 
+        "ข้อ 7", 
+        "ข้อ 8", 
+        "ข้อ 9", 
+        "ข้อ 10"
+    ];
+    const questionOptions = [0, 1, 2, 3, 4]
+    const [selectedValues, setSelectedValues] = useState(Array(10).fill(null));
 
     const nameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value);
@@ -23,6 +37,12 @@ function MBTItest() {
     };
     const interestChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setInterest(event.target.value);
+    };
+
+    const questionChange = (questionIndex: number, value: number) => {
+        const newValues = [...selectedValues];
+        newValues[questionIndex] = value;
+        setSelectedValues(newValues);
     };
 
     return (
@@ -96,6 +116,30 @@ function MBTItest() {
                 </div>
                 <p>{name},{age},{gender},{education},{interest}</p>
             </div>
+            <div className="flex flex-col space-y-8">
+                {questions.map((question, questionIndex) => (
+                    <div key={questionIndex} className="flex flex-col items-center p-4">
+                        <h2 className="text-xl mb-4">{question}</h2>
+                        <div className="flex space-x-4 items-center">
+                            <p>ไม่เห็นด้วย</p>
+                            {questionOptions.map((option) => (
+                            <label key={option} className="flex items-center space-x-2">
+                                <input
+                                type="radio"
+                                value={option}
+                                checked={selectedValues[questionIndex] === option}
+                                onChange={() => questionChange(questionIndex, option)}
+                                className="form-radio h-6 w-6 accent-et-green"
+                                />
+                                <span></span>
+                            </label>
+                            ))}
+                            <p>เห็นด้วย</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <p>{selectedValues.join(', ')}</p>
             <div className="flex justify-center">
                 <Link to="/" className="rounded-md text-xl font-bold p-2 text-et-brown bg-et-pale-pink text-center hover:text-et-dark-green hover:bg-et-sage-green hover:cursor-pointer">
                     ส่งแบบทดสอบ ➜
