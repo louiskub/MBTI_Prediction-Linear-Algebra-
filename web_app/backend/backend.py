@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from controller import Controller
+import uvicorn
 app = FastAPI()
 controller = Controller()
 from pydantic import BaseModel
@@ -17,4 +18,6 @@ class Item(BaseModel):
 @app.post("/mbti-test")
 def get_pearson(item: Item):
     return controller.find_pearson(item)
-    # return item
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
