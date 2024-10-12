@@ -24,7 +24,7 @@ function MBTItest() {
         "คุณชอบทำงานให้เสร็จก่อนที่จะปล่อยให้ตัวเองได้ผ่อนคลาย" //Judging Score
     ];
     const questionOptions = [0, 1, 2, 3, 4]
-    const [selectedValues, setSelectedValues] = useState(Array(12).fill(null));
+    const [selectedValues, setSelectedValues] = useState(Array(12).fill('null'));
 
     const nameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value);
@@ -46,7 +46,7 @@ function MBTItest() {
         setSelectedValues(newValues);
     };
     const checkComplete = () => {
-        return name && age && gender && education !== '' && interest && !selectedValues.includes(null);
+        return name && age && gender && education !== '' && interest && !selectedValues.includes('null');
     };
 
     return (
