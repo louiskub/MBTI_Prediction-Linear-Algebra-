@@ -18,6 +18,4 @@ class Item(BaseModel):
 @app.post("/mbti-test")
 def get_pearson(item: Item):
     return controller.find_pearson(item)
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # return item

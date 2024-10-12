@@ -8,7 +8,7 @@ function MBTItypes() {
 
         <Navbar/>
         <div className='pt-16 w-[80vw] text-center'>
-            <h1 className='text-6xl font-bold p-16 text-et-brown'>Personality Types</h1>
+            <h1 className='text-5xl font-bold p-16 text-et-brown'>Personality Types</h1>
             <TestButton/>
             <div className="relative h-56 flex justify-center flex-row text-8xl text-et-light-gray font-bold hover:cursor-pointer mt-8 border-2 border-et-light-gray rounded-md">
                 <div className='basis-1/8 p-4 rounded-md hover:text-et-green-blue group'>
@@ -16,11 +16,11 @@ function MBTItypes() {
                     <div className="absolute gap-x-4 hidden w-1/2 group-hover:flex flex-row bottom-0 left-1/2 transform -translate-x-1/2 p-4 text-base rounded-md font-normal">
                         <div className="basis-1/2">
                             <div className="font-bold text-2xl">I - introverts</div>
-                            <div>บุคคลชอบอยู่คนเดียว โลกส่วนตัวสูง</div>
+                            <div>บุคคลกล้าแสดงออกชอบพบปะผู้คน</div>
                         </div>
                         <div className="basis-1/2">
                             <div className="font-bold text-2xl">E - extroverts</div>
-                            <div>บุคคลกล้าแสดงออกชอบพบปะผู้คน</div>
+                            <div>บุคคลชอบอยู่คนเดียว โลกส่วนตัวสูง</div>
                         </div>
                     </div>
                 </div>

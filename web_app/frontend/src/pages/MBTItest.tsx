@@ -41,12 +41,6 @@ function MBTItest() {
         setInterest(event.target.value);
     };
 
-    const questionChange = (questionIndex: number, value: number) => {
-        const newValues = [...selectedValues];
-        newValues[questionIndex] = value;
-        setSelectedValues(newValues);
-    };
-
     return (
         <div>
             <Navbar/>
