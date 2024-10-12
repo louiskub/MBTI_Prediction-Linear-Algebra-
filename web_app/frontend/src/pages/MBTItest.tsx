@@ -50,13 +50,15 @@ function MBTItest() {
     };
 
     return (
-        <div>
+        <div className='font-IBM'>
             <Navbar/>
             <div className="flex flex-col justify-center items-center pt-16">
-                <h1 className="text-3xl font-bold">แบบทดสอบ MBTI</h1>
-                <h1 className="text-xl mt-6 font-bold">ข้อมูลส่วนตัว</h1>
+            <h1 className='text-5xl sm:text-6xl md:text-6xl font-bold p-16 text-et-brown'>
+                แบบทดสอบ MBTI
+            </h1>
+                <h1 className="text-xl sm:text-2xl md:text-2xl font-bold p-4 text-et-brown">ข้อมูลส่วนตัว</h1>
                 <div className="flex justify-center items-center p-4">
-                    <p className="font-bold mr-4">ชื่อ</p>
+                    <p className="text-base md:text-lg font-bold text-et-brown mr-4">ชื่อ</p>
                     <input 
                         value={name} 
                         onChange={nameChange}
@@ -65,7 +67,7 @@ function MBTItest() {
                     />
                 </div>
                 <div className="flex justify-center items-center p-4">
-                    <p className="font-bold mr-4">อายุ</p>
+                    <p className="text-base md:text-lg font-bold text-et-brown mr-4">อายุ</p>
                     <input 
                         value={age} 
                         onChange={ageChange}
@@ -75,7 +77,7 @@ function MBTItest() {
                     />
                 </div>
                 <div className="flex justify-center items-center p-4">
-                    <p className="font-bold mr-4">เพศ</p>
+                    <p className="text-base md:text-lg font-bold text-et-brown mr-4">เพศ</p>
                     <button 
                         onClick={() => setGender("Male")} 
                         className={`border border-gray-300 w-20 p-2 rounded mr-2 ${gender === "Male" ? 'bg-et-gray-blue text-white' : 'bg-white'}`}
@@ -90,7 +92,7 @@ function MBTItest() {
                     </button>
                 </div>
                 <div className="flex justify-center items-center p-4">
-                    <p className="font-bold mr-4">ระดับการศึกษา</p>
+                    <p className="text-base md:text-lg font-bold text-et-brown mr-4">ระดับการศึกษา</p>
                     <select 
                         value={education} 
                         onChange={educationChange}
@@ -105,7 +107,7 @@ function MBTItest() {
                     </select>
                 </div>
                 <div className="flex justify-center items-center p-4">
-                    <p className="font-bold mr-4">ความสนใจ</p>
+                    <p className="text-base md:text-lg font-bold text-et-brown mr-4">ความสนใจ</p>
                     <select 
                         value={interest} 
                         onChange={interestChange}
@@ -120,7 +122,7 @@ function MBTItest() {
                     </select>
                 </div>
             </div>
-            <h1 className="flex flex-col items-center text-xl mt-6 mb-8 font-bold">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
+            <h1 className="flex flex-col items-center mt-10 mb-10 text-lg md:text-xl font-bold text-et-brown">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
             <div className="flex flex-col space-y-8">
                 {questions.map((question, questionIndex) => (
                     <div key={questionIndex} className="flex flex-col items-center p-4">
@@ -155,7 +157,9 @@ function MBTItest() {
             <p>Interest : {interest}</p>
             {checkComplete() ? (
                 <div className="flex justify-center mb-24">
-                    <Link to="/" className="rounded-md text-xl font-bold p-2 text-et-brown bg-et-pale-pink text-center hover:text-et-dark-green hover:bg-et-sage-green hover:cursor-pointer">
+                    <Link to="/" className="flex justify-center items-center rounded-md text-xl font-bold p-2 text-et-brown bg-et-pale-pink text-center 
+                        transition-transform transform hover:scale-105 
+                        hover:text-et-dark-green hover:bg-et-sage-green hover:cursor-pointer shadow-sm">
                         ส่งแบบทดสอบ ➜
                     </Link>
                 </div>
