@@ -14,7 +14,7 @@ class Item(BaseModel):
     interest: str
 
 
-@app.post("/")
+@app.post("/mbti-test")
 def get_pearson(item: Item):
     return controller.find_pearson(item)
     # return item
