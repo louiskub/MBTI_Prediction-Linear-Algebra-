@@ -10,16 +10,18 @@ function MBTItest() {
     const [interest, setInterest] = useState('');
 
     const questions = [
-        "ข้อ 1", 
-        "ข้อ 2", 
-        "ข้อ 3", 
-        "ข้อ 4", 
-        "ข้อ 5",
-        "ข้อ 6", 
-        "ข้อ 7", 
-        "ข้อ 8", 
-        "ข้อ 9", 
-        "ข้อ 10"
+        "คุณรู้สึกสบายใจในการพบปะผู้คนใหม่ ๆ", //Introversion Score
+        "คุณมักจะวางแผนก่อนลงมือทำเสมอ", //Judging Score
+        "คุณให้ความสำคัญกับข้อเท็จจริงมากกว่าความรู้สึก", //Thinking Score
+        "คุณไม่สนใจที่จะพูดคุยเกี่ยวกับทฤษฎีว่าโลกจะเป็นไปอย่างไรในอนาคต", //Sensing Score
+        "คุณสนุกกับการมีส่วนร่วมในกิจกรรมที่ทำเป็นทีม", //Introversion Score
+        "คุณถูกอารมณ์ควบคุม มากกว่าที่คุณจะควบคุมอารมณ์ของตัวเอง", //Thinking Score
+        "คุณปรับเปลี่ยนรูปแบบการทำงานตามสถานการณ์อยู่เสมอ", //Judging Score
+        "คุณสนใจการแสดงออกด้านความคิดสร้างสรรค์ในรูปแบบต่าง ๆ เช่น การเขียน", //Sensing Score
+        "คุณรู้สึกอึดอัดเมื่ออยู่ในสังคมที่ไม่คุ้นเคย", //Introversion Score
+        "คุณเบื่อหรือเลิกสนใจเมื่อการพูดคุยหันเหเข้าเรื่องทฤษฎีมากเกินไป", //Thinking Score
+        "คุณมักกังวลว่าสิ่งต่าง ๆ จะเลวร้ายลงไปอีก", //Sensing Score
+        "คุณชอบทำงานให้เสร็จก่อนที่จะปล่อยให้ตัวเองได้ผ่อนคลาย" //Judging Score
     ];
     const questionOptions = [0, 1, 2, 3, 4]
     const [selectedValues, setSelectedValues] = useState(Array(10).fill(null));
@@ -119,7 +121,7 @@ function MBTItest() {
             <div className="flex flex-col space-y-8">
                 {questions.map((question, questionIndex) => (
                     <div key={questionIndex} className="flex flex-col items-center p-4">
-                        <h2 className="text-xl mb-4">{question}</h2>
+                        <h2 className="text-xl mb-4">{questionIndex}{question}</h2>
                         <div className="flex space-x-4 items-center">
                             <p>ไม่เห็นด้วย</p>
                             {questionOptions.map((option) => (
@@ -140,6 +142,10 @@ function MBTItest() {
                 ))}
             </div>
             <p>{selectedValues.join(', ')}</p>
+            <p>Introversion Score : {(selectedValues[0] + selectedValues[4] + (4 - selectedValues[8])) * 10 / 12}</p>
+            <p>Sensing Score : {(selectedValues[3] + (4 - selectedValues[7]) + (4 - selectedValues[10])) * 10 / 12}</p>
+            <p>Thinking Score : {(selectedValues[2] + (4 - selectedValues[5]) + (4 - selectedValues[9])) * 10 / 12}</p>
+            <p>Judging Score : {(selectedValues[1] + (4 - selectedValues[6]) + selectedValues[11]) * 10 / 12}</p>
             <div className="flex justify-center">
                 <Link to="/" className="rounded-md text-xl font-bold p-2 text-et-brown bg-et-pale-pink text-center hover:text-et-dark-green hover:bg-et-sage-green hover:cursor-pointer">
                     ส่งแบบทดสอบ ➜
