@@ -16,11 +16,11 @@ function MBTItypes() {
                     <div className="absolute gap-x-4 hidden w-1/2 group-hover:flex flex-row bottom-0 left-1/2 transform -translate-x-1/2 p-4 text-base rounded-md font-normal">
                         <div className="basis-1/2">
                             <div className="font-bold text-2xl">I - introverts</div>
-                            <div>บุคคลกล้าแสดงออกชอบพบปะผู้คน</div>
+                            <div>บุคคลชอบอยู่คนเดียว โลกส่วนตัวสูง</div>
                         </div>
                         <div className="basis-1/2">
                             <div className="font-bold text-2xl">E - extroverts</div>
-                            <div>บุคคลชอบอยู่คนเดียว โลกส่วนตัวสูง</div>
+                            <div>บุคคลกล้าแสดงออกชอบพบปะผู้คน</div>
                         </div>
                     </div>
                 </div>
