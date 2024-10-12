@@ -120,7 +120,7 @@ function MBTItest() {
                     </select>
                 </div>
             </div>
-            <h1 className="flex flex-col items-center text-xl mt-6 font-bold">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
+            <h1 className="flex flex-col items-center text-xl mt-6 mb-8 font-bold">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
             <div className="flex flex-col space-y-8">
                 {questions.map((question, questionIndex) => (
                     <div key={questionIndex} className="flex flex-col items-center p-4">
