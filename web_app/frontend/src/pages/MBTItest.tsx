@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import Question from '../components/Question';
 
 function MBTItest() {
     const [name, setName] = useState('');
