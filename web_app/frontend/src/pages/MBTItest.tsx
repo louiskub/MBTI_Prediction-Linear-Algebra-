@@ -135,7 +135,7 @@ function MBTItest() {
                 <h1 className='max-[400px]:text-4xl text-5xl sm:text-6xl font-bold p-16 text-et-brown text-center'>
                     แบบทดสอบ MBTI
                 </h1>
-                <div className='bg-white w-5/6 sm:w-2/3 lg:w-[440px] max-w-[440px] rounded-md pt-4 pb-10 shadow-sm'>
+                <div className='bg-white w-5/6 sm:w-2/3 lg:w-[440px] max-w-[440px] rounded-md pt-4 pb-10 shadow-sm transition-transform hover:scale-105'>
                 <h1 className="text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อมูลส่วนตัว</h1>
                     <div className="flex flex-col justify-center items-center p-2">
                         <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">ชื่อ</p>
@@ -276,27 +276,31 @@ function MBTItest() {
                 <div className="flex justify-center m-8">
                     <button
                         onClick={handleSubmit}
-                        className="rounded-md text-xl font-bold p-2 text-et-brown bg-et-pale-pink text-center hover:text-et-dark-green hover:bg-et-sage-green hover:cursor-pointer"
+                        className="flex justify-center items-center rounded-md text-xl font-bold p-2 text-white bg-et-purple-gray text-center 
+                        transition-transform transform hover:scale-105 
+                        hover:text-et-olive-brown hover:bg-et-gray hover:cursor-pointer shadow-sm mb-4"
                     >
                         ส่งแบบทดสอบ ➜
                     </button>
                 </div>
                 {MBTI.length > 0 ? (
                     <div>
-                        <div className="max-w-xl mx-auto p-4 bg-et-lavender rounded-lg shadow-md mb-8 hover:cursor-pointer">
-                            <h1 className="text-2xl font-bold text-center mb-4">
-                                {`ประเภท MBTI ของคุณคือ:`}
-                            </h1>
-                            <p className="text-8xl font-bold text-gray-700 text-center mb-2">{MBTI[0][1]}</p>
-                            <p className="text-lg text-gray-700 text-center mb-2">
-                                {`(${mbtis[MBTI[0][1]][1]})`}
-                            </p>
-                            <p className="text-base text-gray-500 text-center mb-8">
-                                {mbtis[MBTI[0][1]][2]}
-                            </p>
-                            <p className="text-lg text-gray-600 text-center mb-4">
-                                {`อยู่ในกลุ่มของ ${mbtis[MBTI[0][1]][0]}`}
-                            </p>
+                        <div className='flex items-center bg-et-pink p-4 rounded-lg shadow-md mb-8 m-2'>
+                            <div className="max-w-xl mx-auto p-4 bg-et-pink rounded-lg hover:cursor-pointer border-dashed border-4 border-et-pale-pink">
+                                <h1 className="text-2xl font-semibold text-center mb-4 text-white">
+                                    {`MBTI ของคุณคือ:`}
+                                </h1>
+                                <p className="text-8xl font-bold text-et-olive-brown text-center mb-2">{MBTI[0][1]}</p>
+                                <p className="text-lg text-et-olive-brown font-semibold text-center mb-2">
+                                    {`- ${mbtis[MBTI[0][1]][1]} -`}
+                                </p>
+                                <p className="text-lg text-et-brown text-center mb-8">
+                                    {mbtis[MBTI[0][1]][2]}
+                                </p>
+                                <p className="text-lg text-white text-center mb-4">
+                                    {`อยู่ในกลุ่มของ ${mbtis[MBTI[0][1]][0]}`}
+                                </p>
+                            </div>
                         </div>
                         <div className="max-w-xl mx-auto p-4 bg-et-light-blue rounded-lg">
                             <h1 className="text-center text-2xl font-bold mt-6">MBTI ที่ใกล้เคียงกับคุณมากที่สุด</h1>
@@ -336,7 +340,7 @@ function MBTItest() {
                     <div>
                         <div className="max-w-xl mx-auto p-4 bg-et-lavender rounded-lg shadow-md mb-7">
                             <h1 className="text-2xl font-bold text-center mb-4">
-                                {`ประเภท MBTI ของคุณคือ:`}
+                                {`MBTI ของคุณคือ:`}
                             </h1>
                             <p className="text-8xl font-bold text-gray-700 text-center mb-2">?</p>
                         </div>
