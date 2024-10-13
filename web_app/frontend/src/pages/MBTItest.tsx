@@ -9,7 +9,7 @@ function MBTItest() {
     const [gender, setGender] = useState('');
     const [education, setEducation] = useState<number | ''>('');
     const [interest, setInterest] = useState('');
-    const [selectedValues, setSelectedValues] = useState(Array(12).fill("null"));
+    const [selectedValues, setSelectedValues] = useState(Array(12).fill(null));
 
     const questions = [
         "คุณรู้สึกสบายใจในการพบปะผู้คนใหม่ ๆ", 
@@ -53,32 +53,42 @@ function MBTItest() {
     };
 
     const checkComplete = () => {
-        return name && age && gender && education !== '' && interest && !selectedValues.includes("null");
+        return name && age && gender && education !== '' && interest && !selectedValues.includes(null);
     };
 
+    const [MBTI, setMBTI] = useState<string[]>([]);
     const handleSubmit = async () => {
-        if (!checkComplete()) {
-            alert("กรุณากรอกข้อมูลให้ครบก่อนส่งแบบทดสอบ");
-            return;
-        }
+        // if (!checkComplete()) {
+        //     alert("กรุณากรอกข้อมูลให้ครบก่อนส่งแบบทดสอบ");
+        //     return;
+        // }
 
         const data = {
-            "age": age,
-            "gender": gender,
-            "education": education,
-            "intro": parseFloat((selectedValues[0]) + (selectedValues[4]) + (4 - (selectedValues[8])) * 10 / 12.0),
-            "sensing": parseFloat((selectedValues[3]) + (4 - (selectedValues[7])) + (4 - (selectedValues[10])) * 10 / 12.0),
-            "thinking": parseFloat((selectedValues[2]) + (4 - (selectedValues[5])) + (4 - (selectedValues[9])) * 10 / 12.0),
-            "judging": parseFloat((selectedValues[1]) + (4 - (selectedValues[6])) + (selectedValues[11]) * 10 / 12.0),
-            "interest": interest
+            // "age": age,
+            // "gender": gender,
+            // "education": education,
+            // "intro": parseFloat((selectedValues[0]) + (selectedValues[4]) + (4 - (selectedValues[8])) * 10 / 12.0),
+            // "sensing": parseFloat((selectedValues[3]) + (4 - (selectedValues[7])) + (4 - (selectedValues[10])) * 10 / 12.0),
+            // "thinking": parseFloat((selectedValues[2]) + (4 - (selectedValues[5])) + (4 - (selectedValues[9])) * 10 / 12.0),
+            // "judging": parseFloat((selectedValues[1]) + (4 - (selectedValues[6])) + (selectedValues[11]) * 10 / 12.0),
+            // "interest": interest
+            "age": 20,
+            "gender": "Male",
+            "education": 0,
+            "intro": 1,
+            "sensing": 1,
+            "thinking": 1,
+            "judging": 2,
+            "interest": "Sports"
         }
 
         try {
             console.log(data)
-            const response = await axios.post('http://127.0.0.1:8000/mbti-test', data);
+            const response = await axios.post("http://localhost:8000/mbti-test", data);
             console.log(response.data);
+            setMBTI(response.data)
         } catch (error) {
-            console.error('Error submitting data', error);
+            console.error("Error :", error);
         }
     };
 
@@ -178,16 +188,7 @@ function MBTItest() {
                     </div>
                 ))}
             </div>
-            <p>Name : {name}</p>
-            <p>Age : {age}</p>
-            <p>Gender : {gender}</p>
-            <p>Education : {education}</p>
-            <p>Introversion Score : {((selectedValues[0]) + (selectedValues[4]) + (4 - (selectedValues[8])) * 10 / 12.0)}</p>
-            <p>Sensing Score : {((selectedValues[3]) + (4 - (selectedValues[7])) + (4 - (selectedValues[10])) * 10 / 12.0)}</p>
-            <p>Thinking Score : {((selectedValues[2]) + (4 - (selectedValues[5])) + (4 - (selectedValues[9])) * 10 / 12.0)}</p>
-            <p>Judging Score : {((selectedValues[1]) + (4 - (selectedValues[6])) + (selectedValues[11]) * 10 / 12.0)}</p>
-            <p>Interest : {interest}</p>
-            <div className="flex justify-center mb-24">
+            <div className="flex justify-center m-8">
                 <button
                     onClick={handleSubmit}
                     className="rounded-md text-xl font-bold p-2 text-et-brown bg-et-pale-pink text-center hover:text-et-dark-green hover:bg-et-sage-green hover:cursor-pointer"
@@ -195,6 +196,7 @@ function MBTItest() {
                     ส่งแบบทดสอบ ➜
                 </button>
             </div>
+            <p>{MBTI.join(",")}</p>
         </div>
     );
 }
