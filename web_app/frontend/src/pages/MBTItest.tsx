@@ -284,7 +284,7 @@ function MBTItest() {
                     </button>
                 </div>
                 {MBTI.length > 0 ? (
-                    <div>
+                    <div className='mb-8'>
                         <div className='flex items-center bg-et-pink p-4 rounded-lg shadow-md mb-8 m-2'>
                             <div className="max-w-xl mx-auto p-4 bg-et-pink rounded-lg hover:cursor-pointer border-dashed border-4 border-et-pale-pink">
                                 <h1 className="text-2xl font-semibold text-center mb-4 text-white">
@@ -302,8 +302,8 @@ function MBTItest() {
                                 </p>
                             </div>
                         </div>
-                        <div className="max-w-xl mx-auto p-4 bg-et-light-blue rounded-lg">
-                            <h1 className="text-center text-2xl font-bold mt-6">MBTI ที่ใกล้เคียงกับคุณมากที่สุด</h1>
+                        <div className="max-w-xl mx-auto p-4 bg-et-light-blue rounded-lg ml-2 mr-2 border-dashed border-4 border-white">
+                            <h1 className="text-center text-xl min-[410px]:text-2xl font-bold mt-6 mb-4 text-et-dark-blue">MBTI ที่ใกล้เคียงกับคุณมากที่สุด</h1>
                             <MBTIChart MBTI={MBTI} />
                             <table className="table-auto w-1/4 mx-auto border border-gray-300 mb-8">
                                 <thead>
@@ -314,7 +314,7 @@ function MBTItest() {
                                 </thead>
                                 <tbody className="bg-gray-50">
                                     {MBTI.map((item, index) => {
-                                        const top = index === 0 ? "bg-yellow-300 hover:bg-yellow-200 font-bold" : "hover:bg-gray-200"
+                                        const top = index === 0 ? "bg-et-yellow hover:bg-yellow-200 font-bold" : "hover:bg-gray-200"
                                         return (
                                         <tr key={index} className={`${top}`}>
                                             <td className="px-4 py-2 border border-gray-300 text-center font-bold">{item[1]}</td>
@@ -327,9 +327,9 @@ function MBTItest() {
                             <div className="flex justify-center">
                                 <Link
                                     to="/mbti-types"
-                                    className="flex justify-center items-center rounded-md text-xl font-bold p-2 text-white bg-et-purple-gray text-center 
+                                    className="flex justify-center items-center rounded-md text-xl font-bold p-2 text-white bg-et-dark-blue text-center 
                                             transition-transform transform hover:scale-105 
-                                            hover:text-et-olive-brown hover:bg-et-gray hover:cursor-pointer shadow-sm mb-8 w-1/2"
+                                            hover:text-white hover:bg-et-gray-blue hover:cursor-pointer shadow-sm mb-8 w-1/2"
                                 >
                                     ดูประเภท MBTI เพิ่มเติม ➜
                                 </Link>
@@ -337,12 +337,12 @@ function MBTItest() {
                         </div>
                     </div>
                     ) : (
-                    <div>
-                        <div className="max-w-xl mx-auto p-4 bg-et-lavender rounded-lg shadow-md mb-7">
-                            <h1 className="text-2xl font-bold text-center mb-4">
+                    <div className='flex items-center bg-et-pink p-4 rounded-lg shadow-md mb-8 m-2 hover:scale-105'>
+                        <div className="max-w-xl mx-auto p-4 bg-et-pink rounded-lg border-dashed border-4 border-et-pale-pink">
+                            <h1 className="text-2xl font-semibold text-center mb-4 text-white">
                                 {`MBTI ของคุณคือ:`}
                             </h1>
-                            <p className="text-8xl font-bold text-gray-700 text-center mb-2">?</p>
+                            <p className="text-8xl font-bold text-white text-center mb-2">?</p>
                         </div>
                     </div>
                     )
