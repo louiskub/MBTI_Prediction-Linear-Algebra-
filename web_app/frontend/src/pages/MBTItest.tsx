@@ -96,11 +96,11 @@ function MBTItest() {
         <div className='font-IBM bg-et-light-gray'>
             <Navbar/>
             <div className="flex flex-col justify-center items-center pt-16">
-            <h1 className='text-5xl sm:text-6xl md:text-6xl font-bold p-16 text-et-brown'>
+            <h1 className='max-[400px]:text-4xl text-5xl sm:text-6xl font-bold p-16 text-et-brown text-center'>
                 แบบทดสอบ MBTI
             </h1>
-            <div className='bg-white w-[30%] rounded-md pt-4 pb-10 shadow-sm'>
-            <h1 className="text-xl sm:text-2xl md:text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อมูลส่วนตัว</h1>
+            <div className='bg-white w-5/6 sm:w-2/3 lg:w-[440px] max-w-[440px] rounded-md pt-4 pb-10 shadow-sm'>
+            <h1 className="text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อมูลส่วนตัว</h1>
                 <div className="flex flex-col justify-center items-center p-2">
                     <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">ชื่อ</p>
                     <input
@@ -172,14 +172,14 @@ function MBTItest() {
                 
             </div>
             <div className="flex flex-col justify-center items-center pt-16">
-            <div className="flex flex-col space-y-8 bg-white w-3/4 rounded-md pt-10 pb-10 shadow-sm">
-            <h1 className="text-xl sm:text-2xl md:text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
+            <div className="flex flex-col space-y-4 bg-white w-3/4 rounded-md pt-10 pb-10 shadow-sm min-w-[340px]">
+            <h1 className="text-xl sm:text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
                 {questions.map((question, questionIndex) => (
-                    <div key={questionIndex} className="flex flex-col items-center p-4 border-t">
-                        <h2 className="text-xl mb-4 mt-4">{question}</h2>
+                    <div key={questionIndex} className="flex flex-col items-center p-4 border-t border-et-pale-pink text-center">
+                        <h2 className="text-base md:text-lg mb-4 mt-4">{question}</h2>
                         <div className="flex space-x-4 items-center">
-                            <p>ไม่เห็นด้วย</p>
-                            <label key={0} className="flex items-center space-x-2">
+                            <p className='text-sm sm:text-base text-red-300 font-medium'>ไม่เห็นด้วย</p>
+                            <label key={0} className="flex items-center">
                                 <input
                                 type="radio"
                                 value={0}
@@ -187,9 +187,9 @@ function MBTItest() {
                                 onChange={() => questionChange(questionIndex, 0)}
                                 className="hidden peer"
                                 />
-                                <div className="h-10 w-10 rounded-full border-2 border-gray-300 peer-checked:bg-et-green"></div>
+                                <div className="h-10 w-10 rounded-full border-2 text-white border-red-300 hover:cursor-pointer hover:bg-red-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-red-300 leading-10 transition-all duration-300"></div>
                             </label>
-                            <label key={1} className="flex items-center space-x-2">
+                            <label key={1} className="flex items-center">
                                 <input
                                 type="radio"
                                 value={1}
@@ -197,9 +197,9 @@ function MBTItest() {
                                 onChange={() => questionChange(questionIndex, 1)}
                                 className="hidden peer"
                                 />
-                                <div className="h-8 w-8 rounded-full border-2 border-gray-300 peer-checked:bg-et-green"></div>
+                                <div className="h-8 w-8 rounded-full border-2 text-white border-red-300 hover:cursor-pointer hover:bg-red-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-red-300 leading-8 transition-all duration-300"></div>
                             </label>
-                            <label key={2} className="flex items-center space-x-2">
+                            <label key={2} className="flex items-center">
                                 <input
                                 type="radio"
                                 value={2}
@@ -207,9 +207,10 @@ function MBTItest() {
                                 onChange={() => questionChange(questionIndex, 2)}
                                 className="hidden peer"
                                 />
-                                <div className="h-7 w-7 rounded-full border-2 border-gray-300 peer-checked:bg-et-green"></div>
+                                <div className="h-8 w-8 rounded-full border-2 text-white border-gray-300 hover:cursor-pointer hover:bg-gray-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-gray-300 leading-7 transition-all duration-300"></div>
                             </label>
-                            <label key={3} className="flex items-center space-x-2">
+
+                            <label key={3} className="flex items-center">
                                 <input
                                     type="radio"
                                     value={3}
@@ -217,9 +218,10 @@ function MBTItest() {
                                     onChange={() => questionChange(questionIndex, 3)}
                                     className="hidden peer"
                                 />
-                                <div className="h-8 w-8 rounded-full border-2 border-gray-300 peer-checked:bg-et-green"></div>
+                                <div className="h-8 w-8 rounded-full border-2 text-white border-et-light-green hover:cursor-pointer hover:bg-et-light-green text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-et-light-green leading-8 transition-all duration-300"></div>
                             </label>
-                            <label key={4} className="flex items-center space-x-2">
+
+                            <label key={4} className="flex items-center">
                                 <input
                                 type="radio"
                                 value={4}
@@ -227,10 +229,10 @@ function MBTItest() {
                                 onChange={() => questionChange(questionIndex, 4)}
                                 className="hidden peer"
                                 />
-                                <div className="h-10 w-10 rounded-full border-2 border-gray-300 peer-checked:bg-et-green"></div>
+                                <div className="h-10 w-10 rounded-full border-2 text-white border-et-light-green hover:cursor-pointer hover:bg-et-light-green text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-et-light-green leading-10 transition-all duration-300"></div>
                             </label>
                             
-                            <p>เห็นด้วย</p>
+                            <p className='text-sm sm:text-base text-et-light-green font-medium'>เห็นด้วย</p>
                         </div>
                     </div>
                 ))}
@@ -254,15 +256,16 @@ function MBTItest() {
                     </Link>
                 </div>
             ) : (
-                <div className="flex justify-center mb-24">
+                <div className="flex justify-center pb-24">
                     <button
                         onClick={() => {
                             if (!checkComplete()) {
                                 alert("กรุณากรอกข้อมูลให้ครบก่อนส่งแบบทดสอบ");
                             }
                         }}
-                        className="rounded-md text-xl font-bold p-2 text-et-brown bg-et-pale-pink text-center hover:text-et-dark-green hover:bg-et-sage-green hover:cursor-pointer"
-                    >
+                        className="flex justify-center items-center rounded-md text-xl font-bold p-2 text-white bg-et-purple-gray text-center 
+                        transition-all hover:scale-105 
+                        hover:text-et-olive-brown hover:bg-et-gray hover:cursor-pointer shadow-sm">
                         ส่งแบบทดสอบ ➜
                     </button>
                 </div>
