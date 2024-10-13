@@ -243,7 +243,7 @@ function MBTItest() {
                                     onChange={() => questionChange(questionIndex, 2)}
                                     className="hidden peer"
                                     />
-                                    <div className="h-8 w-8 rounded-full border-2 text-white border-gray-300 hover:cursor-pointer hover:bg-gray-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-gray-300 leading-7 transition-all duration-300"></div>
+                                    <div className="h-7 w-7 rounded-full border-2 text-white border-gray-300 hover:cursor-pointer hover:bg-gray-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-gray-300 leading-7 transition-all duration-300"></div>
                                 </label>
 
                                 <label key={3} className="flex items-center">
