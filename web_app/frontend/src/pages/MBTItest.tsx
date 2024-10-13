@@ -131,206 +131,207 @@ function MBTItest() {
         <div className='font-IBM bg-et-light-gray'>
             <Navbar/>
             <div className="flex flex-col justify-center items-center pt-16">
-            <h1 className='max-[400px]:text-4xl text-5xl sm:text-6xl font-bold p-16 text-et-brown text-center'>
-                แบบทดสอบ MBTI
-            </h1>
-            <div className='bg-white w-5/6 sm:w-2/3 lg:w-[440px] max-w-[440px] rounded-md pt-4 pb-10 shadow-sm'>
-            <h1 className="text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อมูลส่วนตัว</h1>
-                <div className="flex flex-col justify-center items-center p-2">
-                    <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">ชื่อ</p>
-                    <input
-                        value={name} 
-                        onChange={nameChange}
-                        className="border border-gray-300 p-2 rounded-md w-2/3"
-                        placeholder="เขียนชื่อของคุณ"
-                    />
-                </div>
-                <div className="flex flex-col justify-center items-center p-2">
-                    <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">อายุ</p>
-                    <input 
-                        value={age} 
-                        onChange={ageChange}
-                        className="border border-gray-300 p-2 rounded-md w-2/3"
-                        placeholder="เลือกอายุของคุณ"
-                        type="number"
-                        min="0"
-                    />
-                </div>
-                <div className="flex flex-col justify-center items-center p-2">
-                    <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">เพศ</p>
-                    <div className='flex justify-center w-full'>
-                    <button 
-                        onClick={() => setGender("Male")} 
-                        className={`border border-gray-300 w-1/3 p-2 rounded-md mr-1 transition-transform transform hover:border-et-gray-blue hover:border-2 ${gender === "Male" ? 'bg-et-gray-blue text-white' : 'bg-white text-gray-400'}`}
-                    >
-                        ชาย
-                    </button>
-                    <button 
-                        onClick={() => setGender("Female")} 
-                        className={`border border-gray-300 w-1/3 p-2 rounded-md transition-transform transform hover:border-et-pink hover:border-2 ${gender === "Female" ? 'bg-et-pink text-white' : 'bg-white text-gray-400'}`}
-                    >
-                        หญิง
-                    </button>
+                <h1 className='max-[400px]:text-4xl text-5xl sm:text-6xl font-bold p-16 text-et-brown text-center'>
+                    แบบทดสอบ MBTI
+                </h1>
+                <div className='bg-white w-5/6 sm:w-2/3 lg:w-[440px] max-w-[440px] rounded-md pt-4 pb-10 shadow-sm'>
+                <h1 className="text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อมูลส่วนตัว</h1>
+                    <div className="flex flex-col justify-center items-center p-2">
+                        <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">ชื่อ</p>
+                        <input
+                            value={name} 
+                            onChange={nameChange}
+                            className="border border-gray-300 p-2 rounded-md w-2/3"
+                            placeholder="เขียนชื่อของคุณ"
+                        />
                     </div>
-                </div>
-                <div className="flex flex-col justify-center items-center p-2">
-                    <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">ระดับการศึกษา</p>
-                    <select 
-                        value={education} 
-                        onChange={educationChange}
-                        className="border border-gray-300 p-2 rounded-md w-2/3 text-gray-400 focus:border-et-gray-brown focus:border-2 hover:cursor-pointer"
-                    >
-                        <option value="">เลือกระดับการศึกษา</option>
-                        <option value="0">ต่ำกว่ามัธยมปลาย</option>
-                        <option value="1">มัธยมปลายหรือเทียบเท่า</option>
-                        <option value="2">ปริญญาตรี</option>
-                        <option value="3">ปริญญาโท</option>
-                        <option value="4">ปริญญาเอก</option>
-                    </select>
-                </div>
-                <div className="flex flex-col justify-center items-center p-2">
-                    <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">ความสนใจ</p>
-                    <select 
-                        value={interest} 
-                        onChange={interestChange}
-                        className="border border-gray-300 p-2 rounded-md w-2/3 text-gray-400 focus:border-2 focus:border-et-gray-brown hover:cursor-pointer"
-                    >
-                        <option value="">เลือกความสนใจ</option>
-                        <option value="Unknown">ไม่มีความสนใจเป็นพิเศษ</option>
-                        <option value="Arts">ศิลปะ</option>
-                        <option value="Technology">เทคโนโลยี</option>
-                        <option value="Sports">กีฬา</option>
-                        <option value="Others">อื่นๆ</option>
-                    </select>
-                </div>
-            </div>
-                
-            </div>
-            <div className="flex flex-col justify-center items-center pt-16">
-            <div className="flex flex-col space-y-4 bg-white w-3/4 rounded-md pt-10 pb-10 shadow-sm min-w-[340px]">
-            <h1 className="text-xl sm:text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
-                {questions.map((question, questionIndex) => (
-                    <div key={questionIndex} className="flex flex-col items-center p-4 border-t border-et-pale-pink text-center">
-                        <h2 className="text-base md:text-lg mb-4 mt-4">{question}</h2>
-                        <div className="flex space-x-4 items-center">
-                            <p className='text-sm sm:text-base text-red-300 font-medium'>ไม่เห็นด้วย</p>
-                            <label key={0} className="flex items-center">
-                                <input
-                                type="radio"
-                                value={0}
-                                checked={selectedValues[questionIndex] === 0}
-                                onChange={() => questionChange(questionIndex, 0)}
-                                className="hidden peer"
-                                />
-                                <div className="h-10 w-10 rounded-full border-2 text-white border-red-300 hover:cursor-pointer hover:bg-red-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-red-300 leading-10 transition-all duration-300"></div>
-                            </label>
-                            <label key={1} className="flex items-center">
-                                <input
-                                type="radio"
-                                value={1}
-                                checked={selectedValues[questionIndex] === 1}
-                                onChange={() => questionChange(questionIndex, 1)}
-                                className="hidden peer"
-                                />
-                                <div className="h-8 w-8 rounded-full border-2 text-white border-red-300 hover:cursor-pointer hover:bg-red-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-red-300 leading-8 transition-all duration-300"></div>
-                            </label>
-                            <label key={2} className="flex items-center">
-                                <input
-                                type="radio"
-                                value={2}
-                                checked={selectedValues[questionIndex] === 2}
-                                onChange={() => questionChange(questionIndex, 2)}
-                                className="hidden peer"
-                                />
-                                <div className="h-8 w-8 rounded-full border-2 text-white border-gray-300 hover:cursor-pointer hover:bg-gray-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-gray-300 leading-7 transition-all duration-300"></div>
-                            </label>
-
-                            <label key={3} className="flex items-center">
-                                <input
-                                    type="radio"
-                                    value={3}
-                                    checked={selectedValues[questionIndex] === 3}
-                                    onChange={() => questionChange(questionIndex, 3)}
-                                    className="hidden peer"
-                                />
-                                <div className="h-8 w-8 rounded-full border-2 text-white border-et-light-green hover:cursor-pointer hover:bg-et-light-green text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-et-light-green leading-8 transition-all duration-300"></div>
-                            </label>
-
-                            <label key={4} className="flex items-center">
-                                <input
-                                type="radio"
-                                value={4}
-                                checked={selectedValues[questionIndex] === 4}
-                                onChange={() => questionChange(questionIndex, 4)}
-                                className="hidden peer"
-                                />
-                                <div className="h-10 w-10 rounded-full border-2 text-white border-et-light-green hover:cursor-pointer hover:bg-et-light-green text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-et-light-green leading-10 transition-all duration-300"></div>
-                            </label>
-                            
-                            <p className='text-sm sm:text-base text-et-light-green font-medium'>เห็นด้วย</p>
+                    <div className="flex flex-col justify-center items-center p-2">
+                        <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">อายุ</p>
+                        <input 
+                            value={age} 
+                            onChange={ageChange}
+                            className="border border-gray-300 p-2 rounded-md w-2/3"
+                            placeholder="เลือกอายุของคุณ"
+                            type="number"
+                            min="0"
+                        />
+                    </div>
+                    <div className="flex flex-col justify-center items-center p-2">
+                        <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">เพศ</p>
+                        <div className='flex justify-center w-full'>
+                        <button 
+                            onClick={() => setGender("Male")} 
+                            className={`border border-gray-300 w-1/3 p-2 rounded-md mr-1 transition-transform transform hover:border-et-gray-blue hover:border-2 ${gender === "Male" ? 'bg-et-gray-blue text-white' : 'bg-white text-gray-400'}`}
+                        >
+                            ชาย
+                        </button>
+                        <button 
+                            onClick={() => setGender("Female")} 
+                            className={`border border-gray-300 w-1/3 p-2 rounded-md transition-transform transform hover:border-et-pink hover:border-2 ${gender === "Female" ? 'bg-et-pink text-white' : 'bg-white text-gray-400'}`}
+                        >
+                            หญิง
+                        </button>
                         </div>
                     </div>
-                ))}
-            </div>
-            <div className="flex justify-center m-8">
-                <button
-                    onClick={handleSubmit}
-                    className="rounded-md text-xl font-bold p-2 text-et-brown bg-et-pale-pink text-center hover:text-et-dark-green hover:bg-et-sage-green hover:cursor-pointer"
-                >
-                    ส่งแบบทดสอบ ➜
-                </button>
-            </div>
-            {MBTI.length > 0 ? (
-                <div>
-                    <div className="max-w-xl mx-auto p-4 bg-et-lavender rounded-lg shadow-md mb-8 hover:cursor-pointer">
-                        <h1 className="text-2xl font-bold text-center mb-4">
-                            {`ประเภท MBTI ของคุณคือ:`}
-                        </h1>
-                        <p className="text-8xl font-bold text-gray-700 text-center mb-2">{MBTI[0][1]}</p>
-                        <p className="text-lg text-gray-700 text-center mb-2">
-                            {`(${mbtis[MBTI[0][1]][1]})`}
-                        </p>
-                        <p className="text-base text-gray-500 text-center mb-8">
-                            {mbtis[MBTI[0][1]][2]}
-                        </p>
-                        <p className="text-lg text-gray-600 text-center mb-4">
-                            {`อยู่ในกลุ่มของ ${mbtis[MBTI[0][1]][0]}`}
-                        </p>
+                    <div className="flex flex-col justify-center items-center p-2">
+                        <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">ระดับการศึกษา</p>
+                        <select 
+                            value={education} 
+                            onChange={educationChange}
+                            className="border border-gray-300 p-2 rounded-md w-2/3 text-gray-400 focus:border-et-gray-brown focus:border-2 hover:cursor-pointer"
+                        >
+                            <option value="">เลือกระดับการศึกษา</option>
+                            <option value="0">ต่ำกว่ามัธยมปลายหรือเทียบเท่า</option>
+                            <option value="1">มัธยมปลายหรือเทียบเท่า</option>
+                            <option value="2">ปริญญาตรี</option>
+                            <option value="3">ปริญญาโท</option>
+                            <option value="4">ปริญญาเอก</option>
+                        </select>
                     </div>
-                    <table className="table-auto w-1/4 mx-auto border border-gray-300 mb-8">
-                        <thead>
-                        <tr className="bg-et-gray-blue text-center text-white">
-                            <th className="px-4 py-2 border border-gray-300 w-1/4">MBTI Type</th>
-                            <th className="px-4 py-2 border border-gray-300">Pearson Similarity</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            {MBTI.map((item, index) => {
-                                const backgroundColor = index === 0 ? "bg-yellow-300" : ""
-                                const backgroundHoverColor = index === 0 ? "hover:bg-yellow-200" : "hover:bg-gray-200"
+                    <div className="flex flex-col justify-center items-center p-2">
+                        <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">ความสนใจ</p>
+                        <select 
+                            value={interest} 
+                            onChange={interestChange}
+                            className="border border-gray-300 p-2 rounded-md w-2/3 text-gray-400 focus:border-2 focus:border-et-gray-brown hover:cursor-pointer"
+                        >
+                            <option value="">เลือกความสนใจ</option>
+                            <option value="Unknown">ไม่มีความสนใจเป็นพิเศษ</option>
+                            <option value="Arts">ศิลปะ</option>
+                            <option value="Technology">เทคโนโลยี</option>
+                            <option value="Sports">กีฬา</option>
+                            <option value="Others">อื่นๆ</option>
+                        </select>
+                    </div>
+                </div>
+                    
+                </div>
+                <div className="flex flex-col justify-center items-center pt-16">
+                <div className="flex flex-col space-y-4 bg-white w-3/4 rounded-md pt-10 pb-10 shadow-sm min-w-[340px]">
+                <h1 className="text-xl sm:text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
+                    {questions.map((question, questionIndex) => (
+                        <div key={questionIndex} className="flex flex-col items-center p-4 border-t border-et-pale-pink text-center">
+                            <h2 className="text-base md:text-lg mb-4 mt-4">{question}</h2>
+                            <div className="flex space-x-4 items-center">
+                                <p className='text-sm sm:text-base text-red-300 font-medium'>ไม่เห็นด้วย</p>
+                                <label key={0} className="flex items-center">
+                                    <input
+                                    type="radio"
+                                    value={0}
+                                    checked={selectedValues[questionIndex] === 0}
+                                    onChange={() => questionChange(questionIndex, 0)}
+                                    className="hidden peer"
+                                    />
+                                    <div className="h-10 w-10 rounded-full border-2 text-white border-red-300 hover:cursor-pointer hover:bg-red-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-red-300 leading-10 transition-all duration-300"></div>
+                                </label>
+                                <label key={1} className="flex items-center">
+                                    <input
+                                    type="radio"
+                                    value={1}
+                                    checked={selectedValues[questionIndex] === 1}
+                                    onChange={() => questionChange(questionIndex, 1)}
+                                    className="hidden peer"
+                                    />
+                                    <div className="h-8 w-8 rounded-full border-2 text-white border-red-300 hover:cursor-pointer hover:bg-red-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-red-300 leading-8 transition-all duration-300"></div>
+                                </label>
+                                <label key={2} className="flex items-center">
+                                    <input
+                                    type="radio"
+                                    value={2}
+                                    checked={selectedValues[questionIndex] === 2}
+                                    onChange={() => questionChange(questionIndex, 2)}
+                                    className="hidden peer"
+                                    />
+                                    <div className="h-8 w-8 rounded-full border-2 text-white border-gray-300 hover:cursor-pointer hover:bg-gray-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-gray-300 leading-7 transition-all duration-300"></div>
+                                </label>
 
-                                return (
-                                <tr key={index} className={`${backgroundColor} ${backgroundHoverColor}`}>
-                                    <td className="px-4 py-2 border border-gray-300 text-center font-bold">{item[1]}</td>
-                                    <td className="px-4 py-2 border border-gray-300 text-center">{item[0]}</td>
-                                </tr>
-                                );
-                            })}
-                        </tbody>
-                    </table>
+                                <label key={3} className="flex items-center">
+                                    <input
+                                        type="radio"
+                                        value={3}
+                                        checked={selectedValues[questionIndex] === 3}
+                                        onChange={() => questionChange(questionIndex, 3)}
+                                        className="hidden peer"
+                                    />
+                                    <div className="h-8 w-8 rounded-full border-2 text-white border-et-light-green hover:cursor-pointer hover:bg-et-light-green text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-et-light-green leading-8 transition-all duration-300"></div>
+                                </label>
+
+                                <label key={4} className="flex items-center">
+                                    <input
+                                    type="radio"
+                                    value={4}
+                                    checked={selectedValues[questionIndex] === 4}
+                                    onChange={() => questionChange(questionIndex, 4)}
+                                    className="hidden peer"
+                                    />
+                                    <div className="h-10 w-10 rounded-full border-2 text-white border-et-light-green hover:cursor-pointer hover:bg-et-light-green text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-et-light-green leading-10 transition-all duration-300"></div>
+                                </label>
+                                
+                                <p className='text-sm sm:text-base text-et-light-green font-medium'>เห็นด้วย</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-                ) : (
-                <div>
-                    <div className="max-w-xl mx-auto p-4 bg-et-lavender rounded-lg shadow-md mb-7">
-                        <h1 className="text-2xl font-bold text-center mb-4">
-                            {`ประเภท MBTI ของคุณคือ:`}
-                        </h1>
-                        <p className="text-8xl font-bold text-gray-700 text-center mb-2">?</p>
+                <div className="flex justify-center m-8">
+                    <button
+                        onClick={handleSubmit}
+                        className="rounded-md text-xl font-bold p-2 text-et-brown bg-et-pale-pink text-center hover:text-et-dark-green hover:bg-et-sage-green hover:cursor-pointer"
+                    >
+                        ส่งแบบทดสอบ ➜
+                    </button>
+                </div>
+                {MBTI.length > 0 ? (
+                    <div>
+                        <div className="max-w-xl mx-auto p-4 bg-et-lavender rounded-lg shadow-md mb-8 hover:cursor-pointer">
+                            <h1 className="text-2xl font-bold text-center mb-4">
+                                {`ประเภท MBTI ของคุณคือ:`}
+                            </h1>
+                            <p className="text-8xl font-bold text-gray-700 text-center mb-2">{MBTI[0][1]}</p>
+                            <p className="text-lg text-gray-700 text-center mb-2">
+                                {`(${mbtis[MBTI[0][1]][1]})`}
+                            </p>
+                            <p className="text-base text-gray-500 text-center mb-8">
+                                {mbtis[MBTI[0][1]][2]}
+                            </p>
+                            <p className="text-lg text-gray-600 text-center mb-4">
+                                {`อยู่ในกลุ่มของ ${mbtis[MBTI[0][1]][0]}`}
+                            </p>
+                        </div>
+                        <table className="table-auto w-1/4 mx-auto border border-gray-300 mb-8">
+                            <thead>
+                            <tr className="bg-et-gray-blue text-center text-white">
+                                <th className="px-4 py-2 border border-gray-300 w-1/4">MBTI Type</th>
+                                <th className="px-4 py-2 border border-gray-300">Pearson Similarity</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {MBTI.map((item, index) => {
+                                    const backgroundColor = index === 0 ? "bg-yellow-300" : ""
+                                    const backgroundHoverColor = index === 0 ? "hover:bg-yellow-200" : "hover:bg-gray-200"
+
+                                    return (
+                                    <tr key={index} className={`${backgroundColor} ${backgroundHoverColor}`}>
+                                        <td className="px-4 py-2 border border-gray-300 text-center font-bold">{item[1]}</td>
+                                        <td className="px-4 py-2 border border-gray-300 text-center">{item[0]}</td>
+                                    </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-            )}
+                    ) : (
+                    <div>
+                        <div className="max-w-xl mx-auto p-4 bg-et-lavender rounded-lg shadow-md mb-7">
+                            <h1 className="text-2xl font-bold text-center mb-4">
+                                {`ประเภท MBTI ของคุณคือ:`}
+                            </h1>
+                            <p className="text-8xl font-bold text-gray-700 text-center mb-2">?</p>
+                        </div>
+                    </div>
+                )}
+            </div>   
         </div>
-    );
+    )
 }
 
 export default MBTItest;
