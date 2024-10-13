@@ -12,15 +12,15 @@ const App: React.FC = () => {
 
             <main className="flex-grow flex flex-col items-center pt-16 px-4">
                 <section className="intro-section text-center p-10 shadow-lg rounded-lg bg-white bg-opacity-90 mb-12 mt-20 transform transition-transform duration-300 hover:scale-105">
-                    <h1 className="text-6xl font-bold text-[#5D3A29]">Discover Your MBTI Type</h1>
-                    <h2 className="text-4xl text-[#7A5A4E] mt-2">Unlock Your Personality</h2>
+                    <h1 className="text-6xl font-bold text-[#5D3A29]">สำรวจ MBTI ของคุณ!</h1>
+                    <h2 className="text-4xl text-[#7A5A4E] mt-2">เพื่อพัฒนาศักยภาพของตัวคุณเอง</h2>
                     <p className="description text-[#9F7C6B] mt-4">♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥</p>
                     <div className="portfolio-buttons mt-6 flex justify-center space-x-4">
-                        <a href="/theorem" className="btn bg-gradient-to-r from-[#4B3D3A] to-[#C9BBA4] text-white py-3 px-6 rounded shadow-lg transform transition-all duration-300 hover:from-[#3D2A25] hover:to-[#C19B8E] hover:scale-105 hover:shadow-xl">
-                            Learn More
+                        <a href="/theorem" className="font-bold btn bg-gradient-to-r from-[#4B3D3A] to-[#C9BBA4] text-white py-3 px-6 rounded shadow-lg transform transition-all duration-300 hover:from-[#3D2A25] hover:to-[#C19B8E] hover:scale-105 hover:shadow-xl">
+                            หลักการทำงาน
                         </a>
-                        <a href="/mbti-test" className="btn bg-gradient-to-r from-[#4B3D3A] to-[#C9BBA4] text-white py-3 px-6 rounded shadow-lg transform transition-all duration-300 hover:from-[#3D2A25] hover:to-[#C19B8E] hover:scale-105 hover:shadow-xl">
-                            Take the Test
+                        <a href="/mbti-test" className="font-bold btn bg-gradient-to-r from-[#4B3D3A] to-[#C9BBA4] text-white py-3 px-6 rounded shadow-lg transform transition-all duration-300 hover:from-[#3D2A25] hover:to-[#C19B8E] hover:scale-105 hover:shadow-xl">
+                            ทำแบบทดสอบ
                         </a>
                     </div>
                 </section>
