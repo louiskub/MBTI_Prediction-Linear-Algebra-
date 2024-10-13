@@ -21,7 +21,7 @@ const members = [
     },
     {
         id: '66011442',
-        name: 'นายพีรวัส อิงคสันตติกุล',
+        name: 'นายพีรวัส ไก่',
         role: 'เกิดใหม่ทั้งทีก็เป็นวิปครีมไปซะแล้ว',
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: MarkProfile, 
