@@ -4,16 +4,16 @@ import LetterDescriptionSwitch from '../components/LetterSwitch';
 
 function MBTItypes() {
     return (
-    <div className='flex justify-center'>
+    <div className='flex justify-center bg-et-light-gray bg-fixed bg-cover'>
         <Navbar/>
         <div className='flex flex-col justify-center pt-16 text-center font-IBM w-[80vw]'>
-            <h1 className='text-5xl sm:text-6xl md:text-6xl font-bold p-16 text-et-brown text-center'>
+            <h1 className='text-6xl sm:text-7xl md:text-7xl font-bold p-16 text-et-olive-brown text-center'>
                 Personality Types
             </h1>
             <TestButton/>
             <LetterDescriptionSwitch />
 
-            <div className="h-screen mt-8">
+            <div className="mt-8">
 
                 <div className='bg-et-lavender rounded-md mb-4 min-h-[400px]'>
                     <div className='text-white pt-8 h-1/4 text-[42px] sm:text-6xl md:text-7xl lg:text-7xl font-bold'>นักวิเคราะห์</div>
