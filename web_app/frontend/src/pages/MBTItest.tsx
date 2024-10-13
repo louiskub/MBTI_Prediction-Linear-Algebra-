@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
+import MBTIChart from '../components/chart';
 
 function MBTItest() {
 
@@ -297,27 +298,39 @@ function MBTItest() {
                                 {`อยู่ในกลุ่มของ ${mbtis[MBTI[0][1]][0]}`}
                             </p>
                         </div>
-                        <table className="table-auto w-1/4 mx-auto border border-gray-300 mb-8">
-                            <thead>
-                            <tr className="bg-et-gray-blue text-center text-white">
-                                <th className="px-4 py-2 border border-gray-300 w-1/4">MBTI Type</th>
-                                <th className="px-4 py-2 border border-gray-300">Pearson Similarity</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                {MBTI.map((item, index) => {
-                                    const backgroundColor = index === 0 ? "bg-yellow-300" : ""
-                                    const backgroundHoverColor = index === 0 ? "hover:bg-yellow-200" : "hover:bg-gray-200"
-
-                                    return (
-                                    <tr key={index} className={`${backgroundColor} ${backgroundHoverColor}`}>
-                                        <td className="px-4 py-2 border border-gray-300 text-center font-bold">{item[1]}</td>
-                                        <td className="px-4 py-2 border border-gray-300 text-center">{item[0]}</td>
-                                    </tr>
-                                    );
-                                })}
-                            </tbody>
-                        </table>
+                        <div className="max-w-xl mx-auto p-4 bg-et-light-blue rounded-lg">
+                            <h1 className="text-center text-2xl font-bold mt-6">MBTI ที่ใกล้เคียงกับคุณมากที่สุด</h1>
+                            <MBTIChart MBTI={MBTI} />
+                            <table className="table-auto w-1/4 mx-auto border border-gray-300 mb-8">
+                                <thead>
+                                <tr className="bg-et-gray-blue text-center text-white">
+                                    <th className="px-4 py-2 border border-gray-300 w-1/4">MBTI Type</th>
+                                    <th className="px-4 py-2 border border-gray-300">Pearson Similarity</th>
+                                </tr>
+                                </thead>
+                                <tbody className="bg-gray-50">
+                                    {MBTI.map((item, index) => {
+                                        const top = index === 0 ? "bg-yellow-300 hover:bg-yellow-200 font-bold" : "hover:bg-gray-200"
+                                        return (
+                                        <tr key={index} className={`${top}`}>
+                                            <td className="px-4 py-2 border border-gray-300 text-center font-bold">{item[1]}</td>
+                                            <td className="px-4 py-2 border border-gray-300 text-center">{item[0]}</td>
+                                        </tr>
+                                        );
+                                    })}
+                                </tbody>
+                            </table>
+                            <div className="flex justify-center">
+                                <Link
+                                    to="/mbti-types"
+                                    className="flex justify-center items-center rounded-md text-xl font-bold p-2 text-white bg-et-purple-gray text-center 
+                                            transition-transform transform hover:scale-105 
+                                            hover:text-et-olive-brown hover:bg-et-gray hover:cursor-pointer shadow-sm mb-8 w-1/2"
+                                >
+                                    ดูประเภท MBTI เพิ่มเติม ➜
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                     ) : (
                     <div>
