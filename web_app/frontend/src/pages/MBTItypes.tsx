@@ -22,6 +22,7 @@ function MBTItypes() {
                             <div className='flex basis-3/4 justify-center items-center'>
                                 <div className='text-6xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold'>INTJ</div>
                             </div>
+                            <div className='basis-1/4 text-base sm:text-sm lg:text-base text-et-dark-purple'>ผู้มีเหุผล</div>
                             <div className='basis-1/4 text-base sm:text-sm lg:text-base'>จินตนาการสูงและเป็นนักคิดกลยุทธ์ที่มีแผนการสำหรับทุกอย่าง</div>
                         </div>
                         <div className='flex flex-col p-4 m-4 rounded-md border-solid border border-white sm:w-1/5 sm:min-h-[250px]'>

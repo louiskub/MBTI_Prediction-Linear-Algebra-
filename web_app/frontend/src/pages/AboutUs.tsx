@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import JinProfile from '../assets/jin_profile.png'
+import MarkProfile from '../assets/mark_profile.png'
 
 const members = [
     {
@@ -20,7 +21,7 @@ const members = [
         name: 'Peerawat',
         role: 'Member3',
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
-        image: 'https://tr.rbxcdn.com/30DAY-Avatar-FCD68AA595DBED3E0F053BCA1D3C583A-Png/420/420/Avatar/Png/noFilter', 
+        image: MarkProfile, 
         instagram: 'https://www.instagram.com',
     },
     {

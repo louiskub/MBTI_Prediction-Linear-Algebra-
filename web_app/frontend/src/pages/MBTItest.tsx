@@ -25,8 +25,6 @@ function MBTItest() {
         "คุณมักกังวลว่าสิ่งต่าง ๆ จะเลวร้ายลงไปอีก", 
         "คุณชอบทำงานให้เสร็จก่อนที่จะปล่อยให้ตัวเองได้ผ่อนคลาย"
     ];
-    
-    const questionOptions = [0, 1, 2, 3, 4];
 
     const nameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value);
@@ -99,7 +97,7 @@ function MBTItest() {
             <h1 className='max-[400px]:text-4xl text-5xl sm:text-6xl font-bold p-16 text-et-brown text-center'>
                 แบบทดสอบ MBTI
             </h1>
-            <div className='bg-white w-5/6 sm:w-2/3 lg:w-[440px] max-w-[440px] rounded-md pt-4 pb-10 shadow-sm'>
+            <div className='bg-white w-5/6 sm:w-2/3 lg:w-[440px] max-w-[440px] rounded-md pt-4 pb-10 shadow-sm transition-transform transform hover:scale-105'>
             <h1 className="text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อมูลส่วนตัว</h1>
                 <div className="flex flex-col justify-center items-center p-2">
                     <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">ชื่อ</p>
@@ -172,7 +170,7 @@ function MBTItest() {
                 
             </div>
             <div className="flex flex-col justify-center items-center pt-16">
-            <div className="flex flex-col space-y-4 bg-white w-3/4 rounded-md pt-10 pb-10 shadow-sm min-w-[340px]">
+            <div className="flex flex-col space-y-4 bg-white w-3/4 rounded-md pt-10 pb-10 shadow-sm min-w-[340px] ">
             <h1 className="text-xl sm:text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
                 {questions.map((question, questionIndex) => (
                     <div key={questionIndex} className="flex flex-col items-center p-4 border-t border-et-pale-pink text-center">
