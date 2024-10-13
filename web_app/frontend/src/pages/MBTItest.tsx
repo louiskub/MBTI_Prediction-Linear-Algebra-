@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import axios from 'axios';
 
 function MBTItest() {
     const [name, setName] = useState('');
@@ -8,45 +9,87 @@ function MBTItest() {
     const [gender, setGender] = useState('');
     const [education, setEducation] = useState<number | ''>('');
     const [interest, setInterest] = useState('');
+    const [selectedValues, setSelectedValues] = useState(Array(12).fill(null));
 
     const questions = [
-        "คุณรู้สึกสบายใจในการพบปะผู้คนใหม่ ๆ", //Introversion Score
-        "คุณมักจะวางแผนก่อนลงมือทำเสมอ", //Judging Score
-        "คุณให้ความสำคัญกับข้อเท็จจริงมากกว่าความรู้สึก", //Thinking Score
-        "คุณไม่สนใจที่จะพูดคุยเกี่ยวกับทฤษฎีว่าโลกจะเป็นไปอย่างไรในอนาคต", //Sensing Score
-        "คุณสนุกกับการมีส่วนร่วมในกิจกรรมที่ทำเป็นทีม", //Introversion Score
-        "คุณถูกอารมณ์ควบคุม มากกว่าที่คุณจะควบคุมอารมณ์ของตัวเอง", //Thinking Score
-        "คุณปรับเปลี่ยนรูปแบบการทำงานตามสถานการณ์อยู่เสมอ", //Judging Score
-        "คุณสนใจการแสดงออกด้านความคิดสร้างสรรค์ในรูปแบบต่าง ๆ เช่น การเขียน", //Sensing Score
-        "คุณรู้สึกอึดอัดเมื่ออยู่ในสังคมที่ไม่คุ้นเคย", //Introversion Score
-        "คุณเบื่อหรือเลิกสนใจเมื่อการพูดคุยหันเหเข้าเรื่องทฤษฎีมากเกินไป", //Thinking Score
-        "คุณมักกังวลว่าสิ่งต่าง ๆ จะเลวร้ายลงไปอีก", //Sensing Score
-        "คุณชอบทำงานให้เสร็จก่อนที่จะปล่อยให้ตัวเองได้ผ่อนคลาย" //Judging Score
+        "คุณรู้สึกสบายใจในการพบปะผู้คนใหม่ ๆ", 
+        "คุณมักจะวางแผนก่อนลงมือทำเสมอ", 
+        "คุณให้ความสำคัญกับข้อเท็จจริงมากกว่าความรู้สึก", 
+        "คุณไม่สนใจที่จะพูดคุยเกี่ยวกับทฤษฎีว่าโลกจะเป็นไปอย่างไรในอนาคต", 
+        "คุณสนุกกับการมีส่วนร่วมในกิจกรรมที่ทำเป็นทีม", 
+        "คุณถูกอารมณ์ควบคุม มากกว่าที่คุณจะควบคุมอารมณ์ของตัวเอง", 
+        "คุณปรับเปลี่ยนรูปแบบการทำงานตามสถานการณ์อยู่เสมอ", 
+        "คุณสนใจการแสดงออกด้านความคิดสร้างสรรค์ในรูปแบบต่าง ๆ เช่น การเขียน", 
+        "คุณรู้สึกอึดอัดเมื่ออยู่ในสังคมที่ไม่คุ้นเคย", 
+        "คุณเบื่อหรือเลิกสนใจเมื่อการพูดคุยหันเหเข้าเรื่องทฤษฎีมากเกินไป", 
+        "คุณมักกังวลว่าสิ่งต่าง ๆ จะเลวร้ายลงไปอีก", 
+        "คุณชอบทำงานให้เสร็จก่อนที่จะปล่อยให้ตัวเองได้ผ่อนคลาย"
     ];
-    const questionOptions = [0, 1, 2, 3, 4]
-    const [selectedValues, setSelectedValues] = useState(Array(12).fill('null'));
+    
+    const questionOptions = [0, 1, 2, 3, 4];
 
     const nameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value);
     };
+
     const ageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         setAge(value === '' ? '' : Number(value));
     };
-    const educationChange = (event: React.ChangeEvent<HTMLSelectElement>)  => {
+
+    const educationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value;
         setEducation(value === '' ? '' : Number(value));
     };
+
     const interestChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setInterest(event.target.value);
     };
+
     const questionChange = (questionIndex: number, value: number) => {
         const newValues = [...selectedValues];
         newValues[questionIndex] = value;
         setSelectedValues(newValues);
     };
+
     const checkComplete = () => {
-        return name && age && gender && education !== '' && interest && !selectedValues.includes('null');
+        return name && age && gender && education !== '' && interest && !selectedValues.includes(null);
+    };
+
+    const [MBTI, setMBTI] = useState<string[]>([]);
+    const handleSubmit = async () => {
+        // if (!checkComplete()) {
+        //     alert("กรุณากรอกข้อมูลให้ครบก่อนส่งแบบทดสอบ");
+        //     return;
+        // }
+
+        const data = {
+            // "age": age,
+            // "gender": gender,
+            // "education": education,
+            // "intro": parseFloat((selectedValues[0]) + (selectedValues[4]) + (4 - (selectedValues[8])) * 10 / 12.0),
+            // "sensing": parseFloat((selectedValues[3]) + (4 - (selectedValues[7])) + (4 - (selectedValues[10])) * 10 / 12.0),
+            // "thinking": parseFloat((selectedValues[2]) + (4 - (selectedValues[5])) + (4 - (selectedValues[9])) * 10 / 12.0),
+            // "judging": parseFloat((selectedValues[1]) + (4 - (selectedValues[6])) + (selectedValues[11]) * 10 / 12.0),
+            // "interest": interest
+            "age": 20,
+            "gender": "Male",
+            "education": 0,
+            "intro": 1,
+            "sensing": 1,
+            "thinking": 1,
+            "judging": 2,
+            "interest": "Sports"
+        }
+
+        try {
+            console.log(data)
+            const response = await axios.post("http://localhost:8000/mbti-test", data);
+            console.log(response.data);
+            setMBTI(response.data)
+        } catch (error) {
+            console.error("Error :", error);
+        }
     };
 
     return (
@@ -75,6 +118,7 @@ function MBTItest() {
                         className="border border-gray-300 p-2 rounded-md w-2/3"
                         placeholder="เลือกอายุของคุณ"
                         type="number"
+                        min="0"
                     />
                 </div>
                 <div className="flex flex-col justify-center items-center p-2">
@@ -224,7 +268,7 @@ function MBTItest() {
                 </div>
             )}
         </div>
-    )
+    );
 }
 
 export default MBTItest;
