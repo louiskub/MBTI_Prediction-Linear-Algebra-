@@ -31,7 +31,11 @@ export default {
         'et-light-gray': '#e9e4e1',
         'et-lavender': '#d7c9db',
         'et-dark-purple': '#baa7bf',
-        'et-light-blue': '#c5d4e3'
+        'et-light-blue': '#c5d4e3',
+        'et-gray-brown': '#B6A89F',
+        'et-purple-gray': '#C6B3AE',
+        'et-olive-brown': '#7d7263',
+        'et-light-green': '#8bb584'
       }
     },
   },

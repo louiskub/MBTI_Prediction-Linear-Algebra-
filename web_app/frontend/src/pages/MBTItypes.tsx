@@ -4,18 +4,18 @@ import LetterDescriptionSwitch from '../components/LetterSwitch';
 
 function MBTItypes() {
     return (
-    <div className='flex justify-center'>
+    <div className='flex justify-center bg-et-light-gray bg-fixed bg-cover'>
         <Navbar/>
         <div className='flex flex-col justify-center pt-16 text-center font-IBM w-[80vw]'>
-            <h1 className='text-5xl sm:text-6xl md:text-6xl font-bold p-16 text-et-brown text-center'>
+            <h1 className='text-6xl sm:text-7xl md:text-7xl font-bold p-16 text-et-olive-brown text-center'>
                 Personality Types
             </h1>
             <TestButton/>
             <LetterDescriptionSwitch />
 
-            <div className="h-screen mt-8">
+            <div className="mt-8">
 
-                <div className='bg-et-lavender rounded-md mb-4 min-h-[400px]'>
+                <div className='bg-et-lavender rounded-md mb-4 min-h-[400px] shadow-md'>
                     <div className='text-white pt-8 h-1/4 text-[42px] sm:text-6xl md:text-7xl lg:text-7xl font-bold'>นักวิเคราะห์</div>
                     <div className="flex justify-center max-w-full sm:flex-row flex-col h-3/4">
                         <div className='flex flex-col p-4 m-4 rounded-md border-solid border border-white sm:w-1/5 sm:min-h-[250px]'>
@@ -45,9 +45,7 @@ function MBTItypes() {
                     </div>
                 </div>
 
-
-
-                <div className='bg-et-sage-green rounded-md mb-4 min-h-[400px]'>
+                <div className='bg-et-sage-green rounded-md mb-4 min-h-[400px] shadow-md'>
                     <div className='text-white pt-8 h-1/4 text-[42px] sm:text-6xl md:text-7xl lg:text-7xl font-bold'>นักการฑูต</div>
                     <div className="flex justify-center max-w-full sm:flex-row flex-col h-3/4">
                         <div className='flex flex-col p-4 m-4 rounded-md border-solid border border-white sm:w-1/5 sm:min-h-[250px]'>
@@ -77,7 +75,7 @@ function MBTItypes() {
                     </div>
                 </div>
 
-                <div className='bg-et-light-blue rounded-md mb-4 min-h-[400px]'>
+                <div className='bg-et-light-blue rounded-md mb-4 min-h-[400px] shadow-md'>
                     <div className='text-white pt-8 h-1/4 text-[42px] sm:text-6xl md:text-7xl lg:text-7xl font-bold'>ผู้พิทักษ์ปกป้อง</div>
                     <div className="flex justify-center max-w-full sm:flex-row flex-col h-3/4">
                         <div className='flex flex-col p-4 m-4 rounded-md border-solid border border-white sm:w-1/5 sm:min-h-[250px]'>
@@ -102,11 +100,12 @@ function MBTItypes() {
                             <div className='flex basis-3/4 justify-center items-center'>
                                 <div className='text-6xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold'>ESFJ</div>
                             </div>
-                            <div className='basis-1/4 text-base sm:text-sm lg:text-base'>ฉลาดและเป็นนักคิดที่ช่างสงสัย ชอบสิ่งที่มาท้าท้ายสติปัญญาของตัวเอง</div>
+                            <div className='basis-1/4 text-base sm:text-sm lg:text-base'>มีความเป็นห่วงเป็นใยมากเป็นพิเศษ มีมนุษย์สัมพันธ์และเป็นที่รักของผู้คน มักกระตือรือร้นเสนอความช่วยเหลือผู้อื่น</div>
                         </div>
                     </div>
-                </div>    
-                <div className='bg-et-yellow rounded-md mb-4 min-h-[400px]'>
+                </div>
+                
+                <div className='bg-et-yellow rounded-md mb-16 min-h-[400px] shadow-md'>
                     <div className='text-white pt-8 h-1/4 text-[42px] sm:text-6xl md:text-7xl lg:text-7xl font-bold'>นักสำรวจ</div>
                     <div className="flex justify-center max-w-full sm:flex-row flex-col h-3/4">
                         <div className='flex flex-col p-4 m-4 rounded-md border-solid border border-white sm:w-1/5 sm:min-h-[250px]'>
@@ -136,6 +135,7 @@ function MBTItypes() {
                     </div>
                 </div>
             </div>
+            <TestButton/>
         </div>
     </div>
     )

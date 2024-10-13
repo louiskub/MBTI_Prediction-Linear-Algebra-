@@ -22,7 +22,7 @@ const LetterPairSwitch: React.FC = () => {
     }, []);
 
     return (
-        <div className="relative h-56 flex justify-center flex-row text-7xl sm:text-8xl text-et-light-gray font-bold mt-8 border-2 border-et-light-gray rounded-md hover:cursor-pointer transition-transform transform hover:scale-105">
+        <div className="relative h-56 flex justify-center flex-row text-7xl sm:text-8xl text-et-light-skin font-bold mt-8 bg-white border-2 border-et-light-gray rounded-md hover:cursor-pointer transition-transform transform hover:scale-105">
             <div className='basis-1/8 p-4 rounded-md hover:text-et-green-blue group'>
                 {letterPairs[0][currentIndices[0]]} {/* Switch between I and E */}
                 <div className="absolute gap-x-4 hidden group-hover:flex flex-row bottom-0 w-5/6 left-1/2 pb-4 transform -translate-x-1/2 text-base rounded-md font-normal">

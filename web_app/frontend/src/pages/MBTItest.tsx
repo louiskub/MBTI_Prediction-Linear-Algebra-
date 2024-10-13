@@ -128,52 +128,57 @@ function MBTItest() {
     };
 
     return (
-        <div>
-            <Navbar />
+        <div className='font-IBM bg-et-light-gray'>
+            <Navbar/>
             <div className="flex flex-col justify-center items-center pt-16">
-                <h1 className="text-3xl font-bold">แบบทดสอบ MBTI</h1>
-                <h1 className="text-xl mt-6 font-bold">ข้อมูลส่วนตัว</h1>
-                <div className="flex justify-center items-center p-4">
-                    <p className="font-bold mr-4">ชื่อ</p>
-                    <input 
+            <h1 className='max-[400px]:text-4xl text-5xl sm:text-6xl font-bold p-16 text-et-brown text-center'>
+                แบบทดสอบ MBTI
+            </h1>
+            <div className='bg-white w-5/6 sm:w-2/3 lg:w-[440px] max-w-[440px] rounded-md pt-4 pb-10 shadow-sm'>
+            <h1 className="text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อมูลส่วนตัว</h1>
+                <div className="flex flex-col justify-center items-center p-2">
+                    <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">ชื่อ</p>
+                    <input
                         value={name} 
                         onChange={nameChange}
-                        className="border border-gray-300 p-2 rounded"
+                        className="border border-gray-300 p-2 rounded-md w-2/3"
                         placeholder="เขียนชื่อของคุณ"
                     />
                 </div>
-                <div className="flex justify-center items-center p-4">
-                    <p className="font-bold mr-4">อายุ</p>
+                <div className="flex flex-col justify-center items-center p-2">
+                    <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">อายุ</p>
                     <input 
                         value={age} 
                         onChange={ageChange}
-                        className="border border-gray-300 p-2 rounded"
+                        className="border border-gray-300 p-2 rounded-md w-2/3"
                         placeholder="เลือกอายุของคุณ"
                         type="number"
                         min="0"
                     />
                 </div>
-                <div className="flex justify-center items-center p-4">
-                    <p className="font-bold mr-4">เพศ</p>
+                <div className="flex flex-col justify-center items-center p-2">
+                    <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">เพศ</p>
+                    <div className='flex justify-center w-full'>
                     <button 
                         onClick={() => setGender("Male")} 
-                        className={`border border-gray-300 w-20 p-2 rounded mr-2 ${gender === "Male" ? 'bg-et-gray-blue text-white' : 'bg-white'}`}
+                        className={`border border-gray-300 w-1/3 p-2 rounded-md mr-1 transition-transform transform hover:border-et-gray-blue hover:border-2 ${gender === "Male" ? 'bg-et-gray-blue text-white' : 'bg-white text-gray-400'}`}
                     >
                         ชาย
                     </button>
                     <button 
                         onClick={() => setGender("Female")} 
-                        className={`border border-gray-300 w-20 p-2 rounded ${gender === "Female" ? 'bg-et-pink text-white' : 'bg-white'}`}
+                        className={`border border-gray-300 w-1/3 p-2 rounded-md transition-transform transform hover:border-et-pink hover:border-2 ${gender === "Female" ? 'bg-et-pink text-white' : 'bg-white text-gray-400'}`}
                     >
                         หญิง
                     </button>
+                    </div>
                 </div>
-                <div className="flex justify-center items-center p-4">
-                    <p className="font-bold mr-4">ระดับการศึกษา</p>
+                <div className="flex flex-col justify-center items-center p-2">
+                    <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">ระดับการศึกษา</p>
                     <select 
                         value={education} 
                         onChange={educationChange}
-                        className="border border-gray-300 p-2 rounded"
+                        className="border border-gray-300 p-2 rounded-md w-2/3 text-gray-400 focus:border-et-gray-brown focus:border-2 hover:cursor-pointer"
                     >
                         <option value="">เลือกระดับการศึกษา</option>
                         <option value="0">ต่ำกว่ามัธยมปลาย</option>
@@ -183,12 +188,12 @@ function MBTItest() {
                         <option value="4">ปริญญาเอก</option>
                     </select>
                 </div>
-                <div className="flex justify-center items-center p-4">
-                    <p className="font-bold mr-4">ความสนใจ</p>
+                <div className="flex flex-col justify-center items-center p-2">
+                    <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">ความสนใจ</p>
                     <select 
                         value={interest} 
                         onChange={interestChange}
-                        className="border border-gray-300 p-2 rounded"
+                        className="border border-gray-300 p-2 rounded-md w-2/3 text-gray-400 focus:border-2 focus:border-et-gray-brown hover:cursor-pointer"
                     >
                         <option value="">เลือกความสนใจ</option>
                         <option value="Unknown">ไม่มีความสนใจเป็นพิเศษ</option>
@@ -199,26 +204,70 @@ function MBTItest() {
                     </select>
                 </div>
             </div>
-            <h1 className="flex flex-col items-center text-xl mt-6 mb-8 font-bold">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
-            <div className="flex flex-col space-y-8">
+                
+            </div>
+            <div className="flex flex-col justify-center items-center pt-16">
+            <div className="flex flex-col space-y-4 bg-white w-3/4 rounded-md pt-10 pb-10 shadow-sm min-w-[340px]">
+            <h1 className="text-xl sm:text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
                 {questions.map((question, questionIndex) => (
-                    <div key={questionIndex} className="flex flex-col items-center p-4">
-                        <h2 className="text-xl mb-4">{question}</h2>
+                    <div key={questionIndex} className="flex flex-col items-center p-4 border-t border-et-pale-pink text-center">
+                        <h2 className="text-base md:text-lg mb-4 mt-4">{question}</h2>
                         <div className="flex space-x-4 items-center">
-                            <p>ไม่เห็นด้วย</p>
-                            {questionOptions.map((option) => (
-                                <label key={option} className="flex items-center space-x-2">
-                                    <input
-                                        type="radio"
-                                        value={option}
-                                        checked={selectedValues[questionIndex] === option}
-                                        onChange={() => questionChange(questionIndex, option)}
-                                        className="form-radio h-6 w-6 accent-et-green"
-                                    />
-                                    <span></span>
-                                </label>
-                            ))}
-                            <p>เห็นด้วย</p>
+                            <p className='text-sm sm:text-base text-red-300 font-medium'>ไม่เห็นด้วย</p>
+                            <label key={0} className="flex items-center">
+                                <input
+                                type="radio"
+                                value={0}
+                                checked={selectedValues[questionIndex] === 0}
+                                onChange={() => questionChange(questionIndex, 0)}
+                                className="hidden peer"
+                                />
+                                <div className="h-10 w-10 rounded-full border-2 text-white border-red-300 hover:cursor-pointer hover:bg-red-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-red-300 leading-10 transition-all duration-300"></div>
+                            </label>
+                            <label key={1} className="flex items-center">
+                                <input
+                                type="radio"
+                                value={1}
+                                checked={selectedValues[questionIndex] === 1}
+                                onChange={() => questionChange(questionIndex, 1)}
+                                className="hidden peer"
+                                />
+                                <div className="h-8 w-8 rounded-full border-2 text-white border-red-300 hover:cursor-pointer hover:bg-red-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-red-300 leading-8 transition-all duration-300"></div>
+                            </label>
+                            <label key={2} className="flex items-center">
+                                <input
+                                type="radio"
+                                value={2}
+                                checked={selectedValues[questionIndex] === 2}
+                                onChange={() => questionChange(questionIndex, 2)}
+                                className="hidden peer"
+                                />
+                                <div className="h-8 w-8 rounded-full border-2 text-white border-gray-300 hover:cursor-pointer hover:bg-gray-300 text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-gray-300 leading-7 transition-all duration-300"></div>
+                            </label>
+
+                            <label key={3} className="flex items-center">
+                                <input
+                                    type="radio"
+                                    value={3}
+                                    checked={selectedValues[questionIndex] === 3}
+                                    onChange={() => questionChange(questionIndex, 3)}
+                                    className="hidden peer"
+                                />
+                                <div className="h-8 w-8 rounded-full border-2 text-white border-et-light-green hover:cursor-pointer hover:bg-et-light-green text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-et-light-green leading-8 transition-all duration-300"></div>
+                            </label>
+
+                            <label key={4} className="flex items-center">
+                                <input
+                                type="radio"
+                                value={4}
+                                checked={selectedValues[questionIndex] === 4}
+                                onChange={() => questionChange(questionIndex, 4)}
+                                className="hidden peer"
+                                />
+                                <div className="h-10 w-10 rounded-full border-2 text-white border-et-light-green hover:cursor-pointer hover:bg-et-light-green text-center align-middle peer-checked:before:content-['✓'] peer-checked:bg-et-light-green leading-10 transition-all duration-300"></div>
+                            </label>
+                            
+                            <p className='text-sm sm:text-base text-et-light-green font-medium'>เห็นด้วย</p>
                         </div>
                     </div>
                 ))}
