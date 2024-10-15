@@ -33,7 +33,7 @@ function Navbar() {
                 </button>
             </div>
             {isOpen && (
-                <div className="absolute top-16 left-0 w-full bg-et-light-orange min-[600px]:hidden bg-opacity-80">
+                <div className="absolute top-16 left-0 w-full bg-et-light-orange min-[770px]:hidden bg-opacity-80">
                     <div className="flex flex-col text-white font-semibold">
                         <a href="/" className="py-2 px-4">Home</a>
                         <a href="/mbti-test" className="py-2 px-4">MBTI Test</a>

@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics.pairwise import cosine_similarity
 from scipy.stats import pearsonr
+from PIL import Image
+
+box = (0, 0, 1300, 500)
 
 class Controller:
     def __init__(self):
@@ -61,7 +64,10 @@ class Controller:
             plt.figure(figsize=(15, 5))
             sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
             plt.title(f'{person} Correlation Matrix')
-            plt.savefig(f'web_app/backend/img/corr_mbti_{person}.png')
+            plt.savefig(f'web_app/frontend/public/corr_img/mbti/{person}.png')
+            img = Image.open(f'web_app/frontend/public/corr_img/mbti/{person}.png')
+            img = img.crop(box)
+            img.save(f'web_app/frontend/public/corr_img/mbti/{person}.png')
             # plt.show()
     
     def corr_for_interest(self):
@@ -74,7 +80,10 @@ class Controller:
             plt.figure(figsize=(15, 5))
             sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
             plt.title(f'{interest[person]} Correlation Matrix')
-            plt.savefig(f'web_app/backend/img/corr_interest_{interest[person]}.png')
+            plt.savefig(f'web_app/frontend/public/corr_img/interest/{interest[person]}.png')
+            img = Image.open(f'web_app/frontend/public/corr_img/interest/{interest[person]}.png')
+            img = img.crop(box)
+            img.save(f'web_app/frontend/public/corr_img/interest/{interest[person]}.png')
             # plt.show()
     
     def corr_for_gender(self):
@@ -87,7 +96,10 @@ class Controller:
             plt.figure(figsize=(15, 5))
             sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
             plt.title(f'{gend[person]} Correlation Matrix')
-            plt.savefig(f'web_app/backend/img/corr_gender_{gend[person]}.png')
+            plt.savefig(f'web_app/frontend/public/corr_img/gender/{gend[person]}.png')
+            img = Image.open(f'web_app/frontend/public/corr_img/gender/{gend[person]}.png')
+            img = img.crop(box)
+            img.save(f'web_app/frontend/public/corr_img/gender/{gend[person]}.png')
             # plt.show()
     
     def corr_for_education(self):
@@ -98,15 +110,19 @@ class Controller:
             plt.figure(figsize=(15, 5))
             sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
             plt.title(f'{person} Correlation Matrix')
-            plt.savefig(f'web_app/backend/img/corr_education_{person}.png')
+            plt.savefig(f'web_app/frontend/public/corr_img/corr_education_{person}.png')
+            img = Image.open(f'web_app/frontend/public/corr_img/corr_education_{person}.png')
+            img = img.crop(box)
+            img.save(f'web_app/frontend/public/corr_img/corr_education_{person}.png')
+            
 
 if __name__ == "__main__":
     controller = Controller()
     # input_vector = [float(e) for e in "27.0 0	0	5.24958	5.963290	1.16176	5.873350	2	".split()]
     # print(controller.find_pearson(input_vector))
-    # controller.corr_for_mbti()
-    # controller.corr_for_interest()
-    # controller.corr_for_gender()
-    controller.corr_for_education()
+    controller.corr_for_mbti()
+    controller.corr_for_interest()
+    controller.corr_for_gender()
+    # controller.corr_for_education()
 
 

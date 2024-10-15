@@ -1,0 +1,36 @@
+{/* Covariance */}
+                <section>
+                    <h2 className="text-3xl font-bold"> Covariance </h2>
+                    <img src={cov_img} alt="" />
+                    <div>
+                        Covariance เป็นการวัดว่าตัวแปรสองตัวเปลี่ยนแปลงไปในทิศทางเดียวกันอย่างไร มันสามารถมีค่าเป็นบวกหรือลบ และบอกถึงทิศทางของความสัมพันธ์
+                    </div>
+                </section>
+
+                {/* Correlation */}
+                <section>
+                    <div className="p-5">
+                        <h2 className="text-3xl font-bold"> Correlation </h2>
+                        <img src="https://lh6.googleusercontent.com/NfO8TEV09GVqHRgP2pvnbaX6xQx9ImUrxzXAyKNBXI6hzaYntDXV2S4rUL5_9-XgWVUZt9yZ4jICcWp20JNvJtbgsA22bqhbpebZhJG2DeQvGcOzvk1rHZB-jSTGMKYp8kHjeVxkPydEvkrmtA" alt="" />
+                    </div>
+                    <div>
+                        เป็นการวัดทั้งความแข็งแกร่งและทิศทางของความสัมพันธ์เชิงเส้นระหว่างตัวแปรสองตัว เป็นรูปแบบที่ได้มาตรฐานของ Covariance ซึ่งทำให้มันมีค่าอยู่ในช่วงระหว่าง -1 ถึง +1
+                    </div>
+                </section>
+
+                {/* Differ */}
+                <section>
+                    <div className="p-5">
+                        <h2 className="text-3xl font-bold">ความแตกต่างที่สำคัญ</h2>
+                        
+                        <li>
+                            Covariance บอกถึงทิศทางของความสัมพันธ์ แต่ไม่สามารถระบุความแข็งแกร่งของความสัมพันธ์ได้ชัดเจน เพราะไม่มีขีดจำกัดที่แน่นอน
+                        </li>
+                        <li>
+                            Correlation เป็นการวัดที่ได้มาตรฐาน ทำให้เราสามารถระบุทั้งทิศทางและความแข็งแกร่งของความสัมพันธ์ได้อย่างชัดเจน
+                        </li>
+                        <li>
+                            ดังนั้นทางกลุ่มจึงเลือกใช้ Correlation เป็นหลักในการหาความสัมพันธ์
+                        </li>
+                    </div>
+                </section>
