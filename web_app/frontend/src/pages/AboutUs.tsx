@@ -11,6 +11,7 @@ const members = [
         id: '66010660',
         name: 'โมฮาเหม็ด หลุยส์',
         role: 'แฮปปี้ คนกินหมู',
+        Sec: '17',
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://img.lovepik.com/png/20231024/Cartoon-Muslim-Cute-Little-Boy-arab-arabic-little-boys_329599_wh1200.png', 
         instagram: 'https://www.instagram.com/louis.mnsv_/',
@@ -20,6 +21,7 @@ const members = [
         id: '66010898',
         name: 'นายอนัธชัย จานเจือ',
         role: 'แฮปปี้ คนกินหมู',
+        Sec: '17',
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBUDstgb_qFZEfqCdHL9R3xMCKXMRq53RIoA&s', 
         instagram: 'https://www.instagram.com/ananx.j/',
@@ -29,6 +31,7 @@ const members = [
         id: '66011442',
         name: 'นายพีรวัส ไก่',
         role: 'เกิดใหม่ทั้งทีก็เป็นวิปครีมไปซะแล้ว',
+        Sec: '17',
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: MarkProfile, 
         instagram: 'https://www.instagram.com/mark_peerawat/',
@@ -38,6 +41,7 @@ const members = [
         id: '66010948',
         name: 'นางสาวแอมมีลี โจว',
         role: 'เกิดใหม่ทั้งทีก็เป็นวิปครีมไปซะแล้ว',
+        Sec: '17',
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: JinProfile,
         instagram: 'https://www.instagram.com/j.i_.n12/',
@@ -92,6 +96,7 @@ function AboutUs() {
                             <div className="p-6 text-center">
                                 <h2 className="text-xl font-semibold text-[#6B4F4F]">{member.name}</h2>
                                 <h3 className="text-md text-black font-bold">รหัสนักศึกษา : {member.id}</h3>
+                                <h3 className="text-md text-black font-bold">Sec : {member.Sec}</h3>
                                 <h3 className="text-md text-[#8B5A2B] mb-2">กลุ่ม : {member.role}</h3>
                                 <p className="text-gray-700">{member.description}</p>
                             </div>
@@ -112,16 +117,16 @@ function AboutUs() {
                 <h2 className="text-4xl font-semibold text-dark-brown mb-8 text-center">รีวิวส่วนหนึ่งจากผู้ใช้</h2>
                 <div className="testimonial-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
-                        <p className="text-gray-600 mb-4">"MBTI ช่วยให้ฉันเข้าใจตัวเองและเพื่อนร่วมงานได้ดีขึ้นมาก!"</p>
-                        <h4 className="text-xl font-bold text-dark-brown">- น้องเอ</h4>
+                        <p className="text-gray-600 mb-4">"MBTI ช่วยให้ผมข้าใจตัวเองและเพื่อนร่วมงานได้ดีขึ้นมาก!"</p>
+                        <h4 className="text-xl font-bold text-dark-brown">- นายอั๋นคนกาฬสินธุ์ อรัญ ภูธาตุแร่</h4>
                     </div>
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                         <p className="text-gray-600 mb-4">"การทำแบบทดสอบนี้เป็นประสบการณ์ที่น่าสนใจและมีประโยชน์"</p>
-                        <h4 className="text-xl font-bold text-dark-brown">- คุณบี</h4>
+                        <h4 className="text-xl font-bold text-dark-brown">- เฮียจิน</h4>
                     </div>
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                         <p className="text-gray-600 mb-4">"ฉันสามารถใช้ผลลัพธ์ MBTI ในการพัฒนาตัวเองและการทำงานได้จริง"</p>
-                        <h4 className="text-xl font-bold text-dark-brown">- น้องซี</h4>
+                        <h4 className="text-xl font-bold text-dark-brown">- เสี่ยโป้</h4>
                     </div>
                 </div>
             </section>
