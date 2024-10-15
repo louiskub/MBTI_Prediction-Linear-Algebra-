@@ -14,7 +14,7 @@ const members = [
         role: 'แฮปปี้ คนกินหมู',
         Sec: '17',
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
-        image: LouisProfile, 
+        image: 'https://stickershop.line-scdn.net/stickershop/v1/product/1370099/LINEStorePC/main.png?v=1', 
         instagram: 'https://www.instagram.com/louis.mnsv_/',
         github: 'https://github.com/louiskub',
     },
