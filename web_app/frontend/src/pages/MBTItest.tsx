@@ -284,8 +284,8 @@ function MBTItest() {
                     </button>
                 </div>
                 {MBTI.length > 0 ? (
-                    <div className='mb-8'>
-                        <div className='flex items-center bg-et-pink p-4 rounded-lg shadow-md mb-8 m-2'>
+                    <div className='mb-8 flex flex-col justify-center items-center'>
+                        <div className='flex items-center bg-et-pink p-4 rounded-lg shadow-md mb-8 m-2 w-11/12'>
                             <div className="max-w-xl mx-auto p-4 bg-et-pink rounded-lg hover:cursor-pointer border-dashed border-4 border-et-pale-pink">
                                 <h1 className="text-2xl font-semibold text-center mb-4 text-white">
                                     {`MBTI ของคุณคือ:`}
@@ -302,7 +302,7 @@ function MBTItest() {
                                 </p>
                             </div>
                         </div>
-                        <div className="max-w-xl mx-auto p-4 bg-et-light-blue rounded-lg ml-2 mr-2 border-dashed border-4 border-white">
+                        <div className="max-w-xl mx-auto p-4 bg-et-light-blue rounded-lg ml-2 mr-2 border-dashed border-4 border-white w-11/12">
                             <h1 className="text-center text-xl min-[410px]:text-2xl font-bold mt-6 mb-4 text-et-dark-blue">MBTI ที่ใกล้เคียงกับคุณมากที่สุด</h1>
                             <MBTIChart MBTI={MBTI} />
                             <table className="table-auto w-1/4 mx-auto border border-gray-300 mb-8">
