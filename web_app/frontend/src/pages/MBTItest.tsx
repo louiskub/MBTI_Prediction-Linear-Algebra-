@@ -104,6 +104,22 @@ function MBTItest() {
         newValues[questionIndex] = value;
         setSelectedValues(newValues);
         Cookies.set(`question_${questionIndex}`, value, { expires: 7 });
+
+        scrollToNextQuestion(questionIndex + 1);
+    };
+
+    const scrollToNextQuestion = (nextQuestionIndex: number) => {
+        const currentQuestionElement = document.getElementById(`question${nextQuestionIndex - 1}`);
+        const nextQuestionElement = document.getElementById(`question${nextQuestionIndex}`);
+
+        if (currentQuestionElement && nextQuestionElement) {
+            const currentPosition = currentQuestionElement.getBoundingClientRect().top + window.scrollY;
+
+            window.scrollTo({
+                top: currentPosition,
+                behavior: 'smooth',
+            });
+        }
     };
 
     const checkComplete = () => {
