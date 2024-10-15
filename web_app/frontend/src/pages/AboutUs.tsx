@@ -1,6 +1,8 @@
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import JinProfile from '../assets/jin_profile.png';
 import MarkProfile from '../assets/mark_profile.png';
+import LouisProfile from '../assets/louis_profile.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useState, useEffect } from 'react';
@@ -13,7 +15,7 @@ const members = [
         role: 'แฮปปี้ คนกินหมู',
         Sec: '17',
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
-        image: 'https://img.lovepik.com/png/20231024/Cartoon-Muslim-Cute-Little-Boy-arab-arabic-little-boys_329599_wh1200.png', 
+        image: LouisProfile, 
         instagram: 'https://www.instagram.com/louis.mnsv_/',
         github: 'https://github.com/louiskub',
     },
@@ -167,6 +169,9 @@ function AboutUs() {
                 </div>
                
             </section>
+            <footer className='w-full'>
+                <Footer/>
+            </footer>
         </div>
     );
 }

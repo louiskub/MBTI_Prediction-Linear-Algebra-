@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -459,8 +460,8 @@ function MBTItest() {
                     )
                 }
             </div>
-            <footer className="p-4 bg-et-gray-brown text-cream-50 text-center">
-                © 2024 MBTI Project. สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง.
+            <footer>
+                <Footer/>
             </footer>
         </div>
     )
