@@ -1,24 +1,31 @@
 import { useState } from 'react';
 import HamburgerIcon from '../assets/Hamburger_icon.png';
-import HamburgerIconClose from '../assets/Hamburger_icon_close.png'
-import Logo from '../assets/Logo.jpg'
+import HamburgerIconClose from '../assets/Hamburger_icon_close.png';
+import Logo from '../assets/Logo.jpg';
 
-function Navbar() {
+interface NavbarProps {
+    bgColor?: string;
+}
+
+function Navbar({ bgColor }: NavbarProps) {
     const [isOpen, setIsOpen] = useState(false);
+    
     return (
-        <nav className="fixed bg-et-light-orange h-16 w-full flex items-center justify-between z-50 ">
+        <nav 
+            className={`fixed h-16 w-full flex items-center justify-between z-50 ${bgColor || 'bg-et-light-orange'}`} // Use custom color or default
+        >
             <a href="/">
-                <div className="flex items-center">
-                        <img src={Logo} alt="Logo" className="h-10 w-auto rounded-sm ml-4" />
-                        <h1 className="ml-2 text-white font-bold">MBTI Prediction</h1>
+                <div className="flex items-center hover:pb-2 duration-300 ease-in-out">
+                    <img src={Logo} alt="Logo" className="h-10 w-auto rounded-sm ml-4" />
+                    <h1 className="ml-2 text-white font-bold">MBTI Prediction</h1>
                 </div>
             </a>
-            <div className="hidden min-[770px]:flex text-white gap-12 font-semibold justify-end mr-4">
-                <a href="/">Home</a>
-                <a href="/mbti-test">MBTI Test</a>
-                <a href="/mbti-types">MBTI Types</a>
-                <a href="/theorem">Theorem</a>
-                <a href="/about-us">About Us</a>
+            <div className="hidden min-[770px]:flex text-white gap-12 font-semibold justify-end mr-4 items-center">
+                <a href="/" className='hover:pb-2 duration-300 ease-in-out'>Home</a>
+                <a href="/mbti-test" className='hover:pb-2 duration-300 ease-in-out'>MBTI Test</a>
+                <a href="/mbti-types" className='hover:pb-2 duration-300 ease-in-out'>MBTI Types</a>
+                <a href="/theorem" className='hover:pb-2 duration-300 ease-in-out'>Theorem</a>
+                <a href="/about-us" className='hover:pb-2 duration-300 ease-in-out'>About Us</a>
             </div> 
             <div className="min-[770px]:hidden p-4 transition justify-end">
                 <button
@@ -44,7 +51,7 @@ function Navbar() {
                 </div>
             )}
         </nav>
-    )
+    );
 }
 
 export default Navbar;
