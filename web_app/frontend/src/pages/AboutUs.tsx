@@ -1,34 +1,39 @@
 import Navbar from '../components/Navbar';
 import JinProfile from '../assets/jin_profile.png'
+import MarkProfile from '../assets/mark_profile.png'
 
 const members = [
     {
-        name: 'Manatsavin',
-        role: 'Member1',
+        id: '66011442',
+        name: 'หลุยส์ นบีมุฮัมมัด',
+        role: 'แฮปปี้ คนกินหมู',
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
-        image: 'https://tr.rbxcdn.com/30DAY-Avatar-FCD68AA595DBED3E0F053BCA1D3C583A-Png/420/420/Avatar/Png/noFilter', 
-        instagram: 'https://www.instagram.com',
+        image: 'https://img.lovepik.com/png/20231024/Cartoon-Muslim-Cute-Little-Boy-arab-arabic-little-boys_329599_wh1200.png', 
+        instagram: 'https://www.instagram.com/louis.mnsv_/',
     },
     {
-        name: 'Ananthachai',
-        role: 'Member2',
+        id: '66011442',
+        name: 'นายอนัธชัย',
+        role: 'แฮปปี้ คนกินหมู',
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
-        image: 'https://tr.rbxcdn.com/30DAY-Avatar-FCD68AA595DBED3E0F053BCA1D3C583A-Png/420/420/Avatar/Png/noFilter', 
-        instagram: 'https://www.instagram.com',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBUDstgb_qFZEfqCdHL9R3xMCKXMRq53RIoA&s', 
+        instagram: 'https://www.instagram.com/ananx.j/',
     },
     {
-        name: 'Peerawat',
-        role: 'Member3',
+        id: '66011442',
+        name: 'นายพีรวัส ไก่',
+        role: 'เกิดใหม่ทั้งทีก็เป็นวิปครีมไปซะแล้ว',
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
-        image: 'https://tr.rbxcdn.com/30DAY-Avatar-FCD68AA595DBED3E0F053BCA1D3C583A-Png/420/420/Avatar/Png/noFilter', 
-        instagram: 'https://www.instagram.com',
+        image: MarkProfile, 
+        instagram: 'https://www.instagram.com/mark_peerawat/',
     },
     {
-        name: 'Emily',
-        role: 'Member4',
+        id: '66010948',
+        name: 'นางสาวแอมมีลี โจว',
+        role: 'เกิดใหม่ทั้งทีก็เป็นวิปครีมไปซะแล้ว',
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: JinProfile,
-        instagram: 'https://www.instagram.com/example4',
+        instagram: 'https://www.instagram.com/j.i_.n12/',
     },
 ];
 
@@ -51,7 +56,8 @@ function AboutUs() {
                         </div>
                         <div className="p-4 text-center">
                             <h2 className="text-xl font-semibold text-[#6B4F4F]">{member.name}</h2>
-                            <h3 className="text-md text-[#8B5A2B] mb-2">{member.role}</h3>
+                            <h3 className="text-md text-black font-bold">รหัสนักศึกษา : {member.id}</h3>
+                            <h3 className="text-md text-[#8B5A2B] mb-2">กลุ่ม : {member.role}</h3>
                             <p className="text-gray-700">{member.description}</p>
                         </div>
                         <div className="flex items-center mb-4">
