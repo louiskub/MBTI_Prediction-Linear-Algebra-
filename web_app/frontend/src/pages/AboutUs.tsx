@@ -117,7 +117,7 @@ function AboutUs() {
                 <h2 className="text-4xl font-semibold text-dark-brown mb-8 text-center">รีวิวส่วนหนึ่งจากผู้ใช้</h2>
                 <div className="testimonial-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
-                        <p className="text-gray-600 mb-4">"MBTI ช่วยให้ผมข้าใจตัวเองและเพื่อนร่วมงานได้ดีขึ้นมาก!"</p>
+                        <p className="text-gray-600 mb-4">"MBTI ช่วยให้ผมเข้าใจตัวเองและเพื่อนร่วมงานได้ดีขึ้นมาก!"</p>
                         <h4 className="text-xl font-bold text-dark-brown">- นายอั๋นคนกาฬสินธุ์ อรัญ ภูธาตุแร่</h4>
                     </div>
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
