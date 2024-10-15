@@ -82,12 +82,12 @@ function AboutUs() {
                 <div className="members-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {members.map((member) => (
                         <div key={member.id} className="card flex flex-col items-center bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
-                            <div className="w-full h-48 relative">
+                            <div className="w-full h-48 relative overflow-hidden">
                                 <img 
                                     src={member.image} 
                                     alt={member.name} 
-                                    className="absolute inset-0 w-full h-full object-cover" 
-                                />
+                                    className="absolute inset-0 w-full h-full object-contain object-center" 
+                                />  
                             </div>
                             <div className="p-6 text-center">
                                 <h2 className="text-xl font-semibold text-[#6B4F4F]">{member.name}</h2>
