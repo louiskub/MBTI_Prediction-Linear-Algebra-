@@ -9,7 +9,7 @@ import Cookies from 'js-cookie';
 const members = [
     {
         id: '66010660',
-        name: 'หลุยส์ นบีมุฮัมมัด',
+        name: 'โมฮาเหม็ด หลุยส์',
         role: 'แฮปปี้ คนกินหมู',
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://img.lovepik.com/png/20231024/Cartoon-Muslim-Cute-Little-Boy-arab-arabic-little-boys_329599_wh1200.png', 
