@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar';
 import JinProfile from '../assets/jin_profile.png';
 import MarkProfile from '../assets/mark_profile.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 
@@ -14,7 +14,7 @@ const members = [
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://img.lovepik.com/png/20231024/Cartoon-Muslim-Cute-Little-Boy-arab-arabic-little-boys_329599_wh1200.png', 
         instagram: 'https://www.instagram.com/louis.mnsv_/',
-        linkedin: 'https://www.linkedin.com/in/louis-mnsv/',
+        github: 'https://github.com/louiskub',
     },
     {
         id: '66010898',
@@ -23,7 +23,7 @@ const members = [
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBUDstgb_qFZEfqCdHL9R3xMCKXMRq53RIoA&s', 
         instagram: 'https://www.instagram.com/ananx.j/',
-        linkedin: 'https://www.linkedin.com/in/ananx-j/',
+        github: 'https://github.com/Anantha250',
     },
     {
         id: '66011442',
@@ -32,7 +32,7 @@ const members = [
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: MarkProfile, 
         instagram: 'https://www.instagram.com/mark_peerawat/',
-        linkedin: 'https://www.linkedin.com/in/mark-peerawat/',
+        github: 'https://github.com/MustMark',
     },
     {
         id: '66010948',
@@ -41,7 +41,7 @@ const members = [
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: JinProfile,
         instagram: 'https://www.instagram.com/j.i_.n12/',
-        linkedin: 'https://www.linkedin.com/in/jin/',
+        github: 'https://github.com/jueeeeeen',
     },
 ];
 
@@ -99,8 +99,8 @@ function AboutUs() {
                                 <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center bg-[#D7C4B8] p-2 rounded-lg shadow-lg transition-transform duration-300 transform hover:bg-[#D2BBA2]">
                                     <FontAwesomeIcon icon={faInstagram} className="w-6 h-6 text-[#6B4F4F] hover:text-[#D2691E]" />
                                 </a>
-                                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center bg-[#D7C4B8] p-2 rounded-lg shadow-lg transition-transform duration-300 transform hover:bg-[#D2BBA2]">
-                                    <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6 text-[#6B4F4F] hover:text-[#D2691E]" />
+                                <a href={member.github} target="_blank" rel="noopener noreferrer" className="flex items-center bg-[#D7C4B8] p-2 rounded-lg shadow-lg transition-transform duration-300 transform hover:bg-[#D2BBA2]">
+                                    <FontAwesomeIcon icon={faGithub} className="w-6 h-6 text-[#6B4F4F] hover:text-[#D2691E]" />
                                 </a>
                             </div>
                         </div>
@@ -146,24 +146,27 @@ function AboutUs() {
                     <div className="flex justify-center">
                         <button 
                             type="submit"
-                            className="bg-[#D2691E] hover:bg-[#8B5A2B] text-white font-bold py-2 px-4 rounded"
-                        >
-                            Submit
+                            className="bg-[#D2691E] hover:bg-[#8B5A2B] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 transform hover:scale-105">
+                            ส่งความคิดเห็น
                         </button>
                     </div>
                 </form>
-            </section>
 
-            <section className="w-full px-4 md:px-16 lg:px-32 py-10">
-                <h2 className="text-4xl font-semibold text-dark-brown mb-8 text-center">ความคิดเห็นที่พึ่งถูกเพิ่มเข้ามา</h2>
-                <div className="latest-comments-container space-y-4">
-                    {comments.map((comment, index) => (
-                        <div key={index} className="comment-card p-6 bg-white rounded-lg shadow-lg">
-                            <p className="text-gray-600">{comment}</p>
-                        </div>
-                    ))}
+                <div className="mt-8">
+                    <h3 className="text-2xl font-semibold text-dark-brown mb-4 text-center">ความคิดเห็นล่าสุด</h3>
+                    <ul className="space-y-4">
+                        {comments.slice(-3).map((comment, index) => (
+                            <li key={index} className="p-4 bg-white rounded-lg shadow-lg">
+                                {comment}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </section>
+
+            <footer className="w-full text-center p-4 bg-[#D7C4B8] text-[#6B4F4F]">
+                <p>&copy; 2024 All rights reserved.</p>
+            </footer>
         </div>
     );
 }
