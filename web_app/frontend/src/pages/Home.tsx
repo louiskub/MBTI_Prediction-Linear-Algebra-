@@ -21,10 +21,10 @@ const App: React.FC = () => {
                     <h2 className="text-4xl text-et-dark-green mt-2">เพื่อพัฒนาศักยภาพของตัวคุณเอง</h2>
                     <p className="description text-et-pale-pink mt-4">♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥</p>
                     <div className="portfolio-buttons mt-6 flex justify-center space-x-4">
-                        <a href="/theorem" className="font-bold btn bg-gradient-to-r from-et-brown to-et-yellow-green text-white py-3 px-6 rounded shadow-lg transform transition-all duration-300 hover:from-dark-brown hover:to-dark-brown hover:scale-105 hover:shadow-xl">
+                        <a href="/theorem" className="font-bold btn bg-gradient-to-r from-et-brown to-et-yellow-green text-white py-3 px-6 rounded shadow-lg transform transition-all duration-300 hover:from-dark-brown hover:to-brown hover:scale-105 hover:shadow-xl">
                             หลักการทำงาน
                         </a>
-                        <a href="/mbti-test" className="font-bold btn bg-gradient-to-r from-et-brown to-et-yellow-green text-white py-3 px-6 rounded shadow-lg transform transition-all duration-300 hover:from-dark-brown hover:to-dark-brown hover:scale-105 hover:shadow-xl">
+                        <a href="/mbti-test" className="font-bold btn bg-gradient-to-r from-et-brown to-et-yellow-green text-white py-3 px-6 rounded shadow-lg transform transition-all duration-300 hover:from-dark-brown hover:to-brown hover:scale-105 hover:shadow-xl">
                             ทำแบบทดสอบ
                         </a>
                     </div>
