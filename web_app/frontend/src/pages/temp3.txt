@@ -10,10 +10,14 @@ function Theorem() {
             <header>
                 <Navbar />
             </header>
-            <main className="mt-6 text-center p-10 justify-center">
+            <main className="mt-6 text-center p-10 justify-center sm:flex-row flex-col">
+                <h1 className='text-6xl sm:text-7xl font-bold p-16 text-et-olive-brown text-center'>
+                    Theorem
+                </h1>
+
                 {/* Pearson */}
-                <div className="flex flex-row flex-wrap max-w-full justify-center">
-                    <section className="w-[40%] p-4 m-4 bg-white transition-transform transform hover:scale-105 rounded-md">
+                <div className="flex sm:flex-row flex-col max-w-full">
+                    <section className="md:basis-1/2 p-4 m-4 bg-white transition-transform transform hover:scale-105 rounded-md">
                         <h2 className="text-3xl font-bold"> Pearson Similarity </h2>
                         <img src="https://cdn1.byjus.com/wp-content/uploads/2019/06/word-image28.png" 
                         className="mx-auto block" />
@@ -25,7 +29,7 @@ function Theorem() {
                         </li>
                     </section>
 
-                    <section className="w-[40%] p-4 m-4 bg-white transition-transform transform hover:scale-105 rounded-md">
+                    <section className="md:basis-1/2 p-4 m-4 bg-white transition-transform transform hover:scale-105 rounded-md">
                         <h2 className="text-3xl font-bold"> Covariance </h2>
                         <img src={cov_img} 
                         className="mx-auto block" />
@@ -33,14 +37,14 @@ function Theorem() {
                             Covariance เป็นการวัดว่าตัวแปรสองตัวเปลี่ยนแปลงไปในทิศทางเดียวกันอย่างไร มันสามารถมีค่าเป็นบวกหรือลบ และบอกถึงทิศทางของความสัมพันธ์
                         </div>
                     </section>
-
-
-
-
-
-
-
-                    
+                    <section className="md:basis-1/2 p-4 m-4 bg-white transition-transform transform hover:scale-105 rounded-md">
+                        <h2 className="text-3xl font-bold"> Covariance </h2>
+                        <img src={cov_img} 
+                        className="mx-auto block" />
+                        <div>
+                            Covariance เป็นการวัดว่าตัวแปรสองตัวเปลี่ยนแปลงไปในทิศทางเดียวกันอย่างไร มันสามารถมีค่าเป็นบวกหรือลบ และบอกถึงทิศทางของความสัมพันธ์
+                        </div>
+                    </section>
                     
                 </div>
                 
