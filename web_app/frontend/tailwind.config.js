@@ -36,9 +36,20 @@ export default {
         'et-purple-gray': '#C6B3AE',
         'et-olive-brown': '#7d7263',
         'et-light-green': '#8bb584'
-      }
+      },
+      keyframes: {
+        gradient: {
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+        },
+      },
+      animation: {
+        'gradient-animation': 'gradient 15s ease infinite',
+      },
+      backgroundSize: {
+        '200%': '200%',
+      },
     },
   },
   plugins: [],
 }
-
