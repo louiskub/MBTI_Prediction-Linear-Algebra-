@@ -69,7 +69,7 @@ const App: React.FC = () => {
                 </section>
 
                 <section className="youtube-section mb-12">
-    <h2 className="text-4xl font-semibold text-dark-brown mb-6">ดูวิดีโอแนะนำ</h2>
+    <h2 className="text-4xl font-semibold text-dark-brown mb-6">ดูวิดีโอแนะนำการใช้งานเว็บไซด์ของเรา</h2>
     <div className="youtube-container flex justify-center">
         <a href="https://www.youtube.com/watch?v=uW2X1UTcqhg" target="_blank" rel="noopener noreferrer" className="youtube-card p-6 bg-white rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
             <img src="https://img.youtube.com/vi/uW2X1UTcqhg/0.jpg" alt="YouTube Video Thumbnail" className="w-full h-auto rounded-lg mb-4" />
