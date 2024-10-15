@@ -241,12 +241,11 @@ function MBTItest() {
                 <h1 className='max-[400px]:text-4xl text-5xl sm:text-6xl font-bold p-16 text-et-brown text-center animate-pulse select-none'>
                     แบบทดสอบ MBTI
                 </h1>
-                <button
-                    onClick={resetAnswers}
-                    className="rounded-md text-xl font-bold p-2 text-white bg-et-gray transition-transform transform hover:scale-105 hover:cursor-pointer hover:bg-et-gray-brown shadow-sm border-dashed border-2 border-white mb-8"
-                >
-                    รีเซ็ตแบบทดสอบ ➜
-                </button>
+                <div className='flex justify-center group text-xl font-bold text-white bg-et-purple-gray pt-2 pb-2 mb-12 rounded-md w-36 shadow-inner hover:cursor-pointer hover:bg-et-gray'
+                    onClick={resetAnswers}>
+                    <div className='group-hover:hidden pr-2'>ล้างข้อมูล</div>
+                    <div className='border-l border-white pl-2 group-hover:border-0 group-hover:w-56 text-right group-hover:-translate-x-16 group-hover:pl-0 transition-transform ease-in duration-200'>⟳</div>
+                </div>
                 <div className='bg-white w-5/6 sm:w-2/3 lg:w-[440px] max-w-[440px] rounded-md pt-4 pb-10 shadow-sm transition-transform hover:scale-105'>
                 <h1 className="text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อมูลส่วนตัว</h1>
                     <div className="flex flex-col justify-center items-center p-2">
@@ -460,9 +459,9 @@ function MBTItest() {
                     )
                 }
             </div>
-            <footer>
-                <Footer/>
-            </footer>
+
+            <Footer bgColor='bg-et-gray-brown'/>
+
         </div>
     )
 }
