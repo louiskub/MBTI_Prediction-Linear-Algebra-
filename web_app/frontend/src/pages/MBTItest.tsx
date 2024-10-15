@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -104,6 +105,22 @@ function MBTItest() {
         newValues[questionIndex] = value;
         setSelectedValues(newValues);
         Cookies.set(`question_${questionIndex}`, value, { expires: 7 });
+
+        scrollToNextQuestion(questionIndex + 1);
+    };
+
+    const scrollToNextQuestion = (nextQuestionIndex: number) => {
+        const currentQuestionElement = document.getElementById(`question${nextQuestionIndex - 1}`);
+        const nextQuestionElement = document.getElementById(`question${nextQuestionIndex}`);
+
+        if (currentQuestionElement && nextQuestionElement) {
+            const currentPosition = currentQuestionElement.getBoundingClientRect().top + window.scrollY;
+
+            window.scrollTo({
+                top: currentPosition,
+                behavior: 'smooth',
+            });
+        }
     };
 
     const checkComplete = () => {
@@ -190,6 +207,31 @@ function MBTItest() {
         setSelectedValues(initialSelectedValues);
     }, []);
 
+    const resetAnswers = () => {
+        const newValues = Array(12).fill(null);
+        setSelectedValues(newValues);
+    
+        setName('');
+        setAge('');
+        setGender('');
+        setEducation('');
+        setInterest('');
+        setMBTI([]);
+
+        Cookies.remove('name');
+        Cookies.remove('age');
+        Cookies.remove('gender');
+        Cookies.remove('education');
+        Cookies.remove('interest');
+        Cookies.remove('MBTIResult');
+    
+        questions.forEach((_, index) => {
+            Cookies.remove(`question_${index}`);
+        });
+
+        window.location.reload();
+    };
+
     return (
         <div className='font-IBM bg-[#f7ebeb]'>
             <Navbar/>
@@ -197,6 +239,12 @@ function MBTItest() {
                 <h1 className='max-[400px]:text-4xl text-5xl sm:text-6xl font-bold p-16 text-et-brown text-center'>
                     แบบทดสอบ MBTI
                 </h1>
+                <button
+                    onClick={resetAnswers}
+                    className="rounded-md text-xl font-bold p-2 text-white bg-et-light-green transition-transform transform hover:scale-105 hover:cursor-pointer shadow-sm mb-8"
+                >
+                    รีเซ็ตแบบทดสอบ
+                </button>
                 <div className='bg-white w-5/6 sm:w-2/3 lg:w-[440px] max-w-[440px] rounded-md pt-4 pb-10 shadow-sm transition-transform hover:scale-105'>
                 <h1 className="text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อมูลส่วนตัว</h1>
                     <div className="flex flex-col justify-center items-center p-2">
@@ -410,6 +458,9 @@ function MBTItest() {
                     )
                 }
             </div>
+            <footer>
+                <Footer/>
+            </footer>
         </div>
     )
 }

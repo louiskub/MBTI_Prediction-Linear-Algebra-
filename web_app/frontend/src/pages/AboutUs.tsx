@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import JinProfile from '../assets/jin_profile.png';
 import MarkProfile from '../assets/mark_profile.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -167,6 +168,9 @@ function AboutUs() {
                 </div>
                
             </section>
+            <footer className='w-full'>
+                <Footer/>
+            </footer>
         </div>
     );
 }
