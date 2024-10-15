@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import TestButton from '../components/testButton';
 import LetterDescriptionSwitch from '../components/LetterSwitch';
 
@@ -153,8 +154,8 @@ function MBTItypes() {
             </div>
             <TestButton/>
         </div>
-        <footer className="p-4 bg-et-gray text-cream-50 text-center">
-                © 2024 MBTI Project. สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง.
+        <footer>
+            <Footer/>
         </footer>
     </div>
     )

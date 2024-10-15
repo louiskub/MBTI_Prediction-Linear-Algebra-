@@ -1,5 +1,6 @@
 import React from 'react';
-import Navbar from '../components/Navbar'; 
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb, faUser, faStar, faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -103,9 +104,8 @@ const App: React.FC = () => {
                     </div>
                 </section>
             </main>
-
-            <footer className="p-4 bg-dark-brown text-cream-50 text-center">
-                © 2024 MBTI Project. สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง.
+            <footer>
+                <Footer/>
             </footer>
         </div>
     );
