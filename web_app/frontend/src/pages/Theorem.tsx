@@ -39,7 +39,8 @@ function Theorem() {
                         className="mx-auto block rounded-md 00" />
                         <div className="text-gray-700 leading-relaxed mt-4">
                             <li>ใช้หลักการหาค่าเฉลี่ยเวคเตอร์ของ MBTI แต่ละประเภท ซึ่งจะทำให้ได้ Vector อ้างอิงของ MBTI แต่ละตัวมา</li>
-                            <li>เมื่อได้ Vector อ้างอิงของ MBTI แต่ละตัวแล้ว กุเอามันมาหา Cosine กับ Pearson Similarity ระหว่าง Vector 2 ตัว</li>
+                            <li>เมื่อได้ Vector อ้างอิงของ MBTI แต่ละตัวแล้วจึงนำมา Pearson Similarity ระหว่าง Vector อ้างอิงของ MBTI ทุกตัวเทียบกับ Input Vector 
+                                แล้วแสดงคู่ที่มีค่า Pearson Similarity มากที่สุด</li>
                         </div>
                     </section>
 
