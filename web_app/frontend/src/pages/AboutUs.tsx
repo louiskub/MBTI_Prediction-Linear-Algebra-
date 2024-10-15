@@ -160,8 +160,12 @@ function AboutUs() {
                     ) : (
                         <p className="text-gray-500 text-center">ยังไม่มีความคิดเห็น</p>
                     )}
+                </div >
+                <div className="flex justify-center mt-4" >
+                      <button onClick={clearCommentsCookie} 
+                      className="mt-4 bg-red-500 text-white font-semibold p-2 rounded-lg shadow-lg transition-transform duration-300 transform hover:bg-red-600">ลบความคิดเห็นทั้งหมด</button>   
                 </div>
-                <button onClick={clearCommentsCookie} className="mt-4 text-red-500 underline">ลบความคิดเห็นทั้งหมด</button>
+               
             </section>
         </div>
     );
