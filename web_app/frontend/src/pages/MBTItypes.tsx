@@ -4,9 +4,9 @@ import LetterDescriptionSwitch from '../components/LetterSwitch';
 
 function MBTItypes() {
     return (
-    <div className='flex justify-center bg-et-light-gray bg-fixed bg-cover'>
+    <div className='bg-et-light-gray'>
         <Navbar/>
-        <div className='flex flex-col justify-center pt-16 text-center font-IBM w-[80vw]'>
+        <div className='flex flex-col justify-center pt-16 text-center font-IBM w-[80vw] ml-auto mr-auto'>
             <h1 className='text-6xl sm:text-7xl md:text-7xl font-bold p-16 text-et-olive-brown text-center'>
                 Personality Types
             </h1>
@@ -153,6 +153,9 @@ function MBTItypes() {
             </div>
             <TestButton/>
         </div>
+        <footer className="p-4 bg-et-gray text-cream-50 text-center">
+                © 2024 MBTI Project. สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง.
+        </footer>
     </div>
     )
 }
