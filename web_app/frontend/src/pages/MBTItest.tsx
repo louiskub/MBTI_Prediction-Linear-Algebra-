@@ -211,6 +211,8 @@ function MBTItest() {
         questions.forEach((_, index) => {
             Cookies.remove(`question_${index}`);
         });
+
+        window.location.reload();
     };
 
     return (
@@ -222,9 +224,9 @@ function MBTItest() {
                 </h1>
                 <button
                     onClick={resetAnswers}
-                    className="rounded-md text-xl font-bold p-2 text-white bg-red-500 hover:bg-red-700 transition-transform transform hover:scale-105 hover:cursor-pointer shadow-sm mb-4"
+                    className="rounded-md text-xl font-bold p-2 text-white bg-et-light-green transition-transform transform hover:scale-105 hover:cursor-pointer shadow-sm mb-8"
                 >
-                    รีเซ็ตคำตอบ
+                    รีเซ็ตแบบทดสอบ
                 </button>
                 <div className='bg-white w-5/6 sm:w-2/3 lg:w-[440px] max-w-[440px] rounded-md pt-4 pb-10 shadow-sm transition-transform hover:scale-105'>
                 <h1 className="text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อมูลส่วนตัว</h1>
