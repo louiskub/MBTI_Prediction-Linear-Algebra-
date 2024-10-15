@@ -68,7 +68,6 @@ const App: React.FC = () => {
                     </div>
                 </section>
 
-                {/* เพิ่ม Section พิเศษ เช่น Testimonials หรือ Call to Action */}
                 <section className="testimonial-section mb-12">
                     <h2 className="text-4xl font-semibold text-dark-brown mb-6">ความคิดเห็นจากผู้ใช้</h2>
                     <div className="testimonial-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
