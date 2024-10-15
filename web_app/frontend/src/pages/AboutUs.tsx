@@ -4,7 +4,7 @@ import MarkProfile from '../assets/mark_profile.png'
 
 const members = [
     {
-        id: '66011442',
+        id: '66010660',
         name: 'หลุยส์ นบีมุฮัมมัด',
         role: 'แฮปปี้ คนกินหมู',
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
@@ -12,8 +12,8 @@ const members = [
         instagram: 'https://www.instagram.com/louis.mnsv_/',
     },
     {
-        id: '66011442',
-        name: 'นายอนัธชัย',
+        id: '66010898',
+        name: 'นายอนัธชัย จานเจือ',
         role: 'แฮปปี้ คนกินหมู',
         description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBUDstgb_qFZEfqCdHL9R3xMCKXMRq53RIoA&s', 
