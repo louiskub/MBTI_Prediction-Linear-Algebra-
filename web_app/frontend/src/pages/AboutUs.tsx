@@ -11,7 +11,6 @@ const members = [
         id: '66010660',
         name: 'โมฮาเหม็ด หลุยส์',
         role: 'แฮปปี้ คนกินหมู',
-        description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://img.lovepik.com/png/20231024/Cartoon-Muslim-Cute-Little-Boy-arab-arabic-little-boys_329599_wh1200.png', 
         instagram: 'https://www.instagram.com/louis.mnsv_/',
         github: 'https://github.com/louiskub',
@@ -20,16 +19,14 @@ const members = [
         id: '66010898',
         name: 'นายอนัธชัย จานเจือ',
         role: 'แฮปปี้ คนกินหมู',
-        description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBUDstgb_qFZEfqCdHL9R3xMCKXMRq53RIoA&s', 
         instagram: 'https://www.instagram.com/ananx.j/',
         github: 'https://github.com/Anantha250',
     },
     {
         id: '66011442',
-        name: 'นายพีรวัส ไก่',
+        name: 'นายพีรวัส อิงคสันตติกุล',
         role: 'เกิดใหม่ทั้งทีก็เป็นวิปครีมไปซะแล้ว',
-        description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: MarkProfile, 
         instagram: 'https://www.instagram.com/mark_peerawat/',
         github: 'https://github.com/MustMark',
@@ -38,7 +35,6 @@ const members = [
         id: '66010948',
         name: 'นางสาวแอมมีลี โจว',
         role: 'เกิดใหม่ทั้งทีก็เป็นวิปครีมไปซะแล้ว',
-        description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: JinProfile,
         instagram: 'https://www.instagram.com/j.i_.n12/',
         github: 'https://github.com/jueeeeeen',
@@ -93,7 +89,6 @@ function AboutUs() {
                                 <h2 className="text-xl font-semibold text-[#6B4F4F]">{member.name}</h2>
                                 <h3 className="text-md text-black font-bold">รหัสนักศึกษา : {member.id}</h3>
                                 <h3 className="text-md text-[#8B5A2B] mb-2">กลุ่ม : {member.role}</h3>
-                                <p className="text-gray-700">{member.description}</p>
                             </div>
                             <div className="flex space-x-4 mb-4">
                                 <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center bg-[#D7C4B8] p-2 rounded-lg shadow-lg transition-transform duration-300 transform hover:bg-[#D2BBA2]">
