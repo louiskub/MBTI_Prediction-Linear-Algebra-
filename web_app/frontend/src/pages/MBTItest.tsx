@@ -1,8 +1,10 @@
 import Navbar from '../components/Navbar';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import MBTIChart from '../components/chart';
+import Cookies from 'js-cookie';
 
 function MBTItest() {
 
@@ -61,31 +63,47 @@ function MBTItest() {
         ESTP: ["นักสำรวจ (ISTP, ISFP, ESTP, ESFP)", "ผู้ประกอบการ", "ฉลาด กระฉับกระเฉง และเข้าใจผู้อื่นได้เป็นอย่างดี มีความสุขกับการใช้ชีวิตแบบสุดโต่ง"],
         ESFP: ["นักสำรวจ (ISTP, ISFP, ESTP, ESFP)", "ผู้มอบความบันเทิง", "ใช้สัญชาตญาณ กระฉับกระเฉง และกระตือรือร้น และผู้คนรอบข้างจะไม่มีวันเบื่อเมื่ออยู่กับพวกเขา"]
     };
-    
-    const questionOptions = [0, 1, 2, 3, 4];
 
     const nameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setName(event.target.value);
+        const value = event.target.value;
+        setName(value);
+        Cookies.set('name', value, { expires: 7 });
     };
 
     const ageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
-        setAge(value === "" ? "" : Number(value));
+        const ageValue = value === "" ? "" : Number(value);
+        setAge(ageValue);
+        Cookies.set('age', ageValue, { expires: 7 });
+    };
+
+    const setGenderMale = () => {
+        setGender("Male");
+        Cookies.set('gender', "Male", { expires: 7 });
+    };
+    
+    const setGenderFemale = () => {
+        setGender("Female");
+        Cookies.set('gender', "Female", { expires: 7 });
     };
 
     const educationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value;
         setEducation(value === "" ? "" : Number(value));
+        Cookies.set('education', value, { expires: 7 });
     };
 
     const interestChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setInterest(event.target.value);
+        const value = event.target.value;
+        setInterest(value);
+        Cookies.set('interest', value, { expires: 7 });
     };
 
     const questionChange = (questionIndex: number, value: number) => {
         const newValues = [...selectedValues];
         newValues[questionIndex] = value;
         setSelectedValues(newValues);
+        Cookies.set(`question_${questionIndex}`, value, { expires: 7 });
     };
 
     const checkComplete = () => {
@@ -123,10 +141,54 @@ function MBTItest() {
             console.log(data)
             const response = await axios.post("http://localhost:8000/mbti-test", data);
             setMBTI(response.data)
+            Cookies.set('MBTIResult', JSON.stringify(response.data), { expires: 7 });
         } catch (error) {
             console.error("Error :", error);
         }
     };
+
+    useEffect(() => {
+
+        const mbtiCookie = Cookies.get('MBTIResult');
+        if (mbtiCookie) {
+            setMBTI(JSON.parse(mbtiCookie));
+        }
+
+        const nameCookie = Cookies.get('name');
+        if (nameCookie) {
+            setName(nameCookie);
+        }
+
+        const ageCookie = Cookies.get('age');
+        if (ageCookie) {
+            setAge(Number(ageCookie));
+        }
+
+        const genderCookie = Cookies.get('gender');
+        if (genderCookie) {
+            setGender(genderCookie);
+        }
+
+        const educationCookie = Cookies.get('education');
+        if (educationCookie) {
+            setEducation(Number(educationCookie));
+        }
+
+        const interestCookie = Cookies.get('interest');
+        if (interestCookie) {
+            setInterest(interestCookie);
+        }
+
+        const initialSelectedValues = [...selectedValues];
+        questions.forEach((_, index) => {
+            const answer = Cookies.get(`question_${index}`);
+            if (answer !== undefined) {
+                initialSelectedValues[index] = Number(answer);
+            }
+        });
+        
+        setSelectedValues(initialSelectedValues);
+    }, []);
 
     return (
         <div className='font-IBM bg-[#f7ebeb]'>
@@ -161,13 +223,13 @@ function MBTItest() {
                         <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">เพศ</p>
                         <div className='flex justify-center w-full'>
                         <button 
-                            onClick={() => setGender("Male")} 
+                            onClick={() => setGenderMale()} 
                             className={`border border-gray-300 w-1/3 p-2 rounded-md mr-1 transition-transform transform hover:border-et-gray-blue hover:border-2 ${gender === "Male" ? 'bg-et-gray-blue text-white' : 'bg-white text-gray-400'}`}
                         >
                             ชาย
                         </button>
                         <button 
-                            onClick={() => setGender("Female")} 
+                            onClick={() => setGenderFemale()} 
                             className={`border border-gray-300 w-1/3 p-2 rounded-md transition-transform transform hover:border-et-pink hover:border-2 ${gender === "Female" ? 'bg-et-pink text-white' : 'bg-white text-gray-400'}`}
                         >
                             หญิง
