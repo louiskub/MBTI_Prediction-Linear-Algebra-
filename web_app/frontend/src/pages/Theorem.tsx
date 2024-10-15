@@ -1,61 +1,87 @@
 import Navbar from "../components/Navbar";
 import CorrSelect from "../components/CorrSelect";
-import cov_img from "../assets/covariance_formular_orachat.png"
-
-
+import cov_img from "../assets/covariance_formular_orachat.png";
 
 function Theorem() {
     return (       
-        <div className="flex flex-col justify-center bg-et-light-gray bg-fixed bg-cover">
+        <div className="flex flex-col justify-center bg-et-pale-pink bg-fixed bg-cover">
             <header>
                 <Navbar />
             </header>
-            <main className="mt-6 text-center p-10 justify-center">
+            <main className="mt-6 text-center p-5 pt-10 pb-20 justify-center min-h-screen font-IBM w-[80vw]'">
+                <h1 className='text-6xl sm:text-7xl md:text-7xl font-bold p-16 text-et-brown text-center'>
+                    Theorem
+                </h1>
+
                 {/* Pearson */}
                 <div className="flex flex-row flex-wrap max-w-full justify-center">
-                    <section className="w-[40%] p-4 m-4 bg-white transition-transform transform hover:scale-105 rounded-md">
-                        <h2 className="text-3xl font-bold"> Pearson Similarity </h2>
-                        <img src="https://cdn1.byjus.com/wp-content/uploads/2019/06/word-image28.png" 
-                        className="mx-auto block" />
-                        <li>
-                            ใช้หลักการหาค่าเฉลี่ยเวคเตอร์ของ MBTI แต่ละประเภท ซึ่งจะทำให้ได้ Vector อ้างอิงของ MBTI แต่ละตัวมา
-                        </li>
-                        <li>
-                            เมื่อได้ Vector อ้างอิงของ MBTI แต่ละตัวแล้ว กุเอามันมาหา Cosine กับ Pearson Similarity ระหว่าง Vector 2 ตัว
-                        </li>
-                    </section>
-
-                    <section className="w-[40%] p-4 m-4 bg-white transition-transform transform hover:scale-105 rounded-md">
-                        <h2 className="text-3xl font-bold"> Covariance </h2>
-                        <img src={cov_img} 
-                        className="mx-auto block" />
-                        <div>
+                    <section className="md:w-[40%] sm:w-[80%] p-6 m-4 bg-white transition-transform transform hover:scale-105 hover:shadow-xl rounded-md flex flex-col justify-between items-center shadow-lg">
+                        <h2 className="text-3xl font-bold text-gray-700">Covariance</h2>
+                        <img src={cov_img} className="mx-auto block w-[85%]" />
+                        <div className="text-gray-700 leading-relaxed mt-4">
                             Covariance เป็นการวัดว่าตัวแปรสองตัวเปลี่ยนแปลงไปในทิศทางเดียวกันอย่างไร มันสามารถมีค่าเป็นบวกหรือลบ และบอกถึงทิศทางของความสัมพันธ์
                         </div>
                     </section>
 
+                    <section className="md:w-[40%] sm:w-[80%] p-6 m-4 bg-white transition-transform transform hover:scale-105 hover:shadow-xl rounded-md flex flex-col justify-between items-center shadow-lg">
+                        <h2 className="text-3xl font-bold text-gray-700">Correlation</h2>
+                        <img src="https://lh6.googleusercontent.com/NfO8TEV09GVqHRgP2pvnbaX6xQx9ImUrxzXAyKNBXI6hzaYntDXV2S4rUL5_9-XgWVUZt9yZ4jICcWp20JNvJtbgsA22bqhbpebZhJG2DeQvGcOzvk1rHZB-jSTGMKYp8kHjeVxkPydEvkrmtA" 
+                        className="mx-auto block rounded-md " />
+                        <div className="text-gray-700 leading-relaxed mt-4">
+                            เป็นการวัดทั้งความแข็งแกร่งและทิศทางของความสัมพันธ์เชิงเส้นระหว่างตัวแปรสองตัว เป็นรูปแบบที่ได้มาตรฐานของ Covariance ซึ่งทำให้มันมีค่าอยู่ในช่วงระหว่าง -1 ถึง +1
+                        </div>
+                    </section>
 
+                    <section className="md:w-[40%] sm:w-[80%] p-6 m-4 bg-white transition-transform transform hover:scale-105 hover:shadow-xl rounded-md flex flex-col justify-between items-center shadow-lg">
+                        <h2 className="text-3xl font-bold text-gray-700">Pearson Similarity</h2>
+                        <img src="https://cdn1.byjus.com/wp-content/uploads/2019/06/word-image28.png" 
+                        className="mx-auto block rounded-md 00" />
+                        <div className="text-gray-700 leading-relaxed mt-4">
+                            <li>ใช้หลักการหาค่าเฉลี่ยเวคเตอร์ของ MBTI แต่ละประเภท ซึ่งจะทำให้ได้ Vector อ้างอิงของ MBTI แต่ละตัวมา</li>
+                            <li>เมื่อได้ Vector อ้างอิงของ MBTI แต่ละตัวแล้ว กุเอามันมาหา Cosine กับ Pearson Similarity ระหว่าง Vector 2 ตัว</li>
+                        </div>
+                    </section>
 
+                    <section className="md:w-[40%] sm:w-[80%] p-6 m-4 bg-white transition-transform transform hover:scale-105 hover:shadow-xl rounded-md flex flex-col justify-between items-center shadow-lg">
+                        <h2 className="text-3xl font-bold text-gray-700">Covariance VS Correlation</h2>
+                        {/* <div className="text-gray-700 leading-relaxed mt-4">
+                            <li>Covariance บอกถึงทิศทางของความสัมพันธ์ แต่ไม่สามารถระบุความแข็งแกร่งของความสัมพันธ์ได้ชัดเจน เพราะไม่มีขีดจำกัดที่แน่นอน</li>
+                            <li>Correlation เป็นการวัดที่ได้มาตรฐาน ทำให้เราสามารถระบุทั้งทิศทางและความแข็งแกร่งของความสัมพันธ์ได้อย่างชัดเจน</li>
+                        </div> */}
+                        <table className="text-left hover:border-collapse border-slate-400 rounded-md">
+                            <tr className="text-center">
+                                
+                                <th className="p-2">Covariance</th>
+                                <th className="p-2">Correlation</th>
+                            </tr>
+                            <tr>
+                                <td className="p-2">
+                                    บอกถึงทิศทางของความสัมพันธ์ แต่ไม่สามารถระบุความแข็งแกร่งของความสัมพันธ์ได้ชัดเจน เพราะไม่มีขีดจำกัดที่แน่นอน
+                                </td>
+                                <td className="p-2">
+                                    เป็นการวัดที่ได้มาตรฐาน ทำให้เราสามารถระบุทั้งทิศทางและความแข็งแกร่งของความสัมพันธ์ได้อย่างชัดเจน
+                                </td>
+                            </tr>
+                            
+                        </table>
 
-
-
-
-                    
-                    
+                        <div>
+                            ดังนั้นทางกลุ่มจึงเลือกใช้ Correlation เป็นหลักในการหาความสัมพันธ์ เนื่องจากสามารถระบุทั้งทิศทางและความแข็งแกร่งของความสัมพันธ์ได้อย่างชัดเจน
+                        </div>
+                    </section>
                 </div>
+
+                {/* Correlation Part */}
                 
-                
-                
+                <footer className="flex justify-center">
+                    
+                    <CorrSelect />
+                </footer> 
             </main>
 
-            {/* Correlation Part */}
-            <footer>
-                <CorrSelect/>
-            </footer>
             
         </div>
     );
 }
-
 
 export default Theorem;

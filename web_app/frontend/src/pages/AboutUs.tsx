@@ -1,14 +1,14 @@
 import Navbar from '../components/Navbar';
 import JinProfile from '../assets/jin_profile.png'
 import MarkProfile from '../assets/mark_profile.png'
-
+import LouisProfile from '../assets/louis_profile.webp'
 const members = [
     {
         id: '66011442',
         name: 'หลุยส์ นบีมุฮัมมัด',
         role: 'แฮปปี้ คนกินหมู',
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
-        image: 'https://img.lovepik.com/png/20231024/Cartoon-Muslim-Cute-Little-Boy-arab-arabic-little-boys_329599_wh1200.png', 
+        image: LouisProfile, 
         instagram: 'https://www.instagram.com/louis.mnsv_/',
     },
     {
