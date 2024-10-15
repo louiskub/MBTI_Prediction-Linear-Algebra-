@@ -273,7 +273,7 @@ function MBTItest() {
                 <div className="flex flex-col space-y-4 bg-white w-3/4 rounded-md pt-10 pb-10 shadow-sm min-w-[340px]">
                 <h1 className="text-xl sm:text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
                     {questions.map((question, questionIndex) => (
-                        <div key={questionIndex} className="flex flex-col items-center p-4 border-t border-et-pale-pink text-center">
+                        <div key={questionIndex} id={`question${questionIndex}`} className="flex flex-col items-center p-4 border-t border-et-pale-pink text-center">
                             <h2 className="text-base md:text-lg mb-4 mt-4">{question}</h2>
                             <div className="flex space-x-4 items-center">
                                 <p className='text-sm sm:text-base text-red-300 font-medium'>ไม่เห็นด้วย</p>
@@ -346,9 +346,9 @@ function MBTItest() {
                     </button>
                 </div>
                 {MBTI.length > 0 ? (
-                    <div className='mb-8 flex flex-col justify-center items-center'>
-                        <div className='flex items-center bg-et-pink p-4 rounded-lg shadow-md mb-8 m-2 w-11/12'>
-                            <div className="max-w-xl mx-auto p-4 bg-et-pink rounded-lg hover:cursor-pointer border-dashed border-4 border-et-pale-pink">
+                    <div className='mb-8'>
+                        <div className='flex items-center bg-et-pink p-4 rounded-lg shadow-md mb-8 m-2'>
+                            <div className="max-w-xl mx-auto p-4 bg-et-pink rounded-lg ml-2 mr-2 hover:cursor-pointer border-dashed border-4 border-et-pale-pink">
                                 <h1 className="text-2xl font-semibold text-center mb-4 text-white">
                                     {`MBTI ของคุณคือ:`}
                                 </h1>
@@ -364,7 +364,7 @@ function MBTItest() {
                                 </p>
                             </div>
                         </div>
-                        <div className="max-w-xl mx-auto p-4 bg-et-light-blue rounded-lg ml-2 mr-2 border-dashed border-4 border-white w-11/12">
+                        <div className="max-w-full mx-auto p-4 bg-et-light-blue rounded-lg ml-2 mr-2 border-dashed border-4 border-white">
                             <h1 className="text-center text-xl min-[410px]:text-2xl font-bold mt-6 mb-4 text-et-dark-blue">MBTI ที่ใกล้เคียงกับคุณมากที่สุด</h1>
                             <MBTIChart MBTI={MBTI} />
                             <table className="table-auto w-1/4 mx-auto border border-gray-300 mb-8">

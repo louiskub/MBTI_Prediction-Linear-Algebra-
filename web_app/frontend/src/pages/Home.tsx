@@ -68,6 +68,23 @@ const App: React.FC = () => {
                     </div>
                 </section>
 
+                <section className="youtube-section mb-12">
+    <h2 className="text-4xl font-semibold text-dark-brown mb-6">ดูวิดีโอแนะนำการใช้งานเว็บไซด์ของเรา</h2>
+    <div className="youtube-container flex justify-center">
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/43Vlz3sR-Fo"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
+        ></iframe>
+    </div>
+</section>
+
+
                 <section className="testimonial-section mb-12">
                     <h2 className="text-4xl font-semibold text-dark-brown mb-6">ความคิดเห็นจากผู้ใช้</h2>
                     <div className="testimonial-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
