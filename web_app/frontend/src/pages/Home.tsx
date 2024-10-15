@@ -90,15 +90,15 @@ const App: React.FC = () => {
                     <div className="testimonial-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                             <p className="text-gray-600 mb-4">"MBTI ช่วยให้ฉันเข้าใจตัวเองและเพื่อนร่วมงานได้ดีขึ้นมาก!"</p>
-                            <h4 className="text-xl font-bold text-dark-brown">- น้องเอ</h4>
+                            <h4 className="text-xl font-bold text-dark-brown">- นายอั๋นคนกาฬสินธุ์ อรัญ ภูธาตุแร่</h4>
                         </div>
                         <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                             <p className="text-gray-600 mb-4">"การทำแบบทดสอบนี้เป็นประสบการณ์ที่น่าสนใจและมีประโยชน์"</p>
-                            <h4 className="text-xl font-bold text-dark-brown">- คุณบี</h4>
+                            <h4 className="text-xl font-bold text-dark-brown">- เฮียจิน</h4>
                         </div>
                         <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                             <p className="text-gray-600 mb-4">"ฉันสามารถใช้ผลลัพธ์ MBTI ในการพัฒนาตัวเองและการทำงานได้จริง"</p>
-                            <h4 className="text-xl font-bold text-dark-brown">- น้องซี</h4>
+                            <h4 className="text-xl font-bold text-dark-brown">- เสี่ยโป้</h4>
                         </div>
                     </div>
                 </section>
