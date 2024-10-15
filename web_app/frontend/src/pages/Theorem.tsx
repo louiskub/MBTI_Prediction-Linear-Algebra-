@@ -25,11 +25,11 @@ function Theorem() {
                         </li>
                     </section>
 
-                    <section className="w-[40%] p-4 m-4 bg-white transition-transform transform hover:scale-105 rounded-md">
+                    <section className="w-[40%] p-4 m-4 bg-white transition-transform transform hover:scale-105 rounded-md flex flex-col items-center justify-between">
                         <h2 className="text-3xl font-bold"> Covariance </h2>
                         <img src={cov_img} 
                         className="mx-auto block" />
-                        <div>
+                        <div className="">
                             Covariance เป็นการวัดว่าตัวแปรสองตัวเปลี่ยนแปลงไปในทิศทางเดียวกันอย่างไร มันสามารถมีค่าเป็นบวกหรือลบ และบอกถึงทิศทางของความสัมพันธ์
                         </div>
                     </section>
