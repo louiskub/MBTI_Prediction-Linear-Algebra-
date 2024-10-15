@@ -1,8 +1,11 @@
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import MBTIChart from '../components/chart';
+import Cookies from 'js-cookie';
 
 function MBTItest() {
 
@@ -61,31 +64,63 @@ function MBTItest() {
         ESTP: ["นักสำรวจ (ISTP, ISFP, ESTP, ESFP)", "ผู้ประกอบการ", "ฉลาด กระฉับกระเฉง และเข้าใจผู้อื่นได้เป็นอย่างดี มีความสุขกับการใช้ชีวิตแบบสุดโต่ง"],
         ESFP: ["นักสำรวจ (ISTP, ISFP, ESTP, ESFP)", "ผู้มอบความบันเทิง", "ใช้สัญชาตญาณ กระฉับกระเฉง และกระตือรือร้น และผู้คนรอบข้างจะไม่มีวันเบื่อเมื่ออยู่กับพวกเขา"]
     };
-    
-    const questionOptions = [0, 1, 2, 3, 4];
 
     const nameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setName(event.target.value);
+        const value = event.target.value;
+        setName(value);
+        Cookies.set('name', value, { expires: 7 });
     };
 
     const ageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
-        setAge(value === "" ? "" : Number(value));
+        const ageValue = value === "" ? "" : Number(value);
+        setAge(ageValue);
+        Cookies.set('age', ageValue, { expires: 7 });
+    };
+
+    const setGenderMale = () => {
+        setGender("Male");
+        Cookies.set('gender', "Male", { expires: 7 });
+    };
+    
+    const setGenderFemale = () => {
+        setGender("Female");
+        Cookies.set('gender', "Female", { expires: 7 });
     };
 
     const educationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value;
         setEducation(value === "" ? "" : Number(value));
+        Cookies.set('education', value, { expires: 7 });
     };
 
     const interestChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setInterest(event.target.value);
+        const value = event.target.value;
+        setInterest(value);
+        Cookies.set('interest', value, { expires: 7 });
     };
 
     const questionChange = (questionIndex: number, value: number) => {
         const newValues = [...selectedValues];
         newValues[questionIndex] = value;
         setSelectedValues(newValues);
+        Cookies.set(`question_${questionIndex}`, value, { expires: 7 });
+
+        scrollToNextQuestion(questionIndex + 1);
+    };
+
+    const scrollToNextQuestion = (nextQuestionIndex: number) => {
+        const currentQuestionElement = document.getElementById(`question${nextQuestionIndex - 1}`);
+        const nextQuestionElement = document.getElementById(`question${nextQuestionIndex}`);
+
+        if (currentQuestionElement && nextQuestionElement) {
+            const currentPosition = currentQuestionElement.getBoundingClientRect().top + window.scrollY;
+
+            window.scrollTo({
+                top: currentPosition,
+                behavior: 'smooth',
+            });
+        }
     };
 
     const checkComplete = () => {
@@ -123,9 +158,78 @@ function MBTItest() {
             console.log(data)
             const response = await axios.post("http://localhost:8000/mbti-test", data);
             setMBTI(response.data)
+            Cookies.set('MBTIResult', JSON.stringify(response.data), { expires: 7 });
         } catch (error) {
             console.error("Error :", error);
         }
+    };
+
+    useEffect(() => {
+
+        const mbtiCookie = Cookies.get('MBTIResult');
+        if (mbtiCookie) {
+            setMBTI(JSON.parse(mbtiCookie));
+        }
+
+        const nameCookie = Cookies.get('name');
+        if (nameCookie) {
+            setName(nameCookie);
+        }
+
+        const ageCookie = Cookies.get('age');
+        if (ageCookie) {
+            setAge(Number(ageCookie));
+        }
+
+        const genderCookie = Cookies.get('gender');
+        if (genderCookie) {
+            setGender(genderCookie);
+        }
+
+        const educationCookie = Cookies.get('education');
+        if (educationCookie) {
+            setEducation(Number(educationCookie));
+        }
+
+        const interestCookie = Cookies.get('interest');
+        if (interestCookie) {
+            setInterest(interestCookie);
+        }
+
+        const initialSelectedValues = [...selectedValues];
+        questions.forEach((_, index) => {
+            const answer = Cookies.get(`question_${index}`);
+            if (answer !== undefined) {
+                initialSelectedValues[index] = Number(answer);
+            }
+        });
+        
+        setSelectedValues(initialSelectedValues);
+    }, []);
+
+    const resetAnswers = () => {
+        const newValues = Array(12).fill(null);
+        setSelectedValues(newValues);
+    
+        setName('');
+        setAge('');
+        setGender('');
+        setEducation('');
+        setInterest('');
+        setMBTI([]);
+
+        Cookies.remove('name');
+        Cookies.remove('age');
+        Cookies.remove('gender');
+        Cookies.remove('education');
+        Cookies.remove('interest');
+        Cookies.remove('MBTIResult');
+    
+        questions.forEach((_, index) => {
+            Cookies.remove(`question_${index}`);
+        });
+
+        window.location.reload();
     };
 
     return (
@@ -135,6 +239,12 @@ function MBTItest() {
                 <h1 className='max-[400px]:text-4xl text-5xl sm:text-6xl font-bold p-16 text-et-brown text-center'>
                     แบบทดสอบ MBTI
                 </h1>
+                <button
+                    onClick={resetAnswers}
+                    className="rounded-md text-xl font-bold p-2 text-white bg-et-light-green transition-transform transform hover:scale-105 hover:cursor-pointer shadow-sm mb-8"
+                >
+                    รีเซ็ตแบบทดสอบ
+                </button>
                 <div className='bg-white w-5/6 sm:w-2/3 lg:w-[440px] max-w-[440px] rounded-md pt-4 pb-10 shadow-sm transition-transform hover:scale-105'>
                 <h1 className="text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อมูลส่วนตัว</h1>
                     <div className="flex flex-col justify-center items-center p-2">
@@ -161,13 +271,13 @@ function MBTItest() {
                         <p className="text-sm md:text-base text-et-brown w-2/3 ml-2 font-medium">เพศ</p>
                         <div className='flex justify-center w-full'>
                         <button 
-                            onClick={() => setGender("Male")} 
+                            onClick={() => setGenderMale()} 
                             className={`border border-gray-300 w-1/3 p-2 rounded-md mr-1 transition-transform transform hover:border-et-gray-blue hover:border-2 ${gender === "Male" ? 'bg-et-gray-blue text-white' : 'bg-white text-gray-400'}`}
                         >
                             ชาย
                         </button>
                         <button 
-                            onClick={() => setGender("Female")} 
+                            onClick={() => setGenderFemale()} 
                             className={`border border-gray-300 w-1/3 p-2 rounded-md transition-transform transform hover:border-et-pink hover:border-2 ${gender === "Female" ? 'bg-et-pink text-white' : 'bg-white text-gray-400'}`}
                         >
                             หญิง
@@ -211,7 +321,7 @@ function MBTItest() {
                 <div className="flex flex-col space-y-4 bg-white w-3/4 rounded-md pt-10 pb-10 shadow-sm min-w-[340px]">
                 <h1 className="text-xl sm:text-2xl font-bold p-4 text-et-olive-brown text-center">ข้อความเหล่านี้ตรงกับตัวคุณหรือไม่</h1>
                     {questions.map((question, questionIndex) => (
-                        <div key={questionIndex} className="flex flex-col items-center p-4 border-t border-et-pale-pink text-center">
+                        <div key={questionIndex} id={`question${questionIndex}`} className="flex flex-col items-center p-4 border-t border-et-pale-pink text-center">
                             <h2 className="text-base md:text-lg mb-4 mt-4">{question}</h2>
                             <div className="flex space-x-4 items-center">
                                 <p className='text-sm sm:text-base text-red-300 font-medium'>ไม่เห็นด้วย</p>
@@ -286,7 +396,7 @@ function MBTItest() {
                 {MBTI.length > 0 ? (
                     <div className='mb-8'>
                         <div className='flex items-center bg-et-pink p-4 rounded-lg shadow-md mb-8 m-2'>
-                            <div className="max-w-xl mx-auto p-4 bg-et-pink rounded-lg hover:cursor-pointer border-dashed border-4 border-et-pale-pink">
+                            <div className="max-w-xl mx-auto p-4 bg-et-pink rounded-lg ml-2 mr-2 hover:cursor-pointer border-dashed border-4 border-et-pale-pink">
                                 <h1 className="text-2xl font-semibold text-center mb-4 text-white">
                                     {`MBTI ของคุณคือ:`}
                                 </h1>
@@ -302,7 +412,7 @@ function MBTItest() {
                                 </p>
                             </div>
                         </div>
-                        <div className="max-w-xl mx-auto p-4 bg-et-light-blue rounded-lg ml-2 mr-2 border-dashed border-4 border-white">
+                        <div className="max-w-full mx-auto p-4 bg-et-light-blue rounded-lg ml-2 mr-2 border-dashed border-4 border-white">
                             <h1 className="text-center text-xl min-[410px]:text-2xl font-bold mt-6 mb-4 text-et-dark-blue">MBTI ที่ใกล้เคียงกับคุณมากที่สุด</h1>
                             <MBTIChart MBTI={MBTI} />
                             <table className="table-auto w-1/4 mx-auto border border-gray-300 mb-8">
@@ -348,6 +458,9 @@ function MBTItest() {
                     )
                 }
             </div>
+            <footer>
+                <Footer/>
+            </footer>
         </div>
     )
 }

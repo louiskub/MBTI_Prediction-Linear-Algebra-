@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import Footer from '../components/Footer';
 import CorrSelect from "../components/CorrSelect";
 import cov_img from "../assets/covariance_formular_orachat.png";
 

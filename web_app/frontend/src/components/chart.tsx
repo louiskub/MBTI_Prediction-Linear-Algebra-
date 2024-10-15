@@ -54,7 +54,7 @@ const MBTIChart: React.FC<MBTIChartProps> = ({ MBTI }) => {
     };
 
     return (
-        <div className="chart-container mx-auto mb-8 w-10/12">
+        <div className="chart-container mx-auto mb-8 w-10/12 bg-white rounded-lg p-6 font">
             <Line data={data} options={options} />
         </div>
     );
