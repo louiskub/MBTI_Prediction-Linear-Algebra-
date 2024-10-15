@@ -68,6 +68,11 @@ function AboutUs() {
         setNewComment('');
     };
 
+    const clearCommentsCookie = () => {
+        Cookies.remove('comments');
+        setComments([]); // ลบความคิดเห็นที่แสดงใน state ด้วย
+    };
+
     return (
         <div className="min-h-screen flex flex-col items-center bg-gradient-to-b from-[#D0B1A1] to-[#E2CFCF] p-0.1">
             <Navbar />
@@ -133,45 +138,31 @@ function AboutUs() {
 
             <section className="w-full px-4 md:px-16 lg:px-32 py-10">
                 <h2 className="text-4xl font-semibold text-dark-brown mb-8 text-center">ความคิดเห็นของคุณมีค่าสำหรับพวกเรา</h2>
-                <form onSubmit={handleCommentSubmit} className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="comment">
-                            Comment
-                        </label>
-                        <textarea
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="comment"
-                            rows={4}
-                            placeholder="Your Comment"
-                            value={newComment}
-                            onChange={(e) => setNewComment(e.target.value)}
-                            required
-                        ></textarea>
-                    </div>
-                    <div className="flex justify-center">
-                        <button 
-                            type="submit"
-                            className="bg-[#D2691E] hover:bg-[#8B5A2B] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 transform hover:scale-105">
-                            ส่งความคิดเห็น
-                        </button>
-                    </div>
+                <form onSubmit={handleCommentSubmit} className="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-lg mb-4">
+                    <textarea 
+                        value={newComment} 
+                        onChange={(e) => setNewComment(e.target.value)} 
+                        placeholder="แสดงความคิดเห็นของคุณที่นี่" 
+                        className="w-full h-32 p-4 border rounded-lg mb-4" 
+                        required
+                    />
+                    <button type="submit" className="w-full bg-[#8B5A2B] text-white font-semibold p-2 rounded-lg transition-transform duration-300 transform hover:bg-[#D2691E]">
+                        ส่งความคิดเห็น
+                    </button>
                 </form>
-
-                <div className="mt-8">
-                    <h3 className="text-2xl font-semibold text-dark-brown mb-4 text-center">ความคิดเห็นล่าสุด</h3>
-                    <ul className="space-y-4">
-                        {comments.slice(-3).map((comment, index) => (
-                            <li key={index} className="p-4 bg-white rounded-lg shadow-lg">
-                                {comment}
-                            </li>
-                        ))}
-                    </ul>
+                <div className="comments-container">
+                    {comments.length > 0 ? (
+                        comments.map((comment, index) => (
+                            <div key={index} className="comment-card p-4 bg-white rounded-lg shadow-lg mb-4">
+                                <p className="text-gray-600">{comment}</p>
+                            </div>
+                        ))
+                    ) : (
+                        <p className="text-gray-500 text-center">ยังไม่มีความคิดเห็น</p>
+                    )}
                 </div>
+                <button onClick={clearCommentsCookie} className="mt-4 text-red-500 underline">ลบความคิดเห็นทั้งหมด</button>
             </section>
-
-            <footer className="w-full text-center p-4 bg-[#D7C4B8] text-[#6B4F4F]">
-                <p>&copy; 2024 All rights reserved.</p>
-            </footer>
         </div>
     );
 }
