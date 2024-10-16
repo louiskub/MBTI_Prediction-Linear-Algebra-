@@ -17,8 +17,6 @@ const App: React.FC = () => {
             </header>
 
             <main className="flex-grow flex flex-col items-center pt-16 px-4">
-                
-                {/* Intro Section */}
                 <section className="intro-section text-center p-10 shadow-lg rounded-lg bg-white bg-opacity-90 mb-12 mt-20 transform transition-transform duration-300 hover:scale-105">
                     <h1 className="text-6xl font-bold text-dark-brown">สำรวจ MBTI ของคุณ!</h1>
                     <h2 className="text-4xl text-et-dark-green mt-2">เพื่อพัฒนาศักยภาพของตัวคุณเอง</h2>
@@ -33,7 +31,6 @@ const App: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Animation Section */}
                 <section className="animation-section mb-12">
                     <div className="animation-container flex justify-center items-center gap-10">
                         <div className="mbti-icon transition-transform duration-300 hover:scale-125">
@@ -51,7 +48,6 @@ const App: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Highlight Section */}
                 <section className="highlight-section mb-12">
                     <h2 className="text-4xl font-semibold text-dark-brown mb-6">ทำไมต้องรับการทดสอบ?</h2>
                     <div className="highlight-container grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -73,24 +69,23 @@ const App: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Video Section */}
                 <section className="youtube-section mb-12">
-                    <h2 className="text-4xl font-semibold text-dark-brown mb-6">ดูวิดีโอแนะนำการใช้งานเว็บไซด์ของเรา</h2>
-                    <div className="youtube-container flex justify-center">
-                        <iframe
-                            width="560"
-                            height="315"
-                            src="https://www.youtube.com/embed/43Vlz3sR-Fo"
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            className="rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
-                        ></iframe>
-                    </div>
-                </section>
+    <h2 className="text-4xl font-semibold text-dark-brown mb-6">ดูวิดีโอแนะนำการใช้งานเว็บไซด์ของเรา</h2>
+    <div className="youtube-container flex justify-center">
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/43Vlz3sR-Fo"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
+        ></iframe>
+    </div>
+</section>
 
-                {/* Testimonial Section */}
+
                 <section className="testimonial-section mb-12">
                     <h2 className="text-4xl font-semibold text-dark-brown mb-6">ความคิดเห็นจากผู้ใช้</h2>
                     <div className="testimonial-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -108,27 +103,13 @@ const App: React.FC = () => {
                         </div>
                     </div>
                 </section>
-
-                {/* Additional Placeholder Sections */}
-                <section className="additional-info mb-12">
-                    <h2 className="text-4xl font-semibold text-dark-brown mb-6">ข้อมูลเพิ่มเติมเกี่ยวกับ MBTI</h2>
-                    <p className="text-gray-600 mb-4">MBTI คือ เครื่องมือที่ถูกพัฒนาโดย Katharine Cook Briggs และ Isabel Briggs Myers ในช่วงสงครามโลกครั้งที่สอง</p>
-                    <p className="text-gray-600 mb-4">MBTI แบ่งบุคลิกภาพออกเป็น 16 ประเภทโดยพิจารณาจาก 4 มิติหลัก: E-I, S-N, T-F, J-P</p>
-                </section>
-
-                <section className="more-resources mb-12">
-                    <h2 className="text-4xl font-semibold text-dark-brown mb-6">แหล่งข้อมูลที่แนะนำ</h2>
-                    <p className="text-gray-600 mb-4">การเข้าใจ MBTI ยังช่วยให้คุณสามารถศึกษาแนวทางการสื่อสารและการแก้ปัญหาของคุณได้</p>
-                    <p className="text-gray-600 mb-4">ดูแหล่งข้อมูลที่มีประโยชน์เพิ่มเติมได้ที่นี่: <a href="https://www.myersbriggs.org/" className="text-blue-500">myersbriggs.org</a></p>
-                </section>
-
             </main>
-
-            <footer className="footer">
-                <Footer />
+            <footer>
+                <Footer/>
             </footer>
         </div>
     );
-};
+
+}
 
 export default App;
