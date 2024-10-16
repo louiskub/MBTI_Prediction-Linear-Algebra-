@@ -12,7 +12,7 @@ function Navbar({ bgColor }: NavbarProps) {
     
     return (
         <nav 
-            className={`fixed h-16 w-full flex items-center justify-between z-50 bg-${bgColor || 'et-light-orange'}`} // Use custom color or default
+            className={`fixed h-16 w-full flex items-center justify-between z-50 select-none bg-${bgColor || 'et-light-orange'}`} // Use custom color or default
         >
             <a href="/">
                 <div className="flex items-center hover:pb-2 duration-300 ease-in-out">

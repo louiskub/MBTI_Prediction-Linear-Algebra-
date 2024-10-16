@@ -8,7 +8,6 @@ import MBTIChart from '../components/chart';
 import Cookies from 'js-cookie';
 import bgImage from '/src/assets/bg.png';
 
-
 function MBTItest() {
 
     interface InputData {

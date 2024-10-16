@@ -12,10 +12,10 @@ const App: React.FC = () => {
                        bg-gradient-to-r from-light-brown via-et-light-orange to-dark-brown 
                        bg-[length:200%_200%] animate-gradient-animation 
                        text-cream-50 overflow-hidden
-                       bg-repeat-y bg-fit bg-fixed" style={{ backgroundImage: `url(${bgImage})` }}
+                       bg-repeat-y bg-fit bg-fixed font-IBM" style={{ backgroundImage: `url(${bgImage})` }}
         >
             <header className="fixed w-full z-10">
-                <Navbar bgColor='dark-brown'/>
+                <Navbar bgColor='et-pink'/>
             </header>
 
             <main className="flex-grow flex flex-col items-center pt-16 px-4">
@@ -107,7 +107,7 @@ const App: React.FC = () => {
                 </section>
             </main>
             <footer>
-                <Footer/>
+                <Footer bgColor='et-pink'/>
             </footer>
         </div>
     );

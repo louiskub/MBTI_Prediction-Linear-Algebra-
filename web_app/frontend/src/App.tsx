@@ -6,10 +6,13 @@ import MBTItest from './pages/MBTItest.tsx'
 import MBTItypes from './pages/MBTItypes.tsx'
 import Theorem from './pages/Theorem.tsx';
 import AboutUs from './pages/AboutUs.tsx';
+import ScrollToTop from './components/ScrollToTop.tsx';
+
 
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Routes>
         <Route 
           path="/" 
