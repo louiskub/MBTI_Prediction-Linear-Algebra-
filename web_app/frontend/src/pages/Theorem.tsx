@@ -2,6 +2,8 @@ import Navbar from "../components/Navbar";
 import Footer from '../components/Footer';
 import CorrSelect from "../components/CorrSelect";
 import cov_img from "../assets/covariance_formular_orachat.png";
+import corr_form from "../assets/corr_form.png"
+import TestButton from '../components/testButton';
 
 function Theorem() {
     return (       
@@ -18,7 +20,7 @@ function Theorem() {
                 <div className="flex flex-row flex-wrap max-w-full justify-center">
                     <section className="md:w-[40%] sm:w-[80%] p-6 m-4 bg-white transition-transform transform hover:scale-105 hover:shadow-xl rounded-md flex flex-col justify-between items-center shadow-lg">
                         <h2 className="text-3xl font-bold text-gray-700">Covariance</h2>
-                        <img src={cov_img} className="mx-auto block w-[85%]" />
+                        <img src={cov_img} className="mx-auto block" />
                         <div className="text-gray-700 leading-relaxed mt-4">
                             Covariance เป็นการวัดว่าตัวแปรสองตัวเปลี่ยนแปลงไปในทิศทางเดียวกันอย่างไร มันสามารถมีค่าเป็นบวกหรือลบ และบอกถึงทิศทางของความสัมพันธ์
                         </div>
@@ -26,8 +28,8 @@ function Theorem() {
 
                     <section className="md:w-[40%] sm:w-[80%] p-6 m-4 bg-white transition-transform transform hover:scale-105 hover:shadow-xl rounded-md flex flex-col justify-between items-center shadow-lg">
                         <h2 className="text-3xl font-bold text-gray-700">Correlation</h2>
-                        <img src="https://lh6.googleusercontent.com/NfO8TEV09GVqHRgP2pvnbaX6xQx9ImUrxzXAyKNBXI6hzaYntDXV2S4rUL5_9-XgWVUZt9yZ4jICcWp20JNvJtbgsA22bqhbpebZhJG2DeQvGcOzvk1rHZB-jSTGMKYp8kHjeVxkPydEvkrmtA" 
-                        className="mx-auto block rounded-md " />
+                        <img src={corr_form} 
+                        className="mx-auto block rounded-md" />
                         <div className="text-gray-700 leading-relaxed mt-4">
                             เป็นการวัดทั้งความแข็งแกร่งและทิศทางของความสัมพันธ์เชิงเส้นระหว่างตัวแปรสองตัว เป็นรูปแบบที่ได้มาตรฐานของ Covariance ซึ่งทำให้มันมีค่าอยู่ในช่วงระหว่าง -1 ถึง +1
                         </div>
@@ -75,12 +77,14 @@ function Theorem() {
 
                 {/* Correlation Part */}
                 
-                <footer className="flex justify-center">
-                    
+                <div className="flex justify-center mb-6">
                     <CorrSelect />
-                </footer> 
+                </div> 
+                <TestButton text='ทำแบบทดสอบ'/>
             </main>
-
+            <footer>
+                <Footer bgColor='bg-et-light-orange'/>
+            </footer>
             
         </div>
     );
