@@ -73,8 +73,8 @@ function AboutUs() {
     };
 
     return (
-        <div className="min-h-screen flex flex-col items-center bg-gradient-to-b from-[#D0B1A1] to-[#E2CFCF] p-0.1">
-            <Navbar />
+        <div className="min-h-screen flex flex-col items-center bg-gradient-to-b from-[#D0B1A1] to-[#E2CFCF] p-0.1 ">
+            <Navbar bgColor='dark-brown'/>
             
             <section className="w-full py-20 text-center">
                 <h1 className="text-6xl md:text-9xl pt-16 text-transparent bg-clip-text bg-gradient-to-r from-[#8B5A2B] to-[#D2691E] font-serif animate-bounce">
