@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb, faUser, faStar, faSearch } from '@fortawesome/free-solid-svg-icons';
+import bgImage from '/src/assets/bg.png';
 
 const App: React.FC = () => {
     return (
@@ -10,7 +11,8 @@ const App: React.FC = () => {
             className="min-h-screen flex flex-col 
                        bg-gradient-to-r from-light-brown via-et-light-orange to-dark-brown 
                        bg-[length:200%_200%] animate-gradient-animation 
-                       text-cream-50 overflow-hidden "
+                       text-cream-50 overflow-hidden
+                       bg-repeat-y bg-fit bg-fixed" style={{ backgroundImage: `url(${bgImage})` }}
         >
             <header className="fixed w-full z-10">
                 <Navbar bgColor='dark-brown'/>
@@ -75,7 +77,7 @@ const App: React.FC = () => {
         <iframe
             width="560"
             height="315"
-            src="https://youtu.be/pmanD_s7G3U?si=Hi2oSvGcYa51j98U"
+            src="https://www.youtube.com/embed/dC_nySgjzb0?si=hMsvsJ9HLwFykFOk"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

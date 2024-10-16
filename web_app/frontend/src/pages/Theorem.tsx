@@ -8,7 +8,7 @@ import bgImage from '/src/assets/bg.png';
 
 function Theorem() {
     return (       
-        <div className="flex flex-col justify-center bg-et-pale-pink bg-fixed bg-cover" style={{ backgroundImage: `url(${bgImage})` }}>
+        <div className="flex flex-col justify-center bg-et-pale-pink bg-fixed bg-[length:200%_200%] animate-gradient-animation" style={{ backgroundImage: `url(${bgImage})` }}>
             <header>
                 <Navbar bgColor="et-pink"/>
             </header>
