@@ -88,7 +88,7 @@ function AboutUs() {
                 <h2 className="text-4xl font-semibold text-dark-brown mb-8 text-center">Meet Our Team</h2>
                 <div className="members-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {members.map((member) => (
-                        <div key={member.id} className="card flex flex-col items-center bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <div key={member.id} className="card flex flex-col items-center bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl pt-6">
                             <div className="w-full h-48 relative overflow-hidden">
                                 <img 
                                     src={member.image} 
