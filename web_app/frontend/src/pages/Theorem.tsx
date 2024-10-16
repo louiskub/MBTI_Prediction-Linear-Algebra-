@@ -2,12 +2,13 @@ import Navbar from "../components/Navbar";
 import Footer from '../components/Footer';
 import CorrSelect from "../components/CorrSelect";
 import cov_img from "../assets/covariance_formular_orachat.png";
+import bgImage from '/src/assets/bg.png';
 
 function Theorem() {
     return (       
-        <div className="flex flex-col justify-center bg-et-pale-pink bg-fixed bg-cover">
+        <div className="flex flex-col justify-center bg-et-pale-pink bg-fixed bg-cover" style={{ backgroundImage: `url(${bgImage})` }}>
             <header>
-                <Navbar />
+                <Navbar bgColor="et-pink"/>
             </header>
             <main className="mt-6 text-center p-5 pt-10 pb-20 justify-center min-h-screen font-IBM w-[80vw]'">
                 <h1 className='text-6xl sm:text-7xl md:text-7xl font-bold p-16 text-et-brown text-center'>
