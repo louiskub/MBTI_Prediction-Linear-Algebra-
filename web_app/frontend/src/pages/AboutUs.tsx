@@ -11,11 +11,11 @@ import Cookies from 'js-cookie';
 const members = [
     {
         id: '66010660',
-        name: 'โมฮาเหม็ด หลุยส์',
+        name: 'นายมนัสวิน ขุนนันทเจียม',
         role: 'แฮปปี้ คนกินหมู',
         Sec: '17',
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
-        image: LouisProfile, 
+        image: 'https://stickershop.line-scdn.net/stickershop/v1/product/1370099/LINEStorePC/main.png?v=1', 
         instagram: 'https://www.instagram.com/louis.mnsv_/',
         github: 'https://github.com/louiskub',
     },
@@ -24,17 +24,15 @@ const members = [
         name: 'นายอนัธชัย จานเจือ',
         role: 'แฮปปี้ คนกินหมู',
         Sec: '17',
-        description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBUDstgb_qFZEfqCdHL9R3xMCKXMRq53RIoA&s', 
+        image: 'https://tr.rbxcdn.com/30DAY-Avatar-F8EC0C8AC0AE05BE583B4E509073492B-Png/420/420/Avatar/Png/noFilter', 
         instagram: 'https://www.instagram.com/ananx.j/',
         github: 'https://github.com/Anantha250',
     },
     {
         id: '66011442',
-        name: 'นายพีรวัส ไก่',
+        name: 'นายพีรวัส อิงคสันตติกุล',
         role: 'เกิดใหม่ทั้งทีก็เป็นวิปครีมไปซะแล้ว',
         Sec: '17',
-        description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: MarkProfile, 
         instagram: 'https://www.instagram.com/mark_peerawat/',
         github: 'https://github.com/MustMark',
@@ -44,7 +42,6 @@ const members = [
         name: 'นางสาวแอมมีลี โจว',
         role: 'เกิดใหม่ทั้งทีก็เป็นวิปครีมไปซะแล้ว',
         Sec: '17',
-        description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: JinProfile,
         instagram: 'https://www.instagram.com/j.i_.n12/',
         github: 'https://github.com/jueeeeeen',
@@ -92,7 +89,7 @@ function AboutUs() {
                 <h2 className="text-4xl font-semibold text-dark-brown mb-8 text-center">Meet Our Team</h2>
                 <div className="members-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {members.map((member) => (
-                        <div key={member.id} className="card flex flex-col items-center bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
+                        <div key={member.id} className="card flex flex-col items-center bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl pt-6">
                             <div className="w-full h-48 relative overflow-hidden">
                                 <img 
                                     src={member.image} 
@@ -103,9 +100,8 @@ function AboutUs() {
                             <div className="p-6 text-center">
                                 <h2 className="text-xl font-semibold text-[#6B4F4F]">{member.name}</h2>
                                 <h3 className="text-md text-black font-bold">รหัสนักศึกษา : {member.id}</h3>
-                                <h3 className="text-md text-black font-bold">Sec : {member.Sec}</h3>
                                 <h3 className="text-md text-[#8B5A2B] mb-2">กลุ่ม : {member.role}</h3>
-                                <p className="text-gray-700">{member.description}</p>
+                                <h3 className="text-md text-gray-500 font-bold">กลุ่มเรียน : {member.Sec}</h3>
                             </div>
                             <div className="flex space-x-4 mb-4">
                                 <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center bg-[#D7C4B8] p-2 rounded-lg shadow-lg transition-transform duration-300 transform hover:bg-[#D2BBA2]">
@@ -125,15 +121,15 @@ function AboutUs() {
                 <div className="testimonial-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                         <p className="text-gray-600 mb-4">"MBTI ช่วยให้ผมเข้าใจตัวเองและเพื่อนร่วมงานได้ดีขึ้นมาก!"</p>
-                        <h4 className="text-xl font-bold text-dark-brown">- นายอั๋นคนกาฬสินธุ์ อรัญ ภูธาตุแร่</h4>
+                        <h4 className="text-xl font-bold text-dark-brown">- ผู้ใช้งานรายหนึ่ง</h4>
                     </div>
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                         <p className="text-gray-600 mb-4">"การทำแบบทดสอบนี้เป็นประสบการณ์ที่น่าสนใจและมีประโยชน์"</p>
-                        <h4 className="text-xl font-bold text-dark-brown">- เฮียจิน</h4>
+                        <h4 className="text-xl font-bold text-dark-brown">- ผู้ใช้งานรายหนึ่ง</h4>
                     </div>
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                         <p className="text-gray-600 mb-4">"ฉันสามารถใช้ผลลัพธ์ MBTI ในการพัฒนาตัวเองและการทำงานได้จริง"</p>
-                        <h4 className="text-xl font-bold text-dark-brown">- เสี่ยโป้</h4>
+                        <h4 className="text-xl font-bold text-dark-brown">- ผู้ใช้งานรายหนึ่ง</h4>
                     </div>
                 </div>
             </section>
