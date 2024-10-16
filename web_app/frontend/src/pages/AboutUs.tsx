@@ -24,7 +24,7 @@ const members = [
         name: 'นายอนัธชัย จานเจือ',
         role: 'แฮปปี้ คนกินหมู',
         Sec: '17',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBUDstgb_qFZEfqCdHL9R3xMCKXMRq53RIoA&s', 
+        image: 'https://tr.rbxcdn.com/30DAY-Avatar-F8EC0C8AC0AE05BE583B4E509073492B-Png/420/420/Avatar/Png/noFilter', 
         instagram: 'https://www.instagram.com/ananx.j/',
         github: 'https://github.com/Anantha250',
     },
@@ -121,15 +121,15 @@ function AboutUs() {
                 <div className="testimonial-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                         <p className="text-gray-600 mb-4">"MBTI ช่วยให้ผมเข้าใจตัวเองและเพื่อนร่วมงานได้ดีขึ้นมาก!"</p>
-                        <h4 className="text-xl font-bold text-dark-brown">- นายอั๋นคนกาฬสินธุ์ อรัญ ภูธาตุแร่</h4>
+                        <h4 className="text-xl font-bold text-dark-brown">- ผู้ใช้งานรายหนึ่ง</h4>
                     </div>
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                         <p className="text-gray-600 mb-4">"การทำแบบทดสอบนี้เป็นประสบการณ์ที่น่าสนใจและมีประโยชน์"</p>
-                        <h4 className="text-xl font-bold text-dark-brown">- เฮียจิน</h4>
+                        <h4 className="text-xl font-bold text-dark-brown">- ผู้ใช้งานรายหนึ่ง</h4>
                     </div>
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                         <p className="text-gray-600 mb-4">"ฉันสามารถใช้ผลลัพธ์ MBTI ในการพัฒนาตัวเองและการทำงานได้จริง"</p>
-                        <h4 className="text-xl font-bold text-dark-brown">- เสี่ยโป้</h4>
+                        <h4 className="text-xl font-bold text-dark-brown">- ผู้ใช้งานรายหนึ่ง</h4>
                     </div>
                 </div>
             </section>
