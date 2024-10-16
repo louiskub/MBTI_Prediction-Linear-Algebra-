@@ -10,7 +10,7 @@ const App: React.FC = () => {
             className="min-h-screen flex flex-col 
                        bg-gradient-to-r from-light-brown via-et-light-orange to-dark-brown 
                        bg-[length:200%_200%] animate-gradient-animation 
-                       text-cream-50 overflow-hidden"
+                       text-cream-50 overflow-hidden "
         >
             <header className="fixed w-full z-10">
                 <Navbar />

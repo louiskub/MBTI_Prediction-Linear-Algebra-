@@ -75,14 +75,12 @@ function Theorem() {
 
                 {/* Correlation Part */}
                 
-                <div className="flex justify-center">
+                <footer className="flex justify-center">
                     
                     <CorrSelect />
-                </div> 
+                </footer> 
             </main>
-            <footer>
-                <Footer/>
-            </footer>
+
             
         </div>
     );
