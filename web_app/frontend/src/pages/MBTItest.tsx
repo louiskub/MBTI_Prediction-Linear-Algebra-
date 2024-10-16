@@ -236,7 +236,7 @@ function MBTItest() {
 
     return (
         <div className='font-IBM bg-[#f7ebeb] bg-repeat-y bg-fit bg-fixed' style={{ backgroundImage: `url(${bgImage})` }}>
-            <Navbar bgColor='bg-et-gray-brown'/>
+            <Navbar bgColor='et-gray-brown'/>
             <div className="flex flex-col justify-center items-center pt-16">
                 <h1 className='max-[400px]:text-4xl text-5xl sm:text-6xl font-bold p-16 text-et-brown text-center animate-pulse select-none'>
                     แบบทดสอบ MBTI
