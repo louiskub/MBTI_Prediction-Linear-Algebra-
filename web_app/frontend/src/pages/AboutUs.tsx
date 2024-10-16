@@ -14,12 +14,8 @@ const members = [
         name: 'โมฮาเหม็ด หลุยส์',
         role: 'แฮปปี้ คนกินหมู',
         Sec: '17',
-<<<<<<< HEAD
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://stickershop.line-scdn.net/stickershop/v1/product/1370099/LINEStorePC/main.png?v=1', 
-=======
-        image: LouisProfile, 
->>>>>>> f45b0204474a5a8aeb15c69fd27fef7e8c871b28
         instagram: 'https://www.instagram.com/louis.mnsv_/',
         github: 'https://github.com/louiskub',
     },

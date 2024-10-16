@@ -13,7 +13,7 @@ const App: React.FC = () => {
                        text-cream-50 overflow-hidden "
         >
             <header className="fixed w-full z-10">
-                <Navbar />
+                <Navbar bgColor='bg-et-gray-brown'/>
             </header>
 
             <main className="flex-grow flex flex-col items-center pt-16 px-4">
