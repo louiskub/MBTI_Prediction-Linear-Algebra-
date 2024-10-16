@@ -157,7 +157,7 @@ function MBTItypes() {
             <TestButton text='ทำแบบทดสอบ'/>
         </div>
         <footer>
-            <Footer bgColor='bg-et-pink'/>
+            <Footer bgColor='et-pink'/>
         </footer>
     </div>
     )

@@ -462,7 +462,7 @@ function MBTItest() {
                 }
             </div>
 
-            <Footer bgColor='bg-et-gray-brown'/>
+            <Footer bgColor='et-pink'/>
 
         </div>
     )

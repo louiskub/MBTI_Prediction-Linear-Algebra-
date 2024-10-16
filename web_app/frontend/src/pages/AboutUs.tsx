@@ -168,7 +168,7 @@ function AboutUs() {
                
             </section>
             <footer className='w-full'>
-                <Footer/>
+                <Footer bgColor='et-pink'/>
             </footer>
         </div>
     );

@@ -83,9 +83,7 @@ function Theorem() {
                 </div> 
                 <TestButton text='ทำแบบทดสอบ'/>
             </main>
-            <footer>
-                <Footer bgColor='bg-et-light-orange'/>
-            </footer>
+            <Footer bgColor="et-pink" />
             
         </div>
     );

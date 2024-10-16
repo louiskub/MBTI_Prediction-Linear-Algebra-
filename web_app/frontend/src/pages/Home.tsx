@@ -107,7 +107,7 @@ const App: React.FC = () => {
                 </section>
             </main>
             <footer>
-                <Footer />
+                <Footer/>
             </footer>
         </div>
     );
