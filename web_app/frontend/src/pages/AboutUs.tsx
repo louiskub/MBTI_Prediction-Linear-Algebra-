@@ -14,7 +14,6 @@ const members = [
         name: 'โมฮาเหม็ด หลุยส์',
         role: 'แฮปปี้ คนกินหมู',
         Sec: '17',
-        description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: LouisProfile, 
         instagram: 'https://www.instagram.com/louis.mnsv_/',
         github: 'https://github.com/louiskub',
@@ -24,17 +23,15 @@ const members = [
         name: 'นายอนัธชัย จานเจือ',
         role: 'แฮปปี้ คนกินหมู',
         Sec: '17',
-        description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBUDstgb_qFZEfqCdHL9R3xMCKXMRq53RIoA&s', 
         instagram: 'https://www.instagram.com/ananx.j/',
         github: 'https://github.com/Anantha250',
     },
     {
         id: '66011442',
-        name: 'นายพีรวัส ไก่',
+        name: 'นายพีรวัส อิงคสันตติกุล',
         role: 'เกิดใหม่ทั้งทีก็เป็นวิปครีมไปซะแล้ว',
         Sec: '17',
-        description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: MarkProfile, 
         instagram: 'https://www.instagram.com/mark_peerawat/',
         github: 'https://github.com/MustMark',
@@ -44,7 +41,6 @@ const members = [
         name: 'นางสาวแอมมีลี โจว',
         role: 'เกิดใหม่ทั้งทีก็เป็นวิปครีมไปซะแล้ว',
         Sec: '17',
-        description: 'Frontend developer at King Mongkuts Institute of Technology Ladkrabang',
         image: JinProfile,
         instagram: 'https://www.instagram.com/j.i_.n12/',
         github: 'https://github.com/jueeeeeen',
@@ -103,9 +99,8 @@ function AboutUs() {
                             <div className="p-6 text-center">
                                 <h2 className="text-xl font-semibold text-[#6B4F4F]">{member.name}</h2>
                                 <h3 className="text-md text-black font-bold">รหัสนักศึกษา : {member.id}</h3>
-                                <h3 className="text-md text-black font-bold">Sec : {member.Sec}</h3>
                                 <h3 className="text-md text-[#8B5A2B] mb-2">กลุ่ม : {member.role}</h3>
-                                <p className="text-gray-700">{member.description}</p>
+                                <h3 className="text-md text-gray-500 font-bold">กลุ่มเรียน : {member.Sec}</h3>
                             </div>
                             <div className="flex space-x-4 mb-4">
                                 <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center bg-[#D7C4B8] p-2 rounded-lg shadow-lg transition-transform duration-300 transform hover:bg-[#D2BBA2]">
