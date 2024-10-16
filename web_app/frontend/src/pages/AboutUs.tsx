@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
+import bgImage from '/src/assets/bg.png';
 
 const members = [
     {
@@ -73,8 +74,8 @@ function AboutUs() {
     };
 
     return (
-        <div className="min-h-screen flex flex-col items-center bg-gradient-to-b from-[#D0B1A1] to-[#E2CFCF] p-0.1 ">
-            <Navbar bgColor='dark-brown'/>
+        <div className="min-h-screen flex flex-col items-center bg-gradient-to-b from-[#D0B1A1] to-[#E2CFCF] p-0.1" style={{ backgroundImage: `url(${bgImage})`}}>
+            <Navbar bgColor='et-pink'/>
             
             <section className="w-full py-20 text-center">
                 <h1 className="text-6xl md:text-9xl pt-16 text-transparent bg-clip-text bg-gradient-to-r from-[#8B5A2B] to-[#D2691E] font-serif animate-bounce">
@@ -116,7 +117,7 @@ function AboutUs() {
                 </div>
             </section>
 
-            <section className="w-full px-4 md:px-16 lg:px-32 py-10 bg-[#F9F7F1]">
+            <section className="w-full px-4 md:px-16 lg:px-32 py-10">
                 <h2 className="text-4xl font-semibold text-dark-brown mb-8 text-center">รีวิวส่วนหนึ่งจากผู้ใช้</h2>
                 <div className="testimonial-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
