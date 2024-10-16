@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
 
-function TestButton() {
+interface TestButtonProps {
+    text: string;
+}
+
+function TestButton({ text }: TestButtonProps) {
+    const defaultText = "ทำแบบทดสอบ";
+
     return (
         <div className="flex justify-center">
             <Link
@@ -9,11 +15,9 @@ function TestButton() {
                         transition-transform transform hover:scale-105 
                         hover:text-et-olive-brown hover:bg-et-gray hover:cursor-pointer shadow-sm mb-8"
             >
-                ทำแบบทดสอบ➜
+                {text || defaultText} ➜
             </Link>
-
         </div>
     );
 }
-
 export default TestButton;

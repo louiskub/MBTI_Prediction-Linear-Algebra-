@@ -2,16 +2,18 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TestButton from '../components/testButton';
 import LetterDescriptionSwitch from '../components/LetterSwitch';
+import bgImage from '/src/assets/bg.png';
+
 
 function MBTItypes() {
     return (
-    <div className='bg-et-light-gray'>
-        <Navbar/>
+    <div className='bg-et-light-gray bg-repeat-y bg-fit bg-fixed' style={{ backgroundImage: `url(${bgImage})` }}>
+        <Navbar bgColor='bg-et-pink'/>
         <div className='flex flex-col justify-center pt-16 text-center font-IBM w-[80vw] ml-auto mr-auto'>
-            <h1 className='text-6xl sm:text-7xl md:text-7xl font-bold p-16 text-et-olive-brown text-center'>
+            <h1 className='text-6xl sm:text-7xl md:text-7xl font-bold p-16 text-et-olive-brown text-center animate-pulse select-none'>
                 Personality Types
             </h1>
-            <TestButton/>
+            <TestButton text='ทำแบบทดสอบ'/>
             <LetterDescriptionSwitch />
 
             <div className="mt-8">
@@ -152,10 +154,10 @@ function MBTItypes() {
                     </div>
                 </div>
             </div>
-            <TestButton/>
+            <TestButton text='ทำแบบทดสอบ'/>
         </div>
         <footer>
-            <Footer/>
+            <Footer bgColor='bg-et-pink'/>
         </footer>
     </div>
     )
