@@ -11,7 +11,7 @@ import Cookies from 'js-cookie';
 const members = [
     {
         id: '66010660',
-        name: 'โมฮาเหม็ด หลุยส์',
+        name: 'นายมนัสวิน ขุนนันทเจียม',
         role: 'แฮปปี้ คนกินหมู',
         Sec: '17',
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
