@@ -72,7 +72,7 @@ const App: React.FC = () => {
                 </section>
 
                 <section className="youtube-section mb-12">
-    <h2 className="text-4xl font-semibold text-dark-brown mb-6">ดูวิดีโอแนะนำการใช้งานเว็บไซด์ของเรา</h2>
+    <h2 className="text-4xl font-semibold text-dark-brown mb-6">ดูวิดีโอแนะนำทฤษฎีที่ใช้ในเว็บของเรา</h2>
     <div className="youtube-container flex justify-center">
         <iframe
             width="560"
