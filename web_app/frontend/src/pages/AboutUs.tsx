@@ -2,7 +2,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import JinProfile from '../assets/jin_profile.png';
 import MarkProfile from '../assets/mark_profile.png';
-import LouisProfile from '../assets/louis_profile.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useState, useEffect } from 'react';
@@ -60,7 +59,7 @@ function AboutUs() {
         }
     }, []);
 
-    const handleCommentSubmit = (e) => {
+    const handleCommentSubmit = (e : React.FormEvent) => {
         e.preventDefault();
         const updatedComments = [...comments, newComment];
         setComments(updatedComments);
