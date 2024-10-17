@@ -50,7 +50,7 @@ const members = [
 ];
 
 function AboutUs() {
-    const [comments, setComments] = useState([]);
+    const [comments, setComments] = useState<string[]>([]);
     const [newComment, setNewComment] = useState('');
 
     useEffect(() => {
@@ -70,7 +70,7 @@ function AboutUs() {
 
     const clearCommentsCookie = () => {
         Cookies.remove('comments');
-        setComments([]); // ลบความคิดเห็นที่แสดงใน state ด้วย
+        setComments([]);
     };
 
     return (
