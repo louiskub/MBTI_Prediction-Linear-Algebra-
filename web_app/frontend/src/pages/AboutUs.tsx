@@ -16,7 +16,7 @@ const members = [
         role: 'แฮปปี้ คนกินหมู',
         Sec: '17',
         description: 'Backend developer at King Mongkuts Institute of Technology Ladkrabang',
-        image: 'https://stickershop.line-scdn.net/stickershop/v1/product/1370099/LINEStorePC/main.png?v=1', 
+        image: 'https://tr.rbxcdn.com/30DAY-Avatar-6602069E9BD7B7A534E87EE4477B60D3-Png/352/352/Avatar/Png/noFilter', 
         instagram: 'https://www.instagram.com/louis.mnsv_/',
         github: 'https://github.com/louiskub',
     },
@@ -123,15 +123,15 @@ function AboutUs() {
                 <div className="testimonial-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                         <p className="text-gray-600 mb-4">"MBTI ช่วยให้ผมเข้าใจตัวเองและเพื่อนร่วมงานได้ดีขึ้นมาก!"</p>
-                        <h4 className="text-xl font-bold text-dark-brown">- ผู้ใช้งานรายหนึ่ง</h4>
+                        <h4 className="text-xl font-bold text-dark-brown">- นายอั๋นคนกาฬสินธุ์ อรัญ ภูธาตุแร่</h4>
                     </div>
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                         <p className="text-gray-600 mb-4">"การทำแบบทดสอบนี้เป็นประสบการณ์ที่น่าสนใจและมีประโยชน์"</p>
-                        <h4 className="text-xl font-bold text-dark-brown">- ผู้ใช้งานรายหนึ่ง</h4>
+                        <h4 className="text-xl font-bold text-dark-brown">- เฮียจิน</h4>
                     </div>
                     <div className="testimonial-card p-6 bg-white rounded-lg shadow-lg">
                         <p className="text-gray-600 mb-4">"ฉันสามารถใช้ผลลัพธ์ MBTI ในการพัฒนาตัวเองและการทำงานได้จริง"</p>
-                        <h4 className="text-xl font-bold text-dark-brown">- ผู้ใช้งานรายหนึ่ง</h4>
+                        <h4 className="text-xl font-bold text-dark-brown">- เสี่ยโป้</h4>
                     </div>
                 </div>
             </section>
